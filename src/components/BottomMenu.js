@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 
-class Blog extends Component {
+class BottomMenu extends Component {
   render() {
     return (
       <div>
-        Blog Page
+        Bottom Menu
         <p>position</p>
       </div>
     );
