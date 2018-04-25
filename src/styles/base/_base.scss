@@ -8,18 +8,11 @@
 
 html {
   box-sizing: border-box;
-  font-size: 62.5%; // 1rem = 10px
+  font-size: 62.5%;
 }
 
 body {
   font-family: $font-primary;
-  font-size: $m-size;
-}
-
-button {
-  cursor: pointer;
-}
-
-button:disabled {
-  cursor: default;
+  font-size: 1.6rem;
+  color: $color-secondary;
 }
