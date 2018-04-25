@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 
-class Checkout extends Component {
+export default class Header extends Component {
   render() {
     return (
-      <div>
-        Checkout Page
+      <div className="header">
+        Here is the header
         <p>position</p>
       </div>
     );

@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 
-export default class HomePage extends Component {
+export default class Sidebar extends Component {
   render() {
     return (
-      <div className="homepage">
-        Home Page
+      <div className="sidebar">
+        Side Bar
         <p>position</p>
       </div>
     );
   }
 }
+

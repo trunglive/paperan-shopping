@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 
-class BottomMenu extends Component {
+export default class Footer extends Component {
   render() {
     return (
-      <div>
-        Bottom Menu
+      <div className="footer">
+        Here is the footer
         <p>position</p>
       </div>
     );

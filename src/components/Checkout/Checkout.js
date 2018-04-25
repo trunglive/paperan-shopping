@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 
-class Blog extends Component {
+export default class Checkout extends Component {
   render() {
     return (
       <div>
-        Blog Page
+        Here is the Checkout
         <p>position</p>
       </div>
     );

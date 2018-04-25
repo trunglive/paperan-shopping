@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 
-class TopMenu extends Component {
+export default class Collection extends Component {
   render() {
     return (
       <div>
-        Top Menu
+        Here is the Collection
         <p>position</p>
       </div>
     );

@@ -1,22 +1,27 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Homepage from '../components/Homepage';
-import Blog from '../components/Blog';
-import Checkout from '../components/Checkout';
-import TopMenu from '../components/TopMenu';
-import BottomMenu from '../components/BottomMenu';
+import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Sidebar from "../components/navigation/Sidebar";
+import NavigationInfo from "../components/navigation/NavigationInfo";
+import Header from "../components/navigation/Header";
+import Collection from "../components/collection/Collection";
+import Checkout from "../components/checkout/Checkout";
+import Homepage from "../components/Homepage";
+import Footer from "../components/navigation/Footer";
 
 const AppRouter = () => (
   <Router>
-    <div>
-      <TopMenu />
-      <Switch>
+    <div className="main-container">
+      <Sidebar />
+      <Header />
+      <NavigationInfo />
+      <Switch className="main-content">
         <Route exact path="/" component={Homepage} />
-        <Route exact path="/blog" component={Blog} />
+        <Route exact path="/collection" component={Collection} />
         <Route exact path="/checkout" component={Checkout} />
-        <Route component={NotFoundPage} />
       </Switch>
-      <BottomMenu />
+      <Footer />
     </div>
   </Router>
 );
+
+export default AppRouter;
