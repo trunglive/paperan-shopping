@@ -1,5 +1,25 @@
 .sidebar {
   grid-column: 1 / span 1;
   grid-row: 1 / -1;
-  border: 1px solid orangered;
+  display: flex;
+  flex-direction: column;
+  background-color: $color-secondary;
+  justify-content: space-between;
+  align-items: center;
+  // border: 1px solid orangered;
+
+  p {
+    margin: 1rem 2rem 0 2rem;
+    color: $color-primary;
+    font-size: 3rem;
+    font-style: italic;
+    font-weight: 700;
+  }
+
+  &__setting-icon,
+  &__question-icon {
+    width: 1.6rem;
+    height: 1.6rem;
+    margin: 2rem 0;
+  }
 }
