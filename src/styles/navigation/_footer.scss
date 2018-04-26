@@ -1,4 +1,25 @@
 .footer {
-  grid-column: 2 / -1;
-  border: 1px solid crimson;
+  // border: 1px solid crimson;
+  grid-column: 4 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 15rem 0 5rem 10rem;
+
+  p {
+    font-size: 1.3rem;
+    text-transform: uppercase;
+  }
+  ul {
+    margin-right: 10rem;
+    margin-top: 1.6rem;
+    color: $color-grey-light-1;
+    list-style-type: none;
+
+    li {
+      margin-bottom: $s-size;
+      font-size: 1.2rem;
+      font-weight: 300;
+      letter-spacing: 0.5px;
+    }
+  }
 }
