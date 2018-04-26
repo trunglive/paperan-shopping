@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { renderProducts } from "../../utils/renderProducts";
 
 export default class NewArrivalsProducts extends Component {
+  
   render() {
     const { allItems } = this.props;
 
