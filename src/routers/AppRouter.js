@@ -5,7 +5,7 @@ import NavigationInfo from "../components/navigation/NavigationInfo";
 import Header from "../components/navigation/Header";
 import Collection from "../components/collection/Collection";
 import Checkout from "../components/checkout/Checkout";
-import Homepage from "../components/Homepage";
+import Homepage from "../components/Home/Homepage";
 import Footer from "../components/navigation/Footer";
 
 const AppRouter = () => (
