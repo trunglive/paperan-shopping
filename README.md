@@ -1,4 +1,4 @@
-**Design credit of the project: [Significa]**
+**Design credit of the project: Patrik Michalicka**
 
 * https://dribbble.com/shots/4414196-paperan-shopping-exploration-Add-to-cart
 * https://dribbble.com/shots/4104241-paperan-shopping-exploration

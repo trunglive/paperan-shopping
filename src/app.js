@@ -14,4 +14,4 @@ import './styles/styles.scss';
 //   </Provider>
 // )
 
-render(<AppRouter />, document.getElementById('app'));
+render(randomData(), document.getElementById('app'));

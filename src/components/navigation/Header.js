@@ -12,8 +12,9 @@ export default class Header extends Component {
           <span>Search</span>
         </div>
         <div className="user-account-container">
-        <span>My account</span>
-        <img
+          <span>Shop</span>
+          <span>My account</span>
+          <img
             className="user-account-container__cart-icon"
             src="/icons/cart.svg"
           />
