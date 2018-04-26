@@ -1,5 +1,5 @@
 .homepage {
-  border: 1px solid blueviolet;
+  // border: 1px solid blueviolet;
   grid-column: 4 / -2;
 }
 
@@ -7,6 +7,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin: $xl-size 0;
 }
 
 .slogan {
@@ -29,7 +30,7 @@
   grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
   grid-gap: 2rem;
   grid-auto-flow: row dense;
-  margin-top: $xl-size;
+  // margin-top: $xl-size;
 
   img {
     width: 100%;

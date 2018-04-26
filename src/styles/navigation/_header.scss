@@ -1,4 +1,36 @@
 .header {
   grid-column: 2 / -1;
-  // border: 1px solid red;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2.5rem;
+  font-size: 1.2rem;
+}
+
+.search-bar-container {
+  display: flex;
+  align-items: center;
+
+  &__search-icon {
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+
+  span {
+    margin: 0 2rem;
+  }
+}
+
+.user-account-container {
+  display: flex;
+  align-items: center;
+
+  &__cart-icon {
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+
+  span {
+    margin: 0 4rem;
+  }
 }
