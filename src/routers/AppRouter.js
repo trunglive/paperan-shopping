@@ -5,7 +5,7 @@ import NavigationInfo from "../components/navigation/NavigationInfo";
 import Header from "../components/navigation/Header";
 import Collection from "../components/collection/Collection";
 import Checkout from "../components/checkout/Checkout";
-import Homepage from "../components/Home/Homepage";
+import HomepageContainer from "../components/Home/HomepageContainer";
 import Footer from "../components/navigation/Footer";
 
 const AppRouter = () => (
@@ -15,7 +15,7 @@ const AppRouter = () => (
       <Header />
       <NavigationInfo />
       <Switch className="main-content">
-        <Route exact path="/" component={Homepage} />
+        <Route exact path="/" component={HomepageContainer} />
         <Route exact path="/collection" component={Collection} />
         <Route exact path="/checkout" component={Checkout} />
       </Switch>
