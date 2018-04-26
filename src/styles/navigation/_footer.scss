@@ -3,23 +3,30 @@
   grid-column: 4 / -1;
   display: flex;
   flex-wrap: wrap;
-  padding: 15rem 0 5rem 10rem;
+  padding: 7rem 0 7rem 7rem;
+
+  > div:not(:last-child) {
+    margin-right: 10rem;
+  }
 
   p {
+    margin-bottom: 1.6rem;
     font-size: 1.3rem;
     text-transform: uppercase;
   }
+
   ul {
-    margin-right: 10rem;
-    margin-top: 1.6rem;
     color: $color-grey-light-1;
     list-style-type: none;
 
     li {
-      margin-bottom: $s-size;
       font-size: 1.2rem;
       font-weight: 300;
       letter-spacing: 0.5px;
+    }
+
+    li:not(:last-child) {
+      margin-bottom: $s-size;
     }
   }
 }
