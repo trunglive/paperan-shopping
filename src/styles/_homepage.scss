@@ -1,5 +1,5 @@
 .homepage {
-  // border: 1px solid blueviolet;
+  border: 1px solid blueviolet;
   grid-column: 4 / -2;
 }
 
@@ -7,7 +7,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: $xl-size 0;
+  margin-bottom: $xl-size;
 }
 
 .slogan {
