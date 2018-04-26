@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { paperan as api } from "../../dev_off/paperan.json";
 
 export default class HomePage extends Component {
   render() {
@@ -88,6 +89,15 @@ export default class HomePage extends Component {
             />
           </div>
         </div>
+        {/* <div className="testing">
+          {api.map(item => (
+            <img
+              className="photo-item"
+              src={item["photo_url"]}
+              key={api["guid"]}
+            />
+          ))}
+        </div> */}
       </div>
     );
   }
