@@ -1,17 +1,13 @@
-import React, { Component } from "react";
+import React from "react";
 import { renderProducts } from "../../utils/renderProducts";
 
-export default class OnSaleProducts extends Component {
-  render() {
-    const { allItems } = this.props;
+const OnSaleProducts = ({ allItems }) => (
+  <div className="homepage-on-sale small-grid">
+    <p>Sale</p>
+    <div className="small-grid__photos">
+      {renderProducts(allItems, "is_on_sale")}
+    </div>
+  </div>
+);
 
-    return (
-      <div className="homepage-on-sale small-grid">
-        <p>Sale</p>
-        <div className="small-grid__photos">
-          {renderProducts(allItems, "is_on_sale")}
-        </div>
-      </div>
-    );
-  }
-}
+export default OnSaleProducts;

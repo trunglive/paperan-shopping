@@ -1,5 +1,6 @@
 .homepage {
   // border: 1px solid blueviolet;
+  min-height: 80vh;
   grid-column: 4 / -2;
 }
 
@@ -45,8 +46,7 @@
 }
 
 .small-grid {
-  display: inline-block;
-  margin-top: $xl-size;
+  padding-top: $xl-size;
 
   p {
     font-size: 2.6rem;
@@ -65,4 +65,12 @@
     grid-gap: 1rem;
     margin: $xl-size 0;
   }
+}
+
+.paperan-spinner {
+  width: 4rem;
+  height: 4rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
 }

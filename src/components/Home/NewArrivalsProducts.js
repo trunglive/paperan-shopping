@@ -1,17 +1,13 @@
-import React, { Component } from "react";
+import React from "react";
 import { renderProducts } from "../../utils/renderProducts";
 
-export default class NewArrivalsProducts extends Component {
-  render() {
-    const { allItems } = this.props;
+const NewArrivalsProducts = ({ allItems }) => (
+  <div className="homepage-new-arrivals small-grid">
+    <p>New Arrivals</p>
+    <div className="small-grid__photos">
+      {renderProducts(allItems, "is_new_arrival")}
+    </div>
+  </div>
+);
 
-    return (
-      <div className="homepage-new-arrivals small-grid">
-        <p>New Arrivals</p>
-        <div className="small-grid__photos">
-          {renderProducts(allItems, "is_new_arrival")}
-        </div>
-      </div>
-    );
-  }
-}
+export default NewArrivalsProducts;

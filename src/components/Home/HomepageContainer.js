@@ -27,6 +27,14 @@ export default class HomepageContainer extends Component {
   render() {
     const { allItems } = this.state;
 
-    return <Homepage allItems={allItems} />;
+    return (
+      <div className="homepage">
+        {allItems.length > 0 ? (
+          <Homepage allItems={allItems} />
+        ) : (
+          <img className="paperan-spinner" src="/icons/paperan-spinner.svg" />
+        )}
+      </div>
+    );
   }
 }

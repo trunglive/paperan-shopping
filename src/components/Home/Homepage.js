@@ -4,7 +4,7 @@ import NewArrivalsProducts from "./NewArrivalsProducts";
 import OnSaleProducts from "./OnSaleProducts";
 
 const Homepage = ({ allItems }) => (
-  <div className="homepage">
+  <div>
     <div className="homepage-header">
       <div className="slogan">
         <p>Makes everything</p>
