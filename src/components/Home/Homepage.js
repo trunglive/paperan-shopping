@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { database } from "../../firebase";
 import FeaturedProducts from './FeaturedProducts';
 import NewArrivalsProducts from './NewArrivalsProducts';
+import OnSaleProducts from './OnSaleProducts';
 
 export default class HomePage extends Component {
   state = {
@@ -42,7 +43,7 @@ export default class HomePage extends Component {
 
         <FeaturedProducts allItems={allItems} />
         <NewArrivalsProducts allItems={allItems} />
-       
+        <OnSaleProducts allItems={allItems} />
       </div>
     );
   }
