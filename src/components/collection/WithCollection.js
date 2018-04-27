@@ -1,36 +1,36 @@
-import React, { Component } from "react";
+// import React, { Component } from "react";
 
-const WithCollection = WrappedComponent =>
-  class extends Component {
-    static displayName = `WithCollection(${WrappedComponent.displayName ||
-      WrappedComponent.name})`;
+// const WithCollection = WrappedComponent =>
+//   class extends Component {
+//     static displayName = `WithCollection(${WrappedComponent.displayName ||
+//       WrappedComponent.name})`;
 
-      state = {
-        threeCols: true
-      };
+//       state = {
+//         threeCols: true
+//       };
     
-      handleTwoColsChange = () => {
-        this.setState({
-          threeCols: false
-        });
-      };
+//       handleTwoColsChange = () => {
+//         this.setState({
+//           threeCols: false
+//         });
+//       };
     
-      handleThreeColsChange = () => {
-        this.setState({
-          threeCols: true
-        });
-      };
+//       handleThreeColsChange = () => {
+//         this.setState({
+//           threeCols: true
+//         });
+//       };
 
-    render() {
-      const { threeCols } = this.state;
+//     render() {
+//       const { threeCols } = this.state;
       
-      return (
-        <WrappedComponent
-          threeCols={threeCols}
-          onColsChange={this.handleColsChange}
-        />
-      );
-    }
-  };
+//       return (
+//         <WrappedComponent
+//           threeCols={threeCols}
+//           onColsChange={this.handleColsChange}
+//         />
+//       );
+//     }
+//   };
 
-export default WithCollection;
+// export default WithCollection;
