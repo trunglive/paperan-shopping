@@ -1,7 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import FeaturedProducts from "./FeaturedProducts";
 import NewArrivalsProducts from "./NewArrivalsProducts";
 import OnSaleProducts from "./OnSaleProducts";
+import WithHomepage from './WithHomepage';
 
 const Homepage = ({ allItems }) => (
   <div>
@@ -10,9 +12,14 @@ const Homepage = ({ allItems }) => (
         <p>Makes everything</p>
         <p>noteworthy.</p>
       </div>
-      <a className="discover-collection button button--outline">
+
+      <Link
+        to="/collection/all"
+        className="discover-collection button button--outline"
+        style={{ textDecoration: "none", color: "inherit" }}
+      >
         Discover collection
-      </a>
+      </Link>
     </div>
 
     <FeaturedProducts allItems={allItems} />
@@ -21,4 +28,4 @@ const Homepage = ({ allItems }) => (
   </div>
 );
 
-export default Homepage;
+export default WithHomepage(Homepage);
