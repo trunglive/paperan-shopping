@@ -5,19 +5,26 @@ import { capitalizeFirstLetter } from "../../utils/capitalizeFirstLetter";
 
 class SingleItem extends Component {
   state = {
-    isPaperSizeSelect: false,
-    isDetailSelect: false
+    selectedPaperSize: "",
+    selectedColor: "",
+    isDetailSelected: false
   };
 
-  handlePaperSizeSelect = () => {
+  handlePaperSize = size => {
     this.setState({
-      isPaperSizeSelect: !this.state.isPaperSizeSelect
+      selectedPaperSize: size
     });
   };
 
-  handleDetailSelect = () => {
+  handlePaperColor = color => {
     this.setState({
-      isDetailSelect: !this.state.isDetailSelect
+      selectedColor: color
+    });
+  };
+
+  handleDetailsToggle = () => {
+    this.setState({
+      isDetailSelected: !this.state.isDetailSelected
     });
   };
 
@@ -39,8 +46,8 @@ class SingleItem extends Component {
       details
     } = item;
 
-    const { isPaperSizeSelect, isDetailSelect } = this.state;
-
+    const { selectedPaperSize, selectedColor, isDetailSelected } = this.state;
+    console.log(selectedColor);
     return (
       <div className="single-product">
         <div className="photo-display">
@@ -65,9 +72,18 @@ class SingleItem extends Component {
             <div className="product-details__color-list">
               {color.map(singleColor => (
                 <div
-                  className={`square ${singleColor}-square`}
+                  className={
+                    selectedColor === singleColor
+                      ? `${selectedColor}-square-border square-border`
+                      : "square-border"
+                  }
                   key={singleColor}
-                />
+                >
+                  <div
+                    className={`square ${singleColor}-square`}
+                    onClick={() => this.handlePaperColor(singleColor)}
+                  />
+                </div>
               ))}
             </div>
           </div>
@@ -76,10 +92,12 @@ class SingleItem extends Component {
             <div className="product-details__size-list">
               {size.map(singleSize => (
                 <div
-                  className={`${
-                    isPaperSizeSelect ? "paper-size-select" : "false"
-                  }`}
-                  onClick={this.handlePaperSizeSelect}
+                  className={
+                    selectedPaperSize === singleSize
+                      ? "paper-size-select"
+                      : "false"
+                  }
+                  onClick={() => this.handlePaperSize(singleSize)}
                   key={singleSize}
                 >
                   {singleSize}
@@ -111,11 +129,11 @@ class SingleItem extends Component {
           </div>
 
           <div className="product-details__details-toggle">
-            <p onClick={this.handleDetailSelect}>
-              {isDetailSelect ? "Hide details" : "Show more details"}
+            <p onClick={this.handleDetailsToggle}>
+              {isDetailSelected ? "Hide details" : "Show more details"}
             </p>
             <div className="detail-text-toggle">
-              {isDetailSelect ? details : null}
+              {isDetailSelected ? details : null}
             </div>
           </div>
         </div>

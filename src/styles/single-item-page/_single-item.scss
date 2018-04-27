@@ -1,7 +1,6 @@
 .single-product {
   // border: 1px solid red;
   grid-column: 4 / -2;
-  height: 70rem;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 10rem;
@@ -62,7 +61,11 @@
     display: flex;
 
     > div:not(:last-child) {
-      margin-right: 1.5rem;
+      margin-right: 1rem;
+    }
+
+    > div {
+      padding: 0.3rem;
     }
   }
 
@@ -71,6 +74,12 @@
       padding: 0.75rem 1rem;
       color: $color-grey-light-1;
       border: 1px solid $color-grey-light-1;
+
+      &:hover,
+      &:active,
+      &:focus {
+        cursor: pointer;
+      }
     }
 
     .paper-size-select {
@@ -85,7 +94,7 @@
     font-weight: 400;
   }
 
-  &__add-to-cart-container--button {  
+  &__add-to-cart-container--button {
     padding: 1.5rem 3.5rem;
     font-weight: 400;
     color: $color-primary;
@@ -101,9 +110,7 @@
   }
 
   &__details-toggle {
-    // display: flex;
-    // justify-content: center;
-    
+    height: 10rem;
     padding: 3rem 2rem 3rem 1rem;
     border-top: 1px solid $color-grey-light-2;
 
@@ -121,41 +128,61 @@
       line-height: 1.8;
     }
   }
-
-
 }
-
-
 
 .square {
   width: 2.5rem;
   height: 2.5rem;
 }
 
-.white-square {
-  background-color: #fff;
+.square-border {
+  border: 1px solid $color-primary;
 }
 
 .grey-square {
   background-color: #393e46;
 }
 
+.grey-square-border {
+  border: 1px solid #393e46;
+}
+
 .black-square {
   background-color: #29252c;
+}
+
+.black-square-border {
+  border: 1px solid #29252c;
 }
 
 .green-square {
   background-color: #2eb872;
 }
 
+.green-square-border {
+  border: 1px solid #2eb872;
+}
+
 .blue-square {
   background-color: #118df0;
+}
+
+.blue-square-border {
+  border: 1px solid #118df0;
 }
 
 .purple-square {
   background-color: #7045ff;
 }
 
+.purple-square-border {
+  border: 1px solid #7045ff;
+}
+
 .pink-square {
   background-color: #fc5185;
+}
+
+.pink-square-border {
+  border: 1px solid #fc5185;
 }
