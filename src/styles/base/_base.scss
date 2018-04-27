@@ -21,4 +21,6 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 7rem) repeat(8, minmax(min-content, 1fr)) 7rem;
   grid-template-rows: repeat(3, min-content);
+  max-width: 150rem;
+  margin: 0 auto;
 }

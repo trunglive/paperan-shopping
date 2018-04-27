@@ -40,17 +40,16 @@ class CollectionGrid extends Component {
               : `collection-grid__items grid-two-cols`
           }`}
         >
-          {allItems.map(
-            (item, index) =>
-              index < allItems.length / 9 && (
-                <CollectionGridItem
-                  key={item.guid}
-                  {...item}
-                  resizePhoto={threeCols ? null : "resize-photo"}
-                />
-              )
-          )}
+          {allItems.map(item => (
+            <CollectionGridItem
+              key={item.guid}
+              {...item}
+              resizePhoto={threeCols ? null : "resize-photo"}
+            />
+          ))}
         </div>
+
+        <div className="more-item">You've reached the end of the list</div>
       </div>
     );
   }

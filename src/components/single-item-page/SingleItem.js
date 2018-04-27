@@ -64,7 +64,10 @@ class SingleItem extends Component {
             <p>Color</p>
             <div className="product-details__color-list">
               {color.map(singleColor => (
-                <div className={`square ${singleColor}-square`} />
+                <div
+                  className={`square ${singleColor}-square`}
+                  key={singleColor}
+                />
               ))}
             </div>
           </div>
@@ -77,6 +80,7 @@ class SingleItem extends Component {
                     isPaperSizeSelect ? "paper-size-select" : "false"
                   }`}
                   onClick={this.handlePaperSizeSelect}
+                  key={singleSize}
                 >
                   {singleSize}
                 </div>
@@ -85,12 +89,13 @@ class SingleItem extends Component {
           </div>
           <div className="product-details__availability-container">
             <p>Availability</p>
-            {in_stock > 10 && (
+            {in_stock >= 10 && (
               <div className="ten-plus-stock">10+ pcs available in stock</div>
             )}
-            {in_stock < 10 && (
-              <div className="low-stock">This item is in limited stock</div>
-            )}
+            {in_stock < 10 &&
+              in_stock > 0 && (
+                <div className="low-stock">This item is in limited stock</div>
+              )}
             {in_stock === 0 && (
               <div className="out-of-stock">
                 Out of stock. Please check back later.

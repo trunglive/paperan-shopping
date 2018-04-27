@@ -18,7 +18,8 @@
   white-space: nowrap;
 }
 
-.discover-collection {
+.discover-collection,
+.button {
   padding: 1.5rem 2rem;
   font-size: 1.1rem;
   font-weight: 600;
@@ -39,10 +40,11 @@
     object-fit: cover;
   }
 
-  img:first-child {
-    grid-column: 1 / span 2;
-    height: 50rem;
-  }
+  // img:first-child {
+  //   grid-column: 1 / span 2;
+  //   height: 50rem;
+  //   border: 1px solid red;
+  // }
 }
 
 .small-grid {

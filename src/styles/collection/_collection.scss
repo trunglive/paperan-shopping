@@ -72,3 +72,16 @@
 .grey-text {
   color: $color-grey-light-1;
 }
+
+.more-item {
+  margin: 0 auto;
+  text-align: center;
+  color: $color-grey-light-1;
+  font-size: 1.1rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+  
+  &:hover {
+    cursor: pointer;
+  }
+}

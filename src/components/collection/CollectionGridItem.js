@@ -2,36 +2,43 @@ import React from "react";
 import { Link } from "react-router-dom";
 import WithCollection from "./WithCollection";
 import { capitalizeFirstLetter } from "../../utils/capitalizeFirstLetter";
+import FadeIn from "react-lazyload-fadein";
 
 const CollectionGridItem = ({
   guid,
   photo_url,
   name,
+  price,
   type,
   target_audience,
-  price,
-  size,
   threeCols,
   resizePhoto
 }) => (
   <div>
-    <Link to={`/collection/${type}/${guid}`}>
-      <img
-        src={photo_url}
-        alt={`${name} ${type} for ${target_audience}`}
-        className={resizePhoto}
-      />
-    </Link>
+    <FadeIn easing={"ease-out"}>
+      {onload => (
+        <div>
+          <Link to={`/collection/${type}/${guid}`}>
+            <img
+              src={photo_url}
+              alt={`${name} ${type} for ${target_audience}`}
+              className={resizePhoto}
+              onLoad={onload}
+            />
+          </Link>
 
-    <div className="collection-grid__item">
-      <div className="collection-grid__item--price">
-        <span>$ </span>
-        <span>{price}</span>
-      </div>
-      <p className="collection-grid__item--label">{`${capitalizeFirstLetter(
-        name
-      )} ${size} ${capitalizeFirstLetter(type)}`}</p>
-    </div>
+          <div className="collection-grid__item">
+            <div className="collection-grid__item--price">
+              <span>$ </span>
+              <span>{price}</span>
+            </div>
+            <p className="collection-grid__item--label">
+              {`${capitalizeFirstLetter(name)} ${capitalizeFirstLetter(type)}`}
+            </p>
+          </div>
+        </div>
+      )}
+    </FadeIn>
   </div>
 );
 
