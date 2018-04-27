@@ -33,7 +33,7 @@ const WithHomepage = WrappedComponent =>
       return (
         <div className="homepage">
           {allItems.length > 0 ? (
-            <WrappedComponent allItems={allItems} />
+            <WrappedComponent allItems={allItems} {...this.props} />
           ) : (
             <img className="paperan-spinner" src="/icons/paperan-spinner.svg" />
           )}

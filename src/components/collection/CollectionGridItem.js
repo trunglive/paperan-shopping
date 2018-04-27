@@ -17,7 +17,6 @@ const CollectionGridItem = ({
   <div>
     <Link to={`/collection/${type}/${guid}`}>
       <img
-        key={guid}
         src={photo_url}
         alt={`${name} ${type} for ${target_audience}`}
         className={resizePhoto}
@@ -37,3 +36,5 @@ const CollectionGridItem = ({
 );
 
 export default CollectionGridItem;
+
+//

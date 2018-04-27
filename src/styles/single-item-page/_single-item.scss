@@ -1,0 +1,161 @@
+.single-product {
+  // border: 1px solid red;
+  grid-column: 4 / -2;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10rem;
+  font-size: 1.1rem;
+  font-weight: 300;
+  color: $color-grey-light-1;
+}
+
+.photo-display {
+  img {
+    width: 100%;
+    min-height: 50rem;
+    object-fit: cover;
+  }
+}
+
+.product-details {
+  .long-dash {
+    margin: 0 1rem;
+  }
+
+  &__name {
+    font-size: 3rem;
+    font-weight: 500;
+    color: $color-secondary;
+    padding: 4rem 0 4rem 1rem;
+  }
+
+  &__price {
+    padding: 4rem 0 4rem 1rem;
+
+    span:first-child {
+      font-size: 2rem;
+      font-weight: 500;
+      color: $color-secondary;
+      letter-spacing: 1px;
+    }
+
+    span:nth-child(2) {
+      margin-left: 1rem;
+      font-size: 1.3rem;
+    }
+  }
+
+  &__color-container,
+  &__size-container,
+  &__availability-container,
+  &__add-to-cart-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3rem 2rem 3rem 1rem;
+    border-top: 1px solid $color-grey-light-2;
+  }
+
+  &__color-list,
+  &__size-list {
+    display: flex;
+
+    > div:not(:last-child) {
+      margin-right: 1.5rem;
+    }
+  }
+
+  &__size-list {
+    > div {
+      padding: 0.75rem 1rem;
+      color: $color-grey-light-1;
+      border: 1px solid $color-grey-light-1;
+    }
+
+    .paper-size-select {
+      color: $color-secondary;
+      border: 1px solid $color-secondary;
+    }
+  }
+
+  .ten-plus-stock {
+    font-size: 1.2rem;
+    color: $color-secondary;
+    font-weight: 400;
+  }
+
+  &__add-to-cart-container--button {  
+    padding: 1.5rem 3.5rem;
+    font-weight: 400;
+    color: $color-primary;
+    background-color: $color-secondary;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+    &:hover,
+    &:active,
+    &:focus {
+      cursor: pointer;
+    }
+  }
+
+  &__details-toggle {
+    // display: flex;
+    // justify-content: center;
+    
+    padding: 3rem 2rem 3rem 1rem;
+    border-top: 1px solid $color-grey-light-2;
+
+    > p:first-child {
+      padding-bottom: 2rem;
+      text-align: center;
+      font-weight: 400;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    .detail-text-toggle {
+      line-height: 1.8;
+    }
+  }
+
+
+}
+
+
+
+.square {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.white-square {
+  background-color: #fff;
+}
+
+.grey-square {
+  background-color: #393e46;
+}
+
+.black-square {
+  background-color: #29252c;
+}
+
+.green-square {
+  background-color: #2eb872;
+}
+
+.blue-square {
+  background-color: #118df0;
+}
+
+.purple-square {
+  background-color: #7045ff;
+}
+
+.pink-square {
+  background-color: #fc5185;
+}
