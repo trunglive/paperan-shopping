@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import WithHomepage from "../home/WithHomepage";
 import { single } from "rxjs/operators";
 import { capitalizeFirstLetter } from "../../utils/capitalizeFirstLetter";
+import { convertColorName } from "../../utils/paperColors";
 
 class SingleItem extends Component {
   state = {
@@ -47,7 +48,7 @@ class SingleItem extends Component {
     } = item;
 
     const { selectedPaperSize, selectedColor, isDetailSelected } = this.state;
-    console.log(selectedColor);
+
     return (
       <div className="single-product">
         <div className="photo-display">
@@ -72,15 +73,17 @@ class SingleItem extends Component {
             <div className="product-details__color-list">
               {color.map(singleColor => (
                 <div
-                  className={
-                    selectedColor === singleColor
-                      ? `${selectedColor}-square-border square-border`
-                      : "square-border"
-                  }
+                  style={{
+                    border:
+                      selectedColor === singleColor
+                        ? `1px solid ${convertColorName(selectedColor)}`
+                        : "1px solid #fff"
+                  }}
                   key={singleColor}
                 >
                   <div
-                    className={`square ${singleColor}-square`}
+                    style={{ backgroundColor: convertColorName(singleColor) }}
+                    className="square-color"
                     onClick={() => this.handlePaperColor(singleColor)}
                   />
                 </div>
