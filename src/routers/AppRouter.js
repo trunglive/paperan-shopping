@@ -1,11 +1,14 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Sidebar from "../components/navigation/Sidebar";
-import NavigationInfo from "../components/navigation/NavigationInfo";
 import Header from "../components/navigation/Header";
-import CollectionGrid from "../components/collection/CollectionGrid";
-// import Checkout from "../components/checkout/Checkout";
+import NavigationInfo from "../components/navigation/NavigationInfo";
 import Homepage from "../components/home/Homepage";
+import CollectionGrid from "../components/collection/CollectionGrid";
+import SingleItem from '../components/single-item-page/SingleItem';
+
+// import Checkout from "../components/checkout/Checkout";
+
 import Footer from "../components/navigation/Footer";
 
 const AppRouter = () => (
@@ -17,6 +20,7 @@ const AppRouter = () => (
       <Switch className="main-content">
         <Route exact path="/" component={Homepage} />
         <Route exact path="/collection/all" component={CollectionGrid} />
+        <Route exact path="/collection/:type/:id" component={SingleItem} />
         {/* <Route exact path="/checkout" component={Checkout} /> */}
       </Switch>
       <Footer />

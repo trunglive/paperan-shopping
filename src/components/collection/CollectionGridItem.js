@@ -1,5 +1,6 @@
 import React from "react";
-import WithCollection from './WithCollection';
+import { Link } from "react-router-dom";
+import WithCollection from "./WithCollection";
 import { capitalizeFirstLetter } from "../../utils/capitalizeFirstLetter";
 
 const CollectionGridItem = ({
@@ -14,12 +15,15 @@ const CollectionGridItem = ({
   resizePhoto
 }) => (
   <div>
-    <img
-      key={guid}
-      src={photo_url}
-      alt={`${name} ${type} for ${target_audience}`}
-      className={resizePhoto}
-    />
+    <Link to={`/collection/${type}/${guid}`}>
+      <img
+        key={guid}
+        src={photo_url}
+        alt={`${name} ${type} for ${target_audience}`}
+        className={resizePhoto}
+      />
+    </Link>
+
     <div className="collection-grid__item">
       <div className="collection-grid__item--price">
         <span>$ </span>
