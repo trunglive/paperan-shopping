@@ -30,7 +30,7 @@ class SingleItem extends Component {
   };
 
   render() {
-    const item = this.props.allItems.find(
+    const itemSelected = this.props.allItems.find(
       item => item.guid === this.props.match.params.id
     );
 
@@ -45,7 +45,7 @@ class SingleItem extends Component {
       size,
       in_stock,
       details
-    } = item;
+    } = itemSelected;
 
     const { selectedPaperSize, selectedColor, isDetailSelected } = this.state;
 
@@ -125,7 +125,17 @@ class SingleItem extends Component {
           </div>
           <div className="product-details__add-to-cart-container">
             <p>Quantity</p>
-            <p>select box</p>
+            <div className="numeric-input">
+              <p className="quantity-input">3 pcs</p>
+              <div>
+                <div className="plus-container">
+                  <img className="plus-icon" src="/icons/plus.svg" />
+                </div>
+                <div className="minus-container">
+                  <img className="minus-icon" src="/icons/minus.svg" />
+                </div>
+              </div>
+            </div>
             <div className="product-details__add-to-cart-container--button">
               add to cart
             </div>
