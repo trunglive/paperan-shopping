@@ -10,6 +10,7 @@ const CollectionGridItem = ({
   name,
   price,
   type,
+  sheet_style,
   target_audience,
   threeCols,
   resizePhoto
@@ -33,7 +34,7 @@ const CollectionGridItem = ({
               <span>{price}</span>
             </div>
             <p className="collection-grid__item--label">
-              {`${capitalizeFirstLetter(name)} ${capitalizeFirstLetter(type)}`}
+              {`${capitalizeFirstLetter(name)} ${capitalizeFirstLetter(sheet_style)} ${capitalizeFirstLetter(type)}`}
             </p>
           </div>
         </div>

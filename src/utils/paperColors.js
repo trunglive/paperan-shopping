@@ -1,10 +1,10 @@
 const color = {
-  grey: "#393e46",
-  black: "#29252c",
-  green: "#2eb872",
-  blue: "#118df0",
+  grey: "#606470",
+  black: "#393939",
+  green: "#627d60",
+  blue: "#429ffd",
   purple: "#7045ff",
-  pink: "#fc5185"
+  pink: "#f73859"
 };
 
 export const convertColorName = name =>
