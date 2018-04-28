@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import WithHomepage from "../home/WithHomepage";
 // import WithCollection from "./WithCollection";
-import CollectionGridNav from "./CollectionGridNav";
+// import CollectionGridNav from "./CollectionGridNav";
 import CollectionGridItem from "./CollectionGridItem";
 
 class CollectionGrid extends Component {
@@ -27,11 +27,24 @@ class CollectionGrid extends Component {
 
     return (
       <div className="collection collection-grid">
-        <CollectionGridNav
-          onTwoColsChange={this.handleTwoColsChange}
-          onThreeColsChange={this.handleThreeColsChange}
-          threeCols={threeCols}
-        />
+        <div className="collection-grid-nav">
+          <p className="collection-grid-nav__title">Notebooks and planners</p>
+          <div className="collection-grid-nav__option">
+            <span
+              onClick={this.handleTwoColsChange}
+              className={threeCols ? "grey-text" : "false"}
+            >
+              Two cols
+            </span>
+            <span>/</span>
+            <span
+              onClick={this.handleThreeColsChange}
+              className={threeCols ? "false" : "grey-text"}
+            >
+              Three cols
+            </span>
+          </div>
+        </div>
 
         <div
           className={`${

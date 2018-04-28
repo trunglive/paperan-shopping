@@ -5,29 +5,28 @@
 //     static displayName = `WithCollection(${WrappedComponent.displayName ||
 //       WrappedComponent.name})`;
 
-//       state = {
+//     state = {
+//       threeCols: true
+//     };
+
+//     handleTwoColsChange = () => {
+//       this.setState({
+//         threeCols: false
+//       });
+//     };
+
+//     handleThreeColsChange = () => {
+//       this.setState({
 //         threeCols: true
-//       };
-    
-//       handleTwoColsChange = () => {
-//         this.setState({
-//           threeCols: false
-//         });
-//       };
-    
-//       handleThreeColsChange = () => {
-//         this.setState({
-//           threeCols: true
-//         });
-//       };
+//       });
+//     };
 
 //     render() {
-//       const { threeCols } = this.state;
-      
 //       return (
 //         <WrappedComponent
-//           threeCols={threeCols}
-//           onColsChange={this.handleColsChange}
+//           threeCols={this.state.threeCols}
+//           handleTwoColsChange={this.handleTwoColsChange}
+//           handleThreeColsChange={this.handleThreeColsChange}
 //         />
 //       );
 //     }
