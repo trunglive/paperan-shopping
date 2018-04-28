@@ -35,12 +35,10 @@ const WithAddToCart = WrappedComponent =>
     render() {
       return (
         <WrappedComponent
-          quantity={this.state.quantity}
-          isItemOutOfStock={this.state.isItemOutOfStock}
-          overQuantityClick={this.state.overQuantityClick}
+          {...this.state}
+          {...this.props}
           handleQuantityIncrement={this.handleQuantityIncrement}
           handleQuantityDecrement={this.handleQuantityDecrement}
-          inStock={this.props.inStock}
         />
       );
     }

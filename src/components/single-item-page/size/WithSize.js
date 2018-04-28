@@ -18,9 +18,9 @@ const WithSize = WrappedComponent =>
     render() {
       return (
         <WrappedComponent
-          selectedPaperSize={this.state.selectedPaperSize}
+          {...this.state}
+          {...this.props}
           handlePaperSize={this.handlePaperSize}
-          size={this.props.size}
         />
       );
     }

@@ -18,9 +18,9 @@ const WithColor = WrappedComponent =>
     render() {
       return (
         <WrappedComponent
-          selectedColor={this.state.selectedColor}
+          {...this.state}
+          {...this.props}
           handlePaperColor={this.handlePaperColor}
-          color={this.props.color}
         />
       );
     }

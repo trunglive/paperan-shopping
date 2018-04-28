@@ -31,7 +31,10 @@ const AddToCartView = ({
           </div>
         </div>
       </div>
-      <div className="product-details__add-to-cart-container--button">
+      <div
+        className="product-details__add-to-cart-container--button"
+        onClick={() => console.log("ok")}
+      >
         add to cart
       </div>
     </div>

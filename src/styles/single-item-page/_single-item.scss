@@ -133,6 +133,12 @@
 .square-color {
   width: 2.5rem;
   height: 2.5rem;
+
+  &:hover,
+  &:active,
+  &:focus {
+    cursor: pointer;
+  }
 }
 
 .numeric-input {
