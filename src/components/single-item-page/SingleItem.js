@@ -6,9 +6,17 @@ import { convertColorName } from "../../utils/paperColors";
 
 class SingleItem extends Component {
   state = {
-    selectedPaperSize: "",
     selectedColor: "",
+    selectedPaperSize: "",
+    quantity: 0,
+    overQuantityClick: false,
     isDetailSelected: false
+  };
+
+  handlePaperColor = color => {
+    this.setState({
+      selectedColor: color
+    });
   };
 
   handlePaperSize = size => {
@@ -17,9 +25,19 @@ class SingleItem extends Component {
     });
   };
 
-  handlePaperColor = color => {
-    this.setState({
-      selectedColor: color
+  handleQuantityIncrement = inStock => {
+    this.setState(state => {
+      if (state.quantity >= inStock) {
+        return { overQuantityClick: true };
+      }
+      return { quantity: state.quantity + 1 };
+    });
+  };
+
+  handleQuantityDecrement = inStock => {
+    this.setState(state => {
+      if (state.quantity === 0) return;
+      return { quantity: state.quantity - 1, overQuantityClick: false };
     });
   };
 
@@ -47,7 +65,13 @@ class SingleItem extends Component {
       details
     } = itemSelected;
 
-    const { selectedPaperSize, selectedColor, isDetailSelected } = this.state;
+    const {
+      selectedColor,
+      selectedPaperSize,
+      quantity,
+      overQuantityClick,
+      isDetailSelected
+    } = this.state;
 
     return (
       <div className="single-product">
@@ -126,13 +150,21 @@ class SingleItem extends Component {
           <div className="product-details__add-to-cart-container">
             <p>Quantity</p>
             <div className="numeric-input">
-              <p className="quantity-input">3 pcs</p>
+              <p className="quantity-input">{quantity} pcs</p>
               <div>
                 <div className="plus-container">
-                  <img className="plus-icon" src="/icons/plus.svg" />
+                  <img
+                    className="plus-icon"
+                    src="/icons/plus.svg"
+                    onClick={() => this.handleQuantityIncrement(in_stock)}
+                  />
                 </div>
                 <div className="minus-container">
-                  <img className="minus-icon" src="/icons/minus.svg" />
+                  <img
+                    className="minus-icon"
+                    src="/icons/minus.svg"
+                    onClick={() => this.handleQuantityDecrement(in_stock)}
+                  />
                 </div>
               </div>
             </div>
@@ -140,7 +172,11 @@ class SingleItem extends Component {
               add to cart
             </div>
           </div>
-
+          {overQuantityClick && (
+            <p className="stock-alert">
+              This is the maximum quantity available
+            </p>
+          )}
           <div className="product-details__details-toggle">
             <p onClick={this.handleDetailsToggle}>
               {isDetailSelected ? "Hide details" : "Show more details"}

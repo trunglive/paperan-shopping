@@ -147,6 +147,7 @@
   .quantity-input {
     margin: 0 auto;
     padding: 0.6rem;
+    // color: $color-grey-dark;
     text-align: center;
   }
 
@@ -164,5 +165,15 @@
   .minus-icon {
     width: 1rem;
     height: 1rem;
+
+    &:hover,
+    &:active,
+    &:focus {
+      cursor: pointer;
+    }
   }
+}
+
+.stock-alert {
+  margin: 0 0 1rem 3rem;
 }
