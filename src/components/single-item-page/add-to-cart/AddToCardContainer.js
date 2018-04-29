@@ -43,10 +43,7 @@ class AddToCartView extends Component {
               </div>
             </div>
           </div>
-
-          {/* <div className="product-details__add-to-cart-container--button">
-            add to cart
-          </div> */}
+          
           <MainCheckout />
         </div>
 

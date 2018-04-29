@@ -7,7 +7,6 @@ import Subtotal from "./Subtotal";
 
 class MainCheckout extends Component {
   
-
   render() {
     const { isMenuOpen, handleOpenMenu, handleCloseMenu } = this.props;
 
