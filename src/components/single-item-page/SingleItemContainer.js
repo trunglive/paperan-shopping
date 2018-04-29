@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import WithHomepage from "../home/WithHomepage";
 import ColorContainer from "./color/ColorContainer";
 import SizeContainer from "./size/SizeContainer";
+import InStock from './in-stock/InStock.js';
 import AddToCartContainer from "./add-to-cart/AddToCardContainer";
 import DetailsToggle from "./details-toggle/DetailsToggle";
 import { capitalizeFirstLetter } from "../../utils/capitalizeFirstLetter";
@@ -70,21 +71,7 @@ class SingleItemView extends Component {
             colorChange={this.handleColorChange}
           />
           <SizeContainer allSizes={size} sizeChange={this.handleSizeChange} />
-          <div className="product-details__availability-container">
-            <p>Availability</p>
-            {in_stock >= 10 && (
-              <div className="ten-plus-stock">10+ pcs available in stock</div>
-            )}
-            {in_stock < 10 &&
-              in_stock > 0 && (
-                <div className="low-stock">This item is in limited stock</div>
-              )}
-            {in_stock === 0 && (
-              <div className="out-of-stock">
-                Out of stock. Please check back later.
-              </div>
-            )}
-          </div>
+          <InStock inStock={in_stock} />
           <SingleItemContext.Provider
             value={{ fullItemName, price, currentSize, currentColor }}
           >
