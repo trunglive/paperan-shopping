@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import WithHomepage from "../home/WithHomepage";
 import ColorContainer from "./color/ColorContainer";
+// import ColorView from './color/ColorView';
+
 import SizeContainer from "./size/SizeContainer";
 import AddToCartContainer from "./add-to-cart/AddToCardContainer";
-import DetailsToggle from './details-toggle/DetailsToggle';
+import DetailsToggle from "./details-toggle/DetailsToggle";
 import { capitalizeFirstLetter } from "../../utils/capitalizeFirstLetter";
 
 class SingleItemView extends Component {
@@ -17,6 +19,7 @@ class SingleItemView extends Component {
       target_audience,
       photo_url,
       name,
+      sheet_style,
       type,
       price,
       color,
@@ -24,6 +27,10 @@ class SingleItemView extends Component {
       in_stock,
       details
     } = itemSelected;
+
+    const fullItemName = `${capitalizeFirstLetter(
+      name
+    )} ${capitalizeFirstLetter(sheet_style)} ${capitalizeFirstLetter(type)}`;
 
     return (
       <div className="single-product">
@@ -38,12 +45,13 @@ class SingleItemView extends Component {
             </span>
           </div>
           <div className="product-details__name">
-            {capitalizeFirstLetter(name)}
+            {fullItemName}
           </div>
           <div className="product-details__price">
             <span>$ {price}</span>
             <span>incl. VAT</span>
           </div>
+          {/* <ColorView /> */}
           <ColorContainer color={color} />
           <SizeContainer size={size} />
           <div className="product-details__availability-container">
@@ -61,7 +69,10 @@ class SingleItemView extends Component {
               </div>
             )}
           </div>
-          <AddToCartContainer inStock={in_stock} />
+          <SingleItemContext.Provider value={{ fullItemName, price }}>
+            <AddToCartContainer inStock={in_stock} />
+          </SingleItemContext.Provider>
+
           <DetailsToggle details={details} />
         </div>
       </div>
@@ -70,3 +81,5 @@ class SingleItemView extends Component {
 }
 
 export default WithHomepage(SingleItemView);
+
+export const SingleItemContext = React.createContext(null);

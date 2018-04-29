@@ -16,7 +16,7 @@ class MainCheckout extends Component {
           className="product-details__add-to-cart-container--button"
           onClick={handleOpenMenu}
         >
-          check out
+          add to cart
         </div>
         <Menu
           isOpen={isMenuOpen}
