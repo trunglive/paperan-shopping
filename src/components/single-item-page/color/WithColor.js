@@ -11,13 +11,11 @@ class WithColor extends Component {
     });
   };
 
-  render() {
-
+  render() {  
     return (
       <div className="with-color">
         {this.props.render(this.state.selectedColor, this.handlePaperColor)}
       </div>
-
     );
   }
 }

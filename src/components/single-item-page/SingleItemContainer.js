@@ -1,14 +1,29 @@
 import React, { Component } from "react";
 import WithHomepage from "../home/WithHomepage";
 import ColorContainer from "./color/ColorContainer";
-// import ColorView from './color/ColorView';
-
 import SizeContainer from "./size/SizeContainer";
 import AddToCartContainer from "./add-to-cart/AddToCardContainer";
 import DetailsToggle from "./details-toggle/DetailsToggle";
 import { capitalizeFirstLetter } from "../../utils/capitalizeFirstLetter";
 
 class SingleItemView extends Component {
+  state = {
+    currentColor: "",
+    currentSize: ""
+  };
+
+  handleColorChange = color => {
+    this.setState({
+      currentColor: color
+    });
+  };
+
+  handleSizeChange = size => {
+    this.setState({
+      currentSize: size
+    });
+  };
+
   render() {
     const itemSelected = this.props.allItems.find(
       item => item.guid === this.props.match.params.id
@@ -32,6 +47,7 @@ class SingleItemView extends Component {
       name
     )} ${capitalizeFirstLetter(sheet_style)} ${capitalizeFirstLetter(type)}`;
 
+    const { currentSize, currentColor } = this.state;
     return (
       <div className="single-product">
         <div className="photo-display">
@@ -44,16 +60,16 @@ class SingleItemView extends Component {
               <span className="long-dash">&mdash;</span>For {target_audience}
             </span>
           </div>
-          <div className="product-details__name">
-            {fullItemName}
-          </div>
+          <div className="product-details__name">{fullItemName}</div>
           <div className="product-details__price">
             <span>$ {price}</span>
             <span>incl. VAT</span>
           </div>
-          {/* <ColorView /> */}
-          <ColorContainer color={color} />
-          <SizeContainer size={size} />
+          <ColorContainer
+            allColors={color}
+            colorChange={this.handleColorChange}
+          />
+          <SizeContainer allSizes={size} sizeChange={this.handleSizeChange} />
           <div className="product-details__availability-container">
             <p>Availability</p>
             {in_stock >= 10 && (
@@ -69,7 +85,9 @@ class SingleItemView extends Component {
               </div>
             )}
           </div>
-          <SingleItemContext.Provider value={{ fullItemName, price }}>
+          <SingleItemContext.Provider
+            value={{ fullItemName, price, currentSize, currentColor }}
+          >
             <AddToCartContainer inStock={in_stock} />
           </SingleItemContext.Provider>
 

@@ -3,13 +3,6 @@ import WithAddToCart from "./WithAddToCart";
 import MainCheckout from "../../menu/MainCheckout";
 
 class AddToCartView extends Component {
-  state = {};
-
-  showSettings = event => {
-    event.preventDefault();
-    console.log("cool");
-  };
-
   render() {
     const {
       quantity,
