@@ -5,6 +5,7 @@ import SizeContainer from "./size/SizeContainer";
 import AddToCartContainer from "./add-to-cart/AddToCardContainer";
 import DetailsToggle from './details-toggle/DetailsToggle';
 import { capitalizeFirstLetter } from "../../utils/capitalizeFirstLetter";
+import Checkout from '../menu/Checkout.js';
 
 class SingleItemView extends Component {
   render() {
@@ -64,6 +65,8 @@ class SingleItemView extends Component {
           <AddToCartContainer inStock={in_stock} />
           <DetailsToggle details={details} />
         </div>
+
+        {/* <Checkout /> */}
       </div>
     );
   }

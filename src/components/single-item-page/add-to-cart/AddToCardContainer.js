@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import WithAddToCart from "./WithAddToCart";
-import { stack as Menu } from "react-burger-menu";
+import Menu from '../../menu/Checkout';
 
 class AddToCartView extends Component {
   state = {};
 
   showSettings = event => {
     event.preventDefault();
-    console.log('cool')
+    console.log("cool");
   };
 
   render() {
@@ -21,7 +21,7 @@ class AddToCartView extends Component {
     } = this.props;
 
     return (
-      <div>
+      <div className="add-to-card-and-alert">
         <div className="product-details__add-to-cart-container">
           <p>Quantity</p>
           <div className="numeric-input">
@@ -44,21 +44,19 @@ class AddToCartView extends Component {
             </div>
           </div>
 
-            <div
-            className="product-details__add-to-cart-container--button"
-            onClick={this.showSettings}
-          >
+          {/* <div className="product-details__add-to-cart-container--button">
             add to cart
-          </div>
-          
+          </div> */}
+          <Menu />
         </div>
+
         {isItemOutOfStock && (
           <p className="stock-alert">This item was out of stock</p>
         )}
         {overQuantityClick && (
           <p className="stock-alert">This is the maximum quantity available</p>
         )}
-
+        
       </div>
     );
   }

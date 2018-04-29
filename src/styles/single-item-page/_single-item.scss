@@ -7,6 +7,7 @@
   font-size: 1.1rem;
   font-weight: 300;
   color: $color-grey-light-1;
+  // position: relative;
 }
 
 .photo-display {
@@ -185,10 +186,16 @@
   text-align: center;
 }
 
-// .bm-burger-button {
-//   position: fixed;
-//   width: 20rem;
-//   height: 20rem;
-//   left: 3rem;
-//   top: 3rem;
-// }
+.stack-menu-checkout {
+  // border: 1px solid red;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.bm-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 1px solid yellowgreen;
+}
