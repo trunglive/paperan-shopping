@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import WithAddToCart from "./WithAddToCart";
-import Menu from '../../menu/Checkout';
+import MainCheckout from "../../menu/MainCheckout";
 
 class AddToCartView extends Component {
   state = {};
@@ -47,7 +47,7 @@ class AddToCartView extends Component {
           {/* <div className="product-details__add-to-cart-container--button">
             add to cart
           </div> */}
-          <Menu />
+          <MainCheckout />
         </div>
 
         {isItemOutOfStock && (
