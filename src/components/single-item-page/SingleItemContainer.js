@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import WithHomepage from "../home/WithHomepage";
 import ColorContainer from "./color/ColorContainer";
 import SizeContainer from "./size/SizeContainer";
-import InStock from './in-stock/InStock.js';
+import InStock from "./in-stock/InStock.js";
 import AddToCartContainer from "./add-to-cart/AddToCardContainer";
 import DetailsToggle from "./details-toggle/DetailsToggle";
 import { capitalizeFirstLetter } from "../../utils/capitalizeFirstLetter";
@@ -73,7 +73,16 @@ class SingleItemView extends Component {
           <SizeContainer allSizes={size} sizeChange={this.handleSizeChange} />
           <InStock inStock={in_stock} />
           <SingleItemContext.Provider
-            value={{ fullItemName, price, currentSize, currentColor }}
+            value={{
+              photo_url,
+              name,
+              type,
+              target_audience,
+              fullItemName,
+              price,
+              currentSize,
+              currentColor
+            }}
           >
             <AddToCartContainer inStock={in_stock} />
           </SingleItemContext.Provider>

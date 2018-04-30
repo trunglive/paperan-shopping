@@ -3,19 +3,33 @@ import { SingleItemContext } from "../single-item-page/SingleItemContainer";
 
 class ItemSelected extends Component {
   render() {
+    const { quantity } = this.props;
+
     return (
       <SingleItemContext.Consumer>
-        {({ fullItemName, price, currentSize, currentColor }) => (
+        {({
+          photo_url,
+          name,
+          type,
+          target_audience,
+          fullItemName,
+          price,
+          currentSize,
+          currentColor
+        }) => (
           <div className="checkout-menu__items-section--items-container">
             <div className="item-display--left">
-              <img src="/photos/journal/journal-1.jpg" />
+              <img
+                src={photo_url}
+                alt={`${name} ${type} for ${target_audience}`}
+              />
               <div>
                 <p className="item-name">{fullItemName}</p>
                 <div className="item-size-and-color">
                   <span>{currentSize}, </span>
                   <span>{currentColor}</span>
                 </div>
-                <p className="item-quantity">Qty: 1</p>
+                <p className="item-quantity">{quantity}</p>
               </div>
             </div>
             <div className="item-display--right">

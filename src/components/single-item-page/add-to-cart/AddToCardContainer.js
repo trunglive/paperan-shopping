@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import WithAddToCart from "./WithAddToCart";
 import MainCheckout from "../../menu/MainCheckout";
+import { SingleItemContext } from "../SingleItemContainer";
 
 class AddToCartView extends Component {
   render() {
@@ -36,8 +37,15 @@ class AddToCartView extends Component {
               </div>
             </div>
           </div>
-          
-          <MainCheckout />
+          <SingleItemContext.Consumer>
+            {({ currentSize, currentColor }) => (
+              <MainCheckout
+                quantity={quantity}
+                currentSize={currentSize}
+                currentColor={currentColor}
+              />
+            )}
+          </SingleItemContext.Consumer>
         </div>
 
         {isItemOutOfStock && (
@@ -46,7 +54,6 @@ class AddToCartView extends Component {
         {overQuantityClick && (
           <p className="stock-alert">This is the maximum quantity available</p>
         )}
-        
       </div>
     );
   }

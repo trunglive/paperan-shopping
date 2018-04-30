@@ -1,20 +1,26 @@
 import React, { Component } from "react";
 import Menu from "react-modal";
-import WithMenuToggle from './WithMenuToggle';
-import BagContainer from './BagContainer';
-import ItemSelected from './ItemSelected';
+import WithMenuToggle from "./WithMenuToggle";
+import BagContainer from "./BagContainer";
+import ItemSelected from "./ItemSelected";
 import Subtotal from "./Subtotal";
 
 class MainCheckout extends Component {
-  
   render() {
-    const { isMenuOpen, handleOpenMenu, handleCloseMenu } = this.props;
+    const {
+      isMenuOpen,
+      handleOpenMenu,
+      handleCloseMenu,
+      quantity,
+      currentColor,
+      currentSize
+    } = this.props;
 
     return (
       <div className="menu checkout-menu">
         <div
           className="product-details__add-to-cart-container--button"
-          onClick={handleOpenMenu}
+          onClick={() => handleOpenMenu(quantity, currentColor, currentSize)}
         >
           add to cart
         </div>
@@ -27,7 +33,7 @@ class MainCheckout extends Component {
         >
           <div className="checkout-menu__items-section">
             <BagContainer handleCloseMenu={handleCloseMenu} />
-            <ItemSelected />
+            <ItemSelected quantity={quantity} />
           </div>
 
           <Subtotal />

@@ -9,8 +9,10 @@ const WithMenuToggle = WrappedComponent =>
       isMenuOpen: false
     };
 
-    handleOpenMenu = () => {
-      this.setState({ isMenuOpen: true });
+    handleOpenMenu = (quantity, currentColor, currentSize) => {
+      if (quantity > 0 && currentColor && currentSize) {
+        this.setState({ isMenuOpen: true });
+      }
     };
 
     handleCloseMenu = () => {
@@ -23,9 +25,10 @@ const WithMenuToggle = WrappedComponent =>
           handleOpenMenu={this.handleOpenMenu}
           handleCloseMenu={this.handleCloseMenu}
           isMenuOpen={this.state.isMenuOpen}
+          {...this.props}
         />
       );
     }
   };
 
-  export default WithMenuToggle;
+export default WithMenuToggle;
