@@ -1,10 +1,13 @@
 .checkbox-item-container {
   display: flex;
-  align-items: center;
 }
 
 .label-text {
-  margin-left: 1rem;
+  margin-left: 1.5rem;
+
+  &:hover {
+    color: $color-grey-dark;
+  }
 }
 
 .checkbox-item {
@@ -37,10 +40,14 @@
     transform: rotate(-45deg);
 }
 
-.checkboxbox-item label:hover::after {
+.checkbox-item label:hover::after {
     opacity: 0.4;
 }
 
 .checkbox-item input[type=checkbox]:checked + label:after {
     opacity: 1;
+}
+
+input[type=checkbox]:checked ~ label {
+  color: $color-grey-dark;
 }

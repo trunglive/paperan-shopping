@@ -12,7 +12,6 @@
   color: #fff;
   background-color: $color-secondary;
   outline: none;
-  // border: 1px solid red;
 }
 
 .filter-all {
@@ -20,7 +19,6 @@
   grid-template-columns: repeat(2, minmax(20rem, 1fr));
   grid-row-gap: 6rem;
   grid-column-gap: 8rem;
-  // border: 1px solid red;
 }
 
 .filter-child {
@@ -30,25 +28,13 @@
     text-transform: uppercase;
   }
 
-  // .checkbox {
-  //   margin-top: 2.5rem;
+  .checkbox {
+    margin-top: 2.5rem;
 
-  // .checkbox-item {
-  //     margin-top: 1.2rem;
-  //   }
-  // }
-
-  // .checkbox-item label {
-  //   margin-left: 1rem;
-  // }
-
-  // input[type=checkbox]:checked ~ label {
-  //   color: $color-grey-dark;
-  // }
-
-  // input[type=checkbox] label:before {
-  //   border-radius: 2px;
-  // }
+    .checkbox-item-container:not(:first-child) {
+      margin-top: 1.5rem;
+    }
+  }
 }
 
 .close-filter-icon {
