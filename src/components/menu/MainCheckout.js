@@ -34,10 +34,6 @@ class MainCheckout extends Component {
           <div className="checkout-menu__items-section">
             <BagContainer handleCloseMenu={handleCloseMenu} />
             <ItemSelected quantity={quantity} />
-            <ItemSelected quantity={quantity} />
-            <ItemSelected quantity={quantity} />
-            <ItemSelected quantity={quantity} />
-
           </div>
 
           <Subtotal />
