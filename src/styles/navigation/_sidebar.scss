@@ -23,5 +23,11 @@
     width: 1.6rem;
     height: 1.6rem;
     margin: 2rem 0;
+
+    &:hover,
+    &:active,
+    &:focus {
+      cursor: pointer;
+    }
   }
 }
