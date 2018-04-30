@@ -1,22 +1,11 @@
 import React, { Component } from "react";
+import WithFilterMenu from './WithFilterMenu';
 
 class FilterMenu extends Component {
-  state = {
-    type: [],
-    price: [],
-    color: [],
-    sheetStyle: [],
-    coverMaterial: [],
-    audience: []
-  };
-
-  handleCheckbox = event => {
-    console.log(event.target.name);
-    console.log(event.target.value);
-  };
 
   render() {
-    const { onCloseFilter } = this.props;
+    const { onCloseFilter, handleCheckbox } = this.props;
+    // console.log(this.props);
 
     return (
       <div className="filter-container">
@@ -37,7 +26,7 @@ class FilterMenu extends Component {
                     id="notebook"
                     name="type"
                     value="notebook"
-                    onChange={this.handleCheckbox}
+                    onChange={handleCheckbox}
                   />
                   <label htmlFor="notebook" />
                 </div>
@@ -53,7 +42,7 @@ class FilterMenu extends Component {
                     id="notepad"
                     name="type"
                     value="notepad"
-                    onClick={this.handleCheckbox}
+                    onClick={handleCheckbox}
                   />
                   <label htmlFor="notepad" />
                 </div>
@@ -69,7 +58,7 @@ class FilterMenu extends Component {
                     id="sketchbook"
                     name="type"
                     value="sketchbook"
-                    onClick={this.handleCheckbox}
+                    onClick={handleCheckbox}
                   />
                   <label htmlFor="sketchbook" />
                 </div>
@@ -85,7 +74,7 @@ class FilterMenu extends Component {
                     id="journal"
                     name="type"
                     value="journal"
-                    onClick={this.handleCheckbox}
+                    onClick={handleCheckbox}
                   />
                   <label htmlFor="journal" />
                 </div>
@@ -107,7 +96,7 @@ class FilterMenu extends Component {
                     id="less-than-ten"
                     name="price"
                     value="less-than-ten"
-                    onClick={this.handleCheckbox}
+                    onClick={handleCheckbox}
                   />
                   <label htmlFor="less-than-ten" />
                 </div>
@@ -123,7 +112,7 @@ class FilterMenu extends Component {
                     id="between-ten-and-thirty"
                     name="price"
                     value="between-ten-and-thirty"
-                    onClick={this.handleCheckbox}
+                    onClick={handleCheckbox}
                   />
                   <label htmlFor="between-ten-and-thirty" />
                 </div>
@@ -140,7 +129,7 @@ class FilterMenu extends Component {
                     id="between-thirty-and-fifty"
                     name="price"
                     value="between-thirty-and-fifty"
-                    onClick={this.handleCheckbox}
+                    onClick={handleCheckbox}
                   />
                   <label htmlFor="between-thirty-and-fifty" />
                 </div>
@@ -159,7 +148,7 @@ class FilterMenu extends Component {
                     id="more-than-fifty"
                     name="price"
                     value="more-than-fifty"
-                    onClick={this.handleCheckbox}
+                    onClick={handleCheckbox}
                   />
                   <label htmlFor="more-than-fifty" />
                 </div>
@@ -181,7 +170,7 @@ class FilterMenu extends Component {
                     id="black"
                     name="color"
                     value="black"
-                    onClick={this.handleCheckbox}
+                    onClick={handleCheckbox}
                   />
                   <label htmlFor="black" />
                 </div>
@@ -196,7 +185,7 @@ class FilterMenu extends Component {
                     id="grey"
                     name="color"
                     value="grey"
-                    onClick={this.handleCheckbox}
+                    onClick={handleCheckbox}
                   />
                   <label htmlFor="grey" />
                 </div>
@@ -211,7 +200,7 @@ class FilterMenu extends Component {
                     id="blue"
                     name="color"
                     value="blue"
-                    onClick={this.handleCheckbox}
+                    onClick={handleCheckbox}
                   />
                   <label htmlFor="blue" />
                 </div>
@@ -226,7 +215,7 @@ class FilterMenu extends Component {
                     id="green"
                     name="color"
                     value="green"
-                    onClick={this.handleCheckbox}
+                    onClick={handleCheckbox}
                   />
                   <label htmlFor="green" />
                 </div>
@@ -241,7 +230,7 @@ class FilterMenu extends Component {
                     id="purple"
                     name="color"
                     value="purple"
-                    onClick={this.handleCheckbox}
+                    onClick={handleCheckbox}
                   />
                   <label htmlFor="purple" />
                 </div>
@@ -256,7 +245,7 @@ class FilterMenu extends Component {
                     id="pink"
                     name="color"
                     value="pink"
-                    onClick={this.handleCheckbox}
+                    onClick={handleCheckbox}
                   />
                   <label htmlFor="pink" />
                 </div>
@@ -276,9 +265,9 @@ class FilterMenu extends Component {
                   <input
                     type="checkbox"
                     id="dotted-grid"
-                    name="sheet style"
+                    name="sheetStyle"
                     value="dotted grid"
-                    onClick={this.handleCheckbox}
+                    onClick={handleCheckbox}
                   />
                   <label htmlFor="dotted-grid" />
                 </div>
@@ -292,9 +281,9 @@ class FilterMenu extends Component {
                   <input
                     type="checkbox"
                     id="lined"
-                    name="sheet style"
+                    name="sheetStyle"
                     value="lined"
-                    onClick={this.handleCheckbox}
+                    onClick={handleCheckbox}
                   />
                   <label htmlFor="lined" />
                 </div>
@@ -308,9 +297,9 @@ class FilterMenu extends Component {
                   <input
                     type="checkbox"
                     id="sketch"
-                    name="sheet style"
+                    name="sheetStyle"
                     value="sketch"
-                    onClick={this.handleCheckbox}
+                    onClick={handleCheckbox}
                   />
                   <label htmlFor="sketch" />
                 </div>
@@ -323,9 +312,9 @@ class FilterMenu extends Component {
                   <input
                     type="checkbox"
                     id="plain"
-                    name="sheet style"
+                    name="sheetStyle"
                     value="plain"
-                    onClick={this.handleCheckbox}
+                    onClick={handleCheckbox}
                   />
                   <label htmlFor="plain" />
                 </div>
@@ -339,9 +328,9 @@ class FilterMenu extends Component {
                   <input
                     type="checkbox"
                     id="graph"
-                    name="sheet style"
+                    name="sheetStyle"
                     value="graph"
-                    onClick={this.handleCheckbox}
+                    onClick={handleCheckbox}
                   />
                   <label htmlFor="graph" />
                 </div>
@@ -361,9 +350,9 @@ class FilterMenu extends Component {
                   <input
                     type="checkbox"
                     id="paper"
-                    name="cover material"
+                    name="coverMaterial"
                     value="paper"
-                    onClick={this.handleCheckbox}
+                    onClick={handleCheckbox}
                   />
                   <label htmlFor="paper" />
                 </div>
@@ -377,9 +366,9 @@ class FilterMenu extends Component {
                   <input
                     type="checkbox"
                     id="hard-cardboard"
-                    name="cover material"
+                    name="coverMaterial"
                     value="hard cardboard"
-                    onClick={this.handleCheckbox}
+                    onClick={handleCheckbox}
                   />
                   <label htmlFor="hard-cardboard" />
                 </div>
@@ -393,9 +382,9 @@ class FilterMenu extends Component {
                   <input
                     type="checkbox"
                     id="cardstock"
-                    name="cover material"
+                    name="coverMaterial"
                     value="cardstock"
-                    onClick={this.handleCheckbox}
+                    onClick={handleCheckbox}
                   />
                   <label htmlFor="cardstock" />
                 </div>
@@ -409,9 +398,9 @@ class FilterMenu extends Component {
                   <input
                     type="checkbox"
                     id="premium-plastic"
-                    name="cover material"
+                    name="coverMaterial"
                     value="premium plastic"
-                    onClick={this.handleCheckbox}
+                    onClick={handleCheckbox}
                   />
                   <label htmlFor="premium-plastic" />
                 </div>
@@ -425,9 +414,9 @@ class FilterMenu extends Component {
                   <input
                     type="checkbox"
                     id="luxurious-leatherette"
-                    name="cover material"
+                    name="coverMaterial"
                     value="luxurious leatherette"
-                    onClick={this.handleCheckbox}
+                    onClick={handleCheckbox}
                   />
                   <label htmlFor="luxurious-leatherette" />
                 </div>
@@ -449,7 +438,7 @@ class FilterMenu extends Component {
                     id="photographer"
                     name="audience"
                     value="photographers"
-                    onClick={this.handleCheckbox}
+                    onClick={handleCheckbox}
                   />
                   <label htmlFor="photographer" />
                 </div>
@@ -465,7 +454,7 @@ class FilterMenu extends Component {
                     id="designer"
                     name="audience"
                     value="designers"
-                    onClick={this.handleCheckbox}
+                    onClick={handleCheckbox}
                   />
                   <label htmlFor="designer" />
                 </div>
@@ -481,7 +470,7 @@ class FilterMenu extends Component {
                     id="artist"
                     name="audience"
                     value="artists"
-                    onClick={this.handleCheckbox}
+                    onClick={handleCheckbox}
                   />
                   <label htmlFor="artist" />
                 </div>
@@ -497,7 +486,7 @@ class FilterMenu extends Component {
                     id="student"
                     name="audience"
                     value="students"
-                    onClick={this.handleCheckbox}
+                    onClick={handleCheckbox}
                   />
                   <label htmlFor="student" />
                 </div>
@@ -513,7 +502,7 @@ class FilterMenu extends Component {
                     id="creative-pro"
                     name="audience"
                     value="creative pros"
-                    onClick={this.handleCheckbox}
+                    onClick={handleCheckbox}
                   />
                   <label htmlFor="creative-pro" />
                 </div>
@@ -529,4 +518,4 @@ class FilterMenu extends Component {
   }
 }
 
-export default FilterMenu;
+export default WithFilterMenu(FilterMenu);

@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import WithHomepage from "../home/WithHomepage";
-// import WithCollection from "./WithCollection";
-// import CollectionGridNav from "./CollectionGridNav";
 import CollectionGridItem from "./CollectionGridItem";
+import WithFilterMenu from '../navigation/WithFilterMenu';
 
 class CollectionGrid extends Component {
   state = {
@@ -24,7 +23,7 @@ class CollectionGrid extends Component {
   render() {
     const { threeCols } = this.state;
     const { allItems } = this.props;
-
+ 
     return (
       <div className="collection collection-grid">
         <div className="collection-grid-nav">
@@ -68,4 +67,4 @@ class CollectionGrid extends Component {
   }
 }
 
-export default WithHomepage(CollectionGrid);
+export default WithFilterMenu(WithHomepage(CollectionGrid));

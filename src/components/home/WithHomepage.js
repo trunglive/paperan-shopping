@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 // import { database } from "../../firebase";
-import { paperan as API } from '../../../dev_off/paperan.json';
+import { paperan as API } from "../../../dev_off/paperan.json";
 
 const WithHomepage = WrappedComponent =>
   class extends Component {
@@ -29,9 +29,11 @@ const WithHomepage = WrappedComponent =>
     // }
 
     componentWillMount() {
-      this.setState({
-        allItems: API
-      })
+      {
+        this.setState({
+          allItems: API
+        });
+      }
     }
 
     render() {
@@ -40,7 +42,7 @@ const WithHomepage = WrappedComponent =>
       return (
         <div className="homepage">
           {allItems.length > 0 ? (
-            <WrappedComponent allItems={allItems} {...this.props} />
+            <WrappedComponent {...this.state} {...this.props} />
           ) : (
             <img className="paperan-spinner" src="/icons/paperan-spinner.svg" />
           )}
