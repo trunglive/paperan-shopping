@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import WithCollection from "./WithCollection";
+// import WithCollection from "./WithCollection";
 import { capitalizeFirstLetter } from "../../utils/capitalizeFirstLetter";
 import FadeIn from "react-lazyload-fadein";
 

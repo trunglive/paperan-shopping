@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import WithHomepage from "../home/WithHomepage";
 import CollectionGridItem from "./CollectionGridItem";
-import WithFilterMenu from '../navigation/WithFilterMenu';
+// import WithFilterMenu from '../navigation/WithFilterMenu';
 
 class CollectionGrid extends Component {
   state = {
@@ -67,4 +67,4 @@ class CollectionGrid extends Component {
   }
 }
 
-export default WithFilterMenu(WithHomepage(CollectionGrid));
+export default WithHomepage(CollectionGrid);

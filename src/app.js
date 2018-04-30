@@ -14,7 +14,7 @@ import "./styles/styles.scss";
 // store = configureStore();
 
 // const jsx = (
-//   <Provider>
+//   <Provider store={store}>
 //     <AppRouter />
 //   </Provider>
 // )
