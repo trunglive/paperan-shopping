@@ -7,7 +7,7 @@ const InStock = ({ inStock }) => (
       <div className="ten-plus-stock">10+ pcs available in stock</div>
     )}
     {inStock < 10 &&
-      in_stock > 0 && (
+      inStock > 0 && (
         <div className="low-stock">This item is in limited stock</div>
       )}
     {inStock === 0 && (
