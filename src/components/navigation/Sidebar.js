@@ -34,6 +34,7 @@ export default class Sidebar extends Component {
           isOpen={isFilterOpen}
           onRequestClose={this.handleCloseFilter}
           style={filterStyles}
+          closeTimeoutMS={200}
           className="filter-container"
           contentLabel="Filter for Paperan"
         >

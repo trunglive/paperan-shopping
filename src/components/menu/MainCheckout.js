@@ -28,6 +28,7 @@ class MainCheckout extends Component {
           isOpen={isMenuOpen}
           onRequestClose={handleCloseMenu}
           style={modalStyles}
+          closeTimeoutMS={200}
           className="checkout-menu-container"
           contentLabel="Menu for Paperan"
         >

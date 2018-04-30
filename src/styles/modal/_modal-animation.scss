@@ -1,0 +1,34 @@
+.ReactModal__Overlay {
+  opacity: 0;
+  transition: opacity 200ms ease-in;
+}
+
+.ReactModal__Overlay--after-open {
+  opacity: 1;
+}
+
+.ReactModal__Overlay--before-close {
+  opacity: 0;
+}
+
+.ReactModal__Content.filter-container {
+  -webkit-transform: translateX(-20rem);
+  transform: translateX(-20rem);
+}
+
+.ReactModal__Content--after-open.filter-container {
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+  transition: all 200ms ease-in-out;
+}
+
+.ReactModal__Content.checkout-menu-container {
+  -webkit-transform: translateX(20rem);
+  transform: translateX(20rem);
+}
+
+.ReactModal__Content--after-open.checkout-menu-container {
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+  transition: all 400ms ease-in;
+}
