@@ -10,7 +10,7 @@ const Subtotal = () => (
       <p>Shipping from Seattle, WA</p>
       <p>from $3.97</p>
     </div>
-    <div className="product-details__add-to-cart-container--button checkout-menu__pricing-section--continue-to-checkout-button">
+    <div className="product-details__add-to-cart-container--button checkout-menu__subtotal-section--continue-to-checkout-button">
       continue to checkout
     </div>
   </div>

@@ -16,10 +16,6 @@ export default class Sidebar extends Component {
     this.setState({ isFilterOpen: false });
   };
 
-  handleTest = () => {
-    console.log("check box");
-  };
-
   render() {
     const { isFilterOpen } = this.state;
 
