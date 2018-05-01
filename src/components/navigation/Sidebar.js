@@ -1,12 +1,16 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import FilterMenu from './FilterMenu';
+import FilterMenu from "./FilterMenu";
 import Filter from "react-modal";
 
 export default class Sidebar extends Component {
   state = {
     isFilterOpen: false
   };
+
+  componentWillMount() {
+    Filter.setAppElement("body");
+  }
 
   handleOpenFilter = () => {
     this.setState({ isFilterOpen: true });
@@ -40,7 +44,6 @@ export default class Sidebar extends Component {
         >
           <FilterMenu onCloseFilter={this.handleCloseFilter} />
         </Filter>
-        
       </div>
     );
   }

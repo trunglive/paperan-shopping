@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Menu from "react-modal";
 
 const WithMenuToggle = WrappedComponent =>
   class extends Component {
@@ -8,6 +9,10 @@ const WithMenuToggle = WrappedComponent =>
     state = {
       isMenuOpen: false
     };
+
+    componentWillMount() {
+      Menu.setAppElement("body");
+    }
 
     handleOpenMenu = (quantity, currentColor, currentSize) => {
       if (quantity > 0 && currentColor && currentSize) {
