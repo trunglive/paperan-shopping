@@ -1,13 +1,16 @@
-import { ADD_FILTER, REMOVE_FILTER } from "../actions/actionTypes";
+import {
+  ADD_FILTER,
+  REMOVE_FILTER,
+  FETCH_FILTER
+} from "../actions/actionTypes";
 
 const initialFilterState = {
-    type: [],
-    price: [],
-    colors: [],
-    sheetStyle: [],
-    coverMaterial: [],
-    audience: []
-
+  type: [],
+  price: [],
+  colors: [],
+  sheetStyle: [],
+  coverMaterial: [],
+  audience: []
 };
 
 const filteringReducer = (state = initialFilterState, action) => {
@@ -23,6 +26,10 @@ const filteringReducer = (state = initialFilterState, action) => {
         [action.name]: [
           ...state[action.name].filter(item => item !== action.value)
         ]
+      };
+    case FETCH_FILTER:
+      return {
+        ...state
       };
     default:
       return state;

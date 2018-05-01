@@ -3,6 +3,10 @@ import { connect } from "react-redux";
 import * as actions from "../../actions/filteringActions";
 
 class FilterMenu extends Component {
+  state = {
+    checkbox: this.props.filterBy
+  };
+
   handleCheckBox = event => {
     const { name, value, checked } = event.target;
 
@@ -11,8 +15,18 @@ class FilterMenu extends Component {
       : this.props.removeFilter(name, value);
   };
 
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.filterBy !== this.props.filterBy) {
+      this.setState({ checkbox: nextProps.filterBy });
+    }
+  }
+
   render() {
     const { onCloseFilter } = this.props;
+    const { checkbox } = this.state;
+    // console.log(checkbox);
+
+    console.log(checkbox);
 
     return (
       <div className="filter-container">
@@ -31,6 +45,7 @@ class FilterMenu extends Component {
                   <input
                     type="checkbox"
                     id="notebook"
+                    checked={checkbox.type.includes("notebook")}
                     name="type"
                     value="notebook"
                     onChange={this.handleCheckBox}
@@ -47,6 +62,7 @@ class FilterMenu extends Component {
                   <input
                     type="checkbox"
                     id="notepad"
+                    checked={checkbox.type.includes("notepad")}
                     name="type"
                     value="notepad"
                     onClick={this.handleCheckBox}
@@ -63,6 +79,7 @@ class FilterMenu extends Component {
                   <input
                     type="checkbox"
                     id="sketchbook"
+                    checked={checkbox.type.includes("sketchbook")}
                     name="type"
                     value="sketchbook"
                     onClick={this.handleCheckBox}
@@ -79,6 +96,7 @@ class FilterMenu extends Component {
                   <input
                     type="checkbox"
                     id="journal"
+                    checked={checkbox.type.includes("journal")}
                     name="type"
                     value="journal"
                     onClick={this.handleCheckBox}
@@ -101,6 +119,7 @@ class FilterMenu extends Component {
                   <input
                     type="checkbox"
                     id="less-than-ten"
+                    checked={checkbox.price.includes("less-than-ten")}
                     name="price"
                     value="less-than-ten"
                     onClick={this.handleCheckBox}
@@ -117,6 +136,7 @@ class FilterMenu extends Component {
                   <input
                     type="checkbox"
                     id="between-ten-and-thirty"
+                    checked={checkbox.price.includes("between-ten-and-thirty")}
                     name="price"
                     value="between-ten-and-thirty"
                     onClick={this.handleCheckBox}
@@ -134,6 +154,9 @@ class FilterMenu extends Component {
                   <input
                     type="checkbox"
                     id="between-thirty-and-fifty"
+                    checked={checkbox.price.includes(
+                      "between-thirty-and-fifty"
+                    )}
                     name="price"
                     value="between-thirty-and-fifty"
                     onClick={this.handleCheckBox}
@@ -153,6 +176,7 @@ class FilterMenu extends Component {
                   <input
                     type="checkbox"
                     id="more-than-fifty"
+                    checked={checkbox.price.includes("more-than-fifty")}
                     name="price"
                     value="more-than-fifty"
                     onClick={this.handleCheckBox}
@@ -175,6 +199,7 @@ class FilterMenu extends Component {
                   <input
                     type="checkbox"
                     id="black"
+                    checked={checkbox.colors.includes("black")}
                     name="colors"
                     value="black"
                     onClick={this.handleCheckBox}
@@ -190,6 +215,7 @@ class FilterMenu extends Component {
                   <input
                     type="checkbox"
                     id="grey"
+                    checked={checkbox.colors.includes("grey")}
                     name="colors"
                     value="grey"
                     onClick={this.handleCheckBox}
@@ -205,6 +231,7 @@ class FilterMenu extends Component {
                   <input
                     type="checkbox"
                     id="blue"
+                    checked={checkbox.colors.includes("blue")}
                     name="colors"
                     value="blue"
                     onClick={this.handleCheckBox}
@@ -220,6 +247,7 @@ class FilterMenu extends Component {
                   <input
                     type="checkbox"
                     id="green"
+                    checked={checkbox.colors.includes("green")}
                     name="colors"
                     value="green"
                     onClick={this.handleCheckBox}
@@ -235,6 +263,7 @@ class FilterMenu extends Component {
                   <input
                     type="checkbox"
                     id="purple"
+                    checked={checkbox.colors.includes("purple")}
                     name="colors"
                     value="purple"
                     onClick={this.handleCheckBox}
@@ -250,6 +279,7 @@ class FilterMenu extends Component {
                   <input
                     type="checkbox"
                     id="pink"
+                    checked={checkbox.colors.includes("pink")}
                     name="colors"
                     value="pink"
                     onClick={this.handleCheckBox}
@@ -272,6 +302,7 @@ class FilterMenu extends Component {
                   <input
                     type="checkbox"
                     id="dotted-grid"
+                    checked={checkbox.sheetStyle.includes("dotted grid")}
                     name="sheetStyle"
                     value="dotted grid"
                     onClick={this.handleCheckBox}
@@ -288,6 +319,7 @@ class FilterMenu extends Component {
                   <input
                     type="checkbox"
                     id="lined"
+                    checked={checkbox.sheetStyle.includes("lined")}
                     name="sheetStyle"
                     value="lined"
                     onClick={this.handleCheckBox}
@@ -304,6 +336,7 @@ class FilterMenu extends Component {
                   <input
                     type="checkbox"
                     id="sketch"
+                    checked={checkbox.sheetStyle.includes("sketch")}
                     name="sheetStyle"
                     value="sketch"
                     onClick={this.handleCheckBox}
@@ -319,6 +352,7 @@ class FilterMenu extends Component {
                   <input
                     type="checkbox"
                     id="plain"
+                    checked={checkbox.sheetStyle.includes("plain")}
                     name="sheetStyle"
                     value="plain"
                     onClick={this.handleCheckBox}
@@ -335,6 +369,7 @@ class FilterMenu extends Component {
                   <input
                     type="checkbox"
                     id="graph"
+                    checked={checkbox.sheetStyle.includes("graph")}
                     name="sheetStyle"
                     value="graph"
                     onClick={this.handleCheckBox}
@@ -357,6 +392,7 @@ class FilterMenu extends Component {
                   <input
                     type="checkbox"
                     id="paper"
+                    checked={checkbox.coverMaterial.includes("paper")}
                     name="coverMaterial"
                     value="paper"
                     onClick={this.handleCheckBox}
@@ -373,6 +409,7 @@ class FilterMenu extends Component {
                   <input
                     type="checkbox"
                     id="hard-cardboard"
+                    checked={checkbox.coverMaterial.includes("hard cardboard")}
                     name="coverMaterial"
                     value="hard cardboard"
                     onClick={this.handleCheckBox}
@@ -389,6 +426,7 @@ class FilterMenu extends Component {
                   <input
                     type="checkbox"
                     id="cardstock"
+                    checked={checkbox.coverMaterial.includes("cardstock")}
                     name="coverMaterial"
                     value="cardstock"
                     onClick={this.handleCheckBox}
@@ -405,6 +443,7 @@ class FilterMenu extends Component {
                   <input
                     type="checkbox"
                     id="premium-plastic"
+                    checked={checkbox.coverMaterial.includes("premium plastic")}
                     name="coverMaterial"
                     value="premium plastic"
                     onClick={this.handleCheckBox}
@@ -421,6 +460,9 @@ class FilterMenu extends Component {
                   <input
                     type="checkbox"
                     id="luxurious-leatherette"
+                    checked={checkbox.coverMaterial.includes(
+                      "luxurious leatherette"
+                    )}
                     name="coverMaterial"
                     value="luxurious leatherette"
                     onClick={this.handleCheckBox}
@@ -443,6 +485,7 @@ class FilterMenu extends Component {
                   <input
                     type="checkbox"
                     id="photographer"
+                    checked={checkbox.audience.includes("photographers")}
                     name="audience"
                     value="photographers"
                     onClick={this.handleCheckBox}
@@ -459,6 +502,7 @@ class FilterMenu extends Component {
                   <input
                     type="checkbox"
                     id="designer"
+                    checked={checkbox.audience.includes("designers")}
                     name="audience"
                     value="designers"
                     onClick={this.handleCheckBox}
@@ -475,6 +519,7 @@ class FilterMenu extends Component {
                   <input
                     type="checkbox"
                     id="artist"
+                    checked={checkbox.audience.includes("artists")}
                     name="audience"
                     value="artists"
                     onClick={this.handleCheckBox}
@@ -491,6 +536,7 @@ class FilterMenu extends Component {
                   <input
                     type="checkbox"
                     id="student"
+                    checked={checkbox.audience.includes("students")}
                     name="audience"
                     value="students"
                     onClick={this.handleCheckBox}
@@ -507,6 +553,7 @@ class FilterMenu extends Component {
                   <input
                     type="checkbox"
                     id="creative-pro"
+                    checked={checkbox.audience.includes("creative pros")}
                     name="audience"
                     value="creative pros"
                     onClick={this.handleCheckBox}
@@ -525,4 +572,8 @@ class FilterMenu extends Component {
   }
 }
 
-export default connect(null, actions)(FilterMenu);
+const mapStateToProps = ({ filterBy }) => ({
+  filterBy
+});
+
+export default connect(mapStateToProps, actions)(FilterMenu);

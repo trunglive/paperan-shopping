@@ -29,7 +29,7 @@ class CollectionGrid extends Component {
   }
 
   render() {
-    const { threeCols } = this.state;
+    const { threeCols, filterBy } = this.state;
     const { allItems } = this.props;
 
     const {
@@ -82,11 +82,10 @@ class CollectionGrid extends Component {
                 sheetStyle.includes(item.sheet_style) ||
                 coverMaterial.includes(item.cover_material) ||
                 audience.includes(item.target_audience) ||
-                Object.values(this.state.filterBy).every(
+                Object.values(filterBy).every(
                   property => property.length === 0
                 )
             )
-
             .map(item => (
               <CollectionGridItem
                 key={item.guid}
@@ -96,7 +95,7 @@ class CollectionGrid extends Component {
             ))}
         </div>
 
-        <div className="more-item">You've reached the end of the list</div>
+        <div className="more-item">You have reached the end of the list</div>
       </div>
     );
   }
