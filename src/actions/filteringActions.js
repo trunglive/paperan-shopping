@@ -1,32 +1,45 @@
 import {
-  FILTER_BY_TYPE,
-  FILTER_BY_PRICE,
-  FILTER_BY_COLOR,
-  FILTER_BY_SHEET_STYLE,
-  FILTER_BY_COVER_MATERIAL,
-  FILTER_BY_AUDIENCE
+  FILTER_BY_CATEGORY
 } from "./actionTypes";
 
-export const filterByType = () => ({
-  type: FILTER_BY_TYPE
+export const filterByCategory = (name, value) => ({
+  type: FILTER_BY_CATEGORY,
+  name,
+  value
 });
 
-export const filterByPrice = () => ({
-  type: FILTER_BY_PRICE
-});
+// export const filterByType = (name, value) => ({
+//   type: FILTER_BY_TYPE,
+//   name,
+//   value
+// });
 
-export const filterByColor = () => ({
-  type: FILTER_BY_COLOR
-});
+// export const filterByPrice = (name, value) => ({
+//   type: FILTER_BY_PRICE,
+//   name,
+//   value
+// });
 
-export const filterBySheetStyle = () => ({
-  type: FILTER_BY_SHEET_STYLE
-});
+// export const filterByColor = (name, value) => ({
+//   type: FILTER_BY_COLOR,
+//   name,
+//   value
+// });
 
-export const filterByCoverMaterial = () => ({
-  type: FILTER_BY_COVER_MATERIAL
-});
+// export const filterBySheetStyle = (name, value) => ({
+//   type: FILTER_BY_SHEET_STYLE,
+//   name,
+//   value
+// });
 
-export const filterByAudience = () => ({
-  type: FILTER_BY_AUDIENCE
-});
+// export const filterByCoverMaterial = (name, value) => ({
+//   type: FILTER_BY_COVER_MATERIAL,
+//   name,
+//   value
+// });
+
+// export const filterByAudience = (name, value) => ({
+//   type: FILTER_BY_AUDIENCE,
+//   name,
+//   value
+// });

@@ -35,6 +35,8 @@ const sortingReducer = (state = initialSortingState, action) => {
         ...state,
         sortBy: "Most Reviews"
       };
+    default:
+      return state;
   }
 };
 

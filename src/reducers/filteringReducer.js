@@ -1,11 +1,4 @@
-import {
-  FILTER_BY_TYPE,
-  FILTER_BY_PRICE,
-  FILTER_BY_COLOR,
-  FILTER_BY_SHEET_STYLE,
-  FILTER_BY_COVER_MATERIAL,
-  FILTER_BY_AUDIENCE
-} from "../actions/actionTypes";
+import { FILTER_BY_CATEGORY } from "../actions/actionTypes";
 
 const initialFilterState = {
   type: [],
@@ -18,37 +11,51 @@ const initialFilterState = {
 
 const filteringReducer = (state = initialFilterState, action) => {
   switch (action.type) {
-    case FILTER_BY_TYPE:
+    case FILTER_BY_CATEGORY:
       return {
         ...state,
-        type: [...state.type, action.type]
+        [action.name]: [...state[action.name], action.value]
       };
-    case FILTER_BY_PRICE:
-      return {
-        ...state,
-        price: [...state.price, action.price]
-      };
-    case FILTER_BY_COLOR:
-      return {
-        ...state,
-        color: [...state.color, action.color]
-      };
-    case FILTER_BY_SHEET_STYLE:
-      return {
-        ...state,
-        sheetStyle: [...state.sheetStyle, action.sheetStyle]
-      };
-    case FILTER_BY_COVER_MATERIAL:
-      return {
-        ...state,
-        coverMaterial: [...state.coverMaterial, action.coverMaterial]
-      };
-    case FILTER_BY_AUDIENCE:
-      return {
-        ...state,
-        audience: [...state.audience, action.audience]
-      };
+    default:
+      return state;
   }
 };
+
+// const filteringReducer = (state = initialFilterState, action) => {
+//   switch (action.type) {
+//     case FILTER_BY_TYPE:
+//       return {
+//         ...state,
+//         [action.name]: [...state[action.name], action.value]
+//       };
+//     case FILTER_BY_PRICE:
+//       return {
+//         ...state,
+//         [action.name]: [...state[action.name], action.value]
+//       };
+//     case FILTER_BY_COLOR:
+//       return {
+//         ...state,
+//         [action.name]: [...state[action.name], action.value]
+//       };
+//     case FILTER_BY_SHEET_STYLE:
+//       return {
+//         ...state,
+//         [action.name]: [...state[action.name], action.value]
+//       };
+//     case FILTER_BY_COVER_MATERIAL:
+//       return {
+//         ...state,
+//         [action.name]: [...state[action.name], action.value]
+//       };
+//     case FILTER_BY_AUDIENCE:
+//       return {
+//         ...state,
+//         [action.name]: [...state[action.name], action.value]
+//       };
+//     default:
+//       return state;
+//   }
+// };
 
 export default filteringReducer;
