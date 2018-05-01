@@ -16,6 +16,17 @@ class MainCheckout extends Component {
       currentSize
     } = this.props;
 
+    const {
+      photo_url,
+      name,
+      type,
+      target_audience,
+      fullItemName,
+      price
+    } = this.props;
+
+    console.log(this.props);
+    
     return (
       <div className="menu checkout-menu">
         <div

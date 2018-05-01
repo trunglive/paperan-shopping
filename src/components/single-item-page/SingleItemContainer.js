@@ -74,6 +74,7 @@ class SingleItemView extends Component {
           <InStock inStock={in_stock} />
           <SingleItemContext.Provider
             value={{
+              guid,
               photo_url,
               name,
               type,

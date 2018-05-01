@@ -9,9 +9,6 @@ class ItemSelected extends Component {
       <SingleItemContext.Consumer>
         {({
           photo_url,
-          name,
-          type,
-          target_audience,
           fullItemName,
           price,
           currentSize,
@@ -21,7 +18,7 @@ class ItemSelected extends Component {
             <div className="item-display--left">
               <img
                 src={photo_url}
-                alt={`${name} ${type} for ${target_audience}`}
+                alt={fullItemName}
               />
               <div>
                 <p className="item-name">{fullItemName}</p>

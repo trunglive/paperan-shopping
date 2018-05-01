@@ -8,6 +8,7 @@ class WithColor extends Component {
   handlePaperColor = color => {
     this.setState({
       selectedColor: color
+      //dispatch color
     });
   };
 
