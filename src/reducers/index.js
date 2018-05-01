@@ -3,7 +3,7 @@ import filtering from './filteringReducer';
 import sorting from './sortingReducer';
 
 const rootReducer = combineReducers({
-  filtering,
+  filterBy: filtering,
   sorting
 })
 

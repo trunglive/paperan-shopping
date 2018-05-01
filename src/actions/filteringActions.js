@@ -1,45 +1,16 @@
 import {
-  FILTER_BY_CATEGORY
+  ADD_FILTER,
+  REMOVE_FILTER
 } from "./actionTypes";
 
-export const filterByCategory = (name, value) => ({
-  type: FILTER_BY_CATEGORY,
+export const addFilter = (name, value) => ({
+  type: ADD_FILTER,
   name,
   value
 });
 
-// export const filterByType = (name, value) => ({
-//   type: FILTER_BY_TYPE,
-//   name,
-//   value
-// });
-
-// export const filterByPrice = (name, value) => ({
-//   type: FILTER_BY_PRICE,
-//   name,
-//   value
-// });
-
-// export const filterByColor = (name, value) => ({
-//   type: FILTER_BY_COLOR,
-//   name,
-//   value
-// });
-
-// export const filterBySheetStyle = (name, value) => ({
-//   type: FILTER_BY_SHEET_STYLE,
-//   name,
-//   value
-// });
-
-// export const filterByCoverMaterial = (name, value) => ({
-//   type: FILTER_BY_COVER_MATERIAL,
-//   name,
-//   value
-// });
-
-// export const filterByAudience = (name, value) => ({
-//   type: FILTER_BY_AUDIENCE,
-//   name,
-//   value
-// });
+export const removeFilter = (name, value) => ({
+  type: REMOVE_FILTER,
+  name,
+  value
+})

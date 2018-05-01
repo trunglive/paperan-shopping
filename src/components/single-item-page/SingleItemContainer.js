@@ -38,8 +38,8 @@ class SingleItemView extends Component {
       sheet_style,
       type,
       price,
-      color,
-      size,
+      colors,
+      sizes,
       in_stock,
       details
     } = itemSelected;
@@ -67,10 +67,10 @@ class SingleItemView extends Component {
             <span>incl. VAT</span>
           </div>
           <ColorContainer
-            allColors={color}
+            allColors={colors}
             colorChange={this.handleColorChange}
           />
-          <SizeContainer allSizes={size} sizeChange={this.handleSizeChange} />
+          <SizeContainer allSizes={sizes} sizeChange={this.handleSizeChange} />
           <InStock inStock={in_stock} />
           <SingleItemContext.Provider
             value={{

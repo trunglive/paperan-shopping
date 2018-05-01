@@ -3,26 +3,16 @@ import { connect } from "react-redux";
 import * as actions from "../../actions/filteringActions";
 
 class FilterMenu extends Component {
-  // state = {
-  //   type: "",
-  //   price: "",
-  //   color: "",
-  //   sheetStyle: "",
-  //   coverMaterial: "",
-  //   audience: ""
-  // };
-
   handleCheckBox = event => {
     const { name, value, checked } = event.target;
 
-    if (checked) {
-      this.props.filterByCategory(name, value);
-    }
+    checked
+      ? this.props.addFilter(name, value)
+      : this.props.removeFilter(name, value);
   };
 
   render() {
     const { onCloseFilter } = this.props;
-    console.log(this.state);
 
     return (
       <div className="filter-container">
@@ -185,7 +175,7 @@ class FilterMenu extends Component {
                   <input
                     type="checkbox"
                     id="black"
-                    name="color"
+                    name="colors"
                     value="black"
                     onClick={this.handleCheckBox}
                   />
@@ -200,7 +190,7 @@ class FilterMenu extends Component {
                   <input
                     type="checkbox"
                     id="grey"
-                    name="color"
+                    name="colors"
                     value="grey"
                     onClick={this.handleCheckBox}
                   />
@@ -215,7 +205,7 @@ class FilterMenu extends Component {
                   <input
                     type="checkbox"
                     id="blue"
-                    name="color"
+                    name="colors"
                     value="blue"
                     onClick={this.handleCheckBox}
                   />
@@ -230,7 +220,7 @@ class FilterMenu extends Component {
                   <input
                     type="checkbox"
                     id="green"
-                    name="color"
+                    name="colors"
                     value="green"
                     onClick={this.handleCheckBox}
                   />
@@ -245,7 +235,7 @@ class FilterMenu extends Component {
                   <input
                     type="checkbox"
                     id="purple"
-                    name="color"
+                    name="colors"
                     value="purple"
                     onClick={this.handleCheckBox}
                   />
@@ -260,7 +250,7 @@ class FilterMenu extends Component {
                   <input
                     type="checkbox"
                     id="pink"
-                    name="color"
+                    name="colors"
                     value="pink"
                     onClick={this.handleCheckBox}
                   />
