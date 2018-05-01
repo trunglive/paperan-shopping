@@ -7,7 +7,7 @@ import { convertTextToPriceRange } from "../../utils/convertTextToPriceRange";
 class CollectionGrid extends Component {
   state = {
     threeCols: true,
-    filterBy: this.props.filterBy
+    filterBy: null
   };
 
   handleTwoColsChange = () => {
@@ -22,15 +22,20 @@ class CollectionGrid extends Component {
     });
   };
 
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.filterBy !== this.props.filterBy) {
-      this.setState({ filterBy: nextProps.filterBy });
+  static getDerivedStateFromProps(nextProps, prevState) {
+    if (nextProps.filterBy === prevState.filterBy) {
+      return null;
     }
+
+    return {
+      filterBy: nextProps.filterBy
+    };
   }
 
   render() {
     const { threeCols, filterBy } = this.state;
     const { allItems } = this.props;
+    console.log(this.state.filterBy);
 
     const {
       type,
@@ -42,7 +47,6 @@ class CollectionGrid extends Component {
     } = this.state.filterBy;
 
     const priceRange = convertTextToPriceRange(price);
-    console.log(priceRange);
 
     return (
       <div className="collection collection-grid">
@@ -82,9 +86,7 @@ class CollectionGrid extends Component {
                 sheetStyle.includes(item.sheet_style) ||
                 coverMaterial.includes(item.cover_material) ||
                 audience.includes(item.target_audience) ||
-                Object.values(filterBy).every(
-                  property => property.length === 0
-                )
+              Object.values(filterBy).every(property => property.length === 0)
             )
             .map(item => (
               <CollectionGridItem

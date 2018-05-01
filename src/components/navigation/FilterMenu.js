@@ -4,7 +4,7 @@ import * as actions from "../../actions/filteringActions";
 
 class FilterMenu extends Component {
   state = {
-    checkbox: this.props.filterBy
+    checkbox: null
   };
 
   handleCheckBox = event => {
@@ -15,18 +15,16 @@ class FilterMenu extends Component {
       : this.props.removeFilter(name, value);
   };
 
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.filterBy !== this.props.filterBy) {
-      this.setState({ checkbox: nextProps.filterBy });
+  static getDerivedStateFromProps(nextProps, prevState) {
+    if (nextProps.filterBy !== prevState.filterBy) {
+      return { checkbox: nextProps.filterBy };
     }
+    return null;
   }
 
   render() {
     const { onCloseFilter } = this.props;
     const { checkbox } = this.state;
-    // console.log(checkbox);
-
-    console.log(checkbox);
 
     return (
       <div className="filter-container">
