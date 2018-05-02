@@ -1,8 +1,11 @@
-import React from "react";
+import React, { Component } from "react";
 import { Link } from "react-router-dom";
-// import WithCollection from "./WithCollection";
 import { capitalizeFirstLetter } from "../../utils/capitalizeFirstLetter";
+import { calculateAverageRating } from "../../utils/calculateAverageRating";
 import FadeIn from "react-lazyload-fadein";
+import ItemRating from "react-star-ratings";
+
+
 
 const CollectionGridItem = ({
   guid,
@@ -12,11 +15,12 @@ const CollectionGridItem = ({
   type,
   sheet_style,
   target_audience,
+  reviews,
   threeCols,
   resizePhoto
 }) => (
   <div>
-    <FadeIn easing={"ease-out"} height={500}>
+    <FadeIn easing={"ease-out"} height={300}>
       {onload => (
         <div>
           <Link to={`/collection/${type}/${guid}`}>
@@ -38,6 +42,15 @@ const CollectionGridItem = ({
                 sheet_style
               )} ${capitalizeFirstLetter(type)}`}
             </p>
+            {console.log(calculateAverageRating(reviews))}
+            <ItemRating
+              starRatedColor="#808080"
+              starEmptyColor="#bbb"
+              rating={calculateAverageRating(reviews)}
+              numberOfStars={5}
+              starDimension="12px"
+              starSpacing="1px"
+            />
           </div>
         </div>
       )}
@@ -46,5 +59,3 @@ const CollectionGridItem = ({
 );
 
 export default CollectionGridItem;
-
-//

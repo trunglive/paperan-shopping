@@ -1,6 +1,7 @@
-export const calculateAverateRating = item => {
-  const sum = item.reviews.reduce((prevReview, nextReview) => {
-    return prevReview.rating + nextReview.rating;
+export const calculateAverageRating = reviews => {
+  const all = reviews.reduce((acc, currentRating) => {
+    return acc + currentRating.rating;
   }, 0);
-  return sum / item.length;
+  return all / reviews.length;
 };
+ 

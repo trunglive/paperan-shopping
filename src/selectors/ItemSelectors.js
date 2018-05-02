@@ -1,5 +1,5 @@
 import { convertTextToPriceRange } from "../utils/convertTextToPriceRange";
-import { calculateAverateRating } from "../utils/calculateAverageRating";
+import { calculateAverageRating } from "../utils/calculateAverageRating";
 
 export const ItemSelectors = (items, filterBy, sortBy) => {
   const priceRange = convertTextToPriceRange(filterBy.price);
@@ -28,8 +28,8 @@ export const ItemSelectors = (items, filterBy, sortBy) => {
         case "highest_price":
           return currentItem.price < nextItem.price ? 1 : -1;
         case "top_rated":
-          return calculateAverateRating(currentItem) <
-            calculateAverateRating(nextItem)
+          return calculateAverageRating(currentItem.reviews) <
+            calculateAverageRating(nextItem.reviews)
             ? 1
             : -1;
         case "newest":
