@@ -3,11 +3,14 @@ import WithHomepage from "../home/WithHomepage";
 import CollectionGridItem from "./CollectionGridItem";
 import { connect } from "react-redux";
 import { convertTextToPriceRange } from "../../utils/convertTextToPriceRange";
+import Select from "react-select";
+import 'react-select/dist/react-select.css';
 
 class CollectionGrid extends Component {
   state = {
     threeCols: true,
-    filterBy: null
+    filterBy: null,
+    sortBy: ""
   };
 
   handleTwoColsChange = () => {
@@ -20,6 +23,11 @@ class CollectionGrid extends Component {
     this.setState({
       threeCols: true
     });
+  };
+
+  handleSortBy = val => {
+    this.setState({ sortBy: val });
+    console.log(val.label);
   };
 
   static getDerivedStateFromProps(nextProps, prevState) {
@@ -48,24 +56,44 @@ class CollectionGrid extends Component {
 
     const priceRange = convertTextToPriceRange(price);
 
+    const { sortBy } = this.state;
+    const value = sortBy && sortBy.value;
+
     return (
       <div className="collection collection-grid">
         <div className="collection-grid-nav">
           <p className="collection-grid-nav__title">Notebooks and planners</p>
           <div className="collection-grid-nav__option">
-            <span
-              onClick={this.handleTwoColsChange}
-              className={threeCols ? "grey-text" : "false"}
-            >
-              Two cols
-            </span>
-            <span>/</span>
-            <span
-              onClick={this.handleThreeColsChange}
-              className={threeCols ? "false" : "grey-text"}
-            >
-              Three cols
-            </span>
+            <div className="col-switch">
+              <span
+                onClick={this.handleTwoColsChange}
+                className={threeCols ? "grey-text" : "false"}
+              >
+                Two cols
+              </span>
+              <span>/</span>
+              <span
+                onClick={this.handleThreeColsChange}
+                className={threeCols ? "false" : "grey-text"}
+              >
+                Three cols
+              </span>
+            </div>
+            <Select
+              name="collection-sorting"
+              value={value}
+              placeholder={"Sort by"}
+              autosize={true}
+              onChange={this.handleSortBy}
+
+              options={[
+                { value: "best_sellers", label: "Best Sellers" },
+                { value: "lowest_price", label: "Price: Low to High" },
+                { value: "highest_price", label: "Price: High to Low" },
+                { value: "highest_rating", label: "Top Rated" },
+                { value: "newest", label: "Newest" }
+              ]}
+            />
           </div>
         </div>
 
@@ -86,7 +114,7 @@ class CollectionGrid extends Component {
                 sheetStyle.includes(item.sheet_style) ||
                 coverMaterial.includes(item.cover_material) ||
                 audience.includes(item.target_audience) ||
-              Object.values(filterBy).every(property => property.length === 0)
+                Object.values(filterBy).every(property => property.length === 0)
             )
             .map(item => (
               <CollectionGridItem

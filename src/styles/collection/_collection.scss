@@ -14,7 +14,15 @@
   }
 
   &__option {
+    display: flex;
     font-size: 1.2rem;
+    justify-content: space-between;
+    // border: 1px solid red;
+    align-items: center;
+
+    .col-switch {
+      // border: 1px solid red;
+    }
 
     span:not(:nth-child(2)) {
       cursor: pointer;
@@ -80,8 +88,29 @@
   font-size: 1.1rem;
   font-weight: 300;
   letter-spacing: 1px;
-  
+
   &:hover {
     cursor: pointer;
   }
+}
+
+.Select {
+  width: 16rem;
+  margin-left: 4rem;
+  font-size: 1.2rem;
+
+  .Select-control {
+    border: 1px solid $color-grey-light-1;
+    border-radius: 0;
+  }
+}
+
+.Select-multi-value-wrapper {
+  border: none;
+  outline: none;
+}
+
+.Select-menu-outer {
+  border: 1px solid $color-grey-light-1;
+  border-radius: 0;
 }
