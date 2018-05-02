@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import WithAddToCart from "./WithAddToCart";
 import MainCheckout from "../../menu/MainCheckout";
-import { SingleItemContext } from "../SingleItemContainer";
+// import { SingleItemContext } from "../SingleItemContainer";
 
 class AddToCartView extends Component {
   render() {
@@ -37,26 +37,8 @@ class AddToCartView extends Component {
               </div>
             </div>
           </div>
-          <SingleItemContext.Consumer>
-            {({
-              guid,
-              currentSize,
-              currentColor,
-              photo_url,
-              fullItemName,
-              price
-            }) => (
-              <MainCheckout
-                quantity={quantity}
-                guid={guid}
-                currentSize={currentSize}
-                currentColor={currentColor}
-                photo_url={photo_url}
-                fullItemName={fullItemName}
-                price={price}
-              />
-            )}
-          </SingleItemContext.Consumer>
+
+          <MainCheckout quantity={quantity} />
         </div>
 
         {isItemOutOfStock && (

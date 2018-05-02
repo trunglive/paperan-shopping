@@ -1,9 +1,12 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 import Menu from "react-modal";
 import WithMenuToggle from "./WithMenuToggle";
 import BagContainer from "./BagContainer";
 import ItemSelected from "./ItemSelected";
 import Subtotal from "./Subtotal";
+import { SingleItemContext } from "../single-item-page/SingleItemContainer";
+import { addToCart } from "../../actions/cartActions";
 
 class MainCheckout extends Component {
   render() {
@@ -11,30 +14,42 @@ class MainCheckout extends Component {
       isMenuOpen,
       handleOpenMenu,
       handleCloseMenu,
-      quantity,
-      currentColor,
-      currentSize
+      quantity
     } = this.props;
 
-    const {
-      photo_url,
-      name,
-      type,
-      target_audience,
-      fullItemName,
-      price
-    } = this.props;
+    // console.log(this.props);
 
-    console.log(this.props);
-    
     return (
       <div className="menu checkout-menu">
-        <div
-          className="product-details__add-to-cart-container--button"
-          onClick={() => handleOpenMenu(quantity, currentColor, currentSize)}
-        >
-          add to cart
-        </div>
+        <SingleItemContext.Consumer>
+          {({
+            guid,
+            currentSize,
+            currentColor,
+            photo_url,
+            fullItemName,
+            price
+          }) => (
+            <div
+              className="product-details__add-to-cart-container--button"
+              onClick={() => {
+                handleOpenMenu(quantity, currentColor, currentSize, guid);
+                this.props.addToCart(
+                  guid,
+                  currentSize,
+                  currentColor,
+                  photo_url,
+                  fullItemName,
+                  price,
+                  quantity
+                );
+              }}
+            >
+              add to cart
+            </div>
+          )}
+        </SingleItemContext.Consumer>
+
         <Menu
           isOpen={isMenuOpen}
           onRequestClose={handleCloseMenu}
@@ -55,7 +70,7 @@ class MainCheckout extends Component {
   }
 }
 
-export default WithMenuToggle(MainCheckout);
+export default connect(null, { addToCart })(WithMenuToggle(MainCheckout));
 
 const modalStyles = {
   overlay: {

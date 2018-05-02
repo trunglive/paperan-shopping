@@ -1,7 +1,7 @@
 export const ADD_FILTER = 'ADD_FILTER';
 export const REMOVE_FILTER = 'REMOVE_FILTER';
-export const FETCH_FILTER = 'FETCH_FILTER';
-
+export const ADD_TO_CART = 'ADD_TO_CART';
+export const REMOVE_FROM_CART = 'REMOVE_FROM_CART';
 
 export const SORT_BY_LOWEST_PRICE = 'SORT_BY_LOWEST_PRICE';
 export const SORT_BY_HIGHEST_PRICE = 'SORT_BY_HIGHEST_PRICE';

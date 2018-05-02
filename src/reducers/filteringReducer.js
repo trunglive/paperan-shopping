@@ -1,7 +1,6 @@
 import {
   ADD_FILTER,
-  REMOVE_FILTER,
-  FETCH_FILTER
+  REMOVE_FILTER
 } from "../actions/actionTypes";
 
 const initialFilterState = {
@@ -26,10 +25,6 @@ const filteringReducer = (state = initialFilterState, action) => {
         [action.name]: [
           ...state[action.name].filter(item => item !== action.value)
         ]
-      };
-    case FETCH_FILTER:
-      return {
-        ...state
       };
     default:
       return state;
