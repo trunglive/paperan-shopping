@@ -5,8 +5,6 @@ import { calculateAverageRating } from "../../utils/calculateAverageRating";
 import FadeIn from "react-lazyload-fadein";
 import ItemRating from "react-star-ratings";
 
-
-
 const CollectionGridItem = ({
   guid,
   photo_url,
@@ -42,7 +40,7 @@ const CollectionGridItem = ({
                 sheet_style
               )} ${capitalizeFirstLetter(type)}`}
             </p>
-            {console.log(calculateAverageRating(reviews))}
+
             <ItemRating
               starRatedColor="#808080"
               starEmptyColor="#bbb"
@@ -51,6 +49,7 @@ const CollectionGridItem = ({
               starDimension="12px"
               starSpacing="1px"
             />
+            <span className="collection-grid__item--rating">{reviews.length}</span>
           </div>
         </div>
       )}

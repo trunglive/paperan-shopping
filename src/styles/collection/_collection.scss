@@ -51,7 +51,8 @@
   &__items {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(26rem, 1fr));
-    grid-gap: 3rem;
+    grid-column-gap: 4rem;
+    grid-row-gap: 6rem;
     margin: $xl-size 0;
   }
 
@@ -68,6 +69,12 @@
       font-size: 1.1rem;
       font-weight: 300;
       letter-spacing: 1px;
+      color: $color-grey-dark;
+    }
+
+    &--rating {
+      margin-left: 0.5rem;
+      font-size: 1.1rem;
       color: $color-grey-dark;
     }
   }

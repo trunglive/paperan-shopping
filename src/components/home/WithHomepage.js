@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-// import { database } from "../../firebase";
+import { database } from "../../firebase";
 import { paperan as API } from "../../../dev_off/paperan.json";
 
 const WithHomepage = WrappedComponent =>
