@@ -26,6 +26,9 @@ const cartReducer = (state = initialCartState, action) => {
         };
       }
 
+    case REMOVE_FROM_CART:
+      
+
     default:
       return state;
   }

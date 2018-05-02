@@ -7,6 +7,7 @@ import ItemSelected from "./ItemSelected";
 import Subtotal from "./Subtotal";
 import { SingleItemContext } from "../single-item-page/SingleItemContainer";
 import { addToCart } from "../../actions/cartActions";
+import { calculateSubtotal } from '../../utils/calculateSubtotal';
 
 class MainCheckout extends Component {
   render() {
@@ -18,16 +19,7 @@ class MainCheckout extends Component {
       cart
     } = this.props;
 
-    const totalPrice = Object.keys(cart)
-      .map(id => {
-        return cart[id].map(item => Number(item.quantity) * item.price);
-      })
-      .reduce((acc, next) => {
-        return [...acc, ...next];
-      }, [])
-      .reduce((acc, next) => {
-        return acc + next;
-      }, 0);
+    const totalPrice = calculateSubtotal(cart);
 
     return (
       <div className="menu checkout-menu">
