@@ -16,7 +16,7 @@ const CollectionGridItem = ({
   resizePhoto
 }) => (
   <div>
-    <FadeIn easing={"ease-out"}>
+    <FadeIn easing={"ease-out"} height={500}>
       {onload => (
         <div>
           <Link to={`/collection/${type}/${guid}`}>
@@ -34,7 +34,9 @@ const CollectionGridItem = ({
               <span>{price}</span>
             </div>
             <p className="collection-grid__item--label">
-              {`${capitalizeFirstLetter(name)} ${capitalizeFirstLetter(sheet_style)} ${capitalizeFirstLetter(type)}`}
+              {`${capitalizeFirstLetter(name)} ${capitalizeFirstLetter(
+                sheet_style
+              )} ${capitalizeFirstLetter(type)}`}
             </p>
           </div>
         </div>

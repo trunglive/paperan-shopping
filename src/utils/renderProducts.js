@@ -3,8 +3,12 @@ import FadeIn from "react-lazyload-fadein";
 
 export const renderProducts = (products, section) => {
   return products.filter(item => item[section]).map(item => (
-    <a href={`/collection/${item.type}/${item.guid}`} target="_blank" key={item.guid}>
-      <FadeIn duration={800} easing={"ease-in"}>
+    <a
+      href={`/collection/${item.type}/${item.guid}`}
+      target="_blank"
+      key={item.guid}
+    >
+      <FadeIn duration={800} height={500} easing={"ease-in"}>
         {onload => (
           <img
             src={item.photo_url}

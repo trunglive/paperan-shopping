@@ -1,17 +1,14 @@
 import React, { Component } from "react";
 import WithHomepage from "../home/WithHomepage";
 import CollectionGridItem from "./CollectionGridItem";
+import SortBy from "../sort-by/SortBy";
 import { connect } from "react-redux";
 import { ItemSelectors } from '../../selectors/ItemSelectors';
-// import { convertTextToPriceRange } from "../../utils/convertTextToPriceRange";
-import Select from "react-select";
-import 'react-select/dist/react-select.css';
 
 class CollectionGrid extends Component {
   state = {
     threeCols: true,
     filterBy: null,
-    sortBy: ""
   };
 
   handleTwoColsChange = () => {
@@ -26,11 +23,6 @@ class CollectionGrid extends Component {
     });
   };
 
-  handleSortBy = val => {
-    this.setState({ sortBy: val });
-    console.log(val.label);
-  };
-
   static getDerivedStateFromProps(nextProps, prevState) {
     if (nextProps.filterBy === prevState.filterBy) {
       return null;
@@ -43,7 +35,7 @@ class CollectionGrid extends Component {
 
   render() {
     const { threeCols, filterBy } = this.state;
-    const { allItems } = this.props;
+    const { allItems, sortBy } = this.props;
 
     const {
       type,
@@ -53,9 +45,6 @@ class CollectionGrid extends Component {
       coverMaterial,
       audience
     } = this.state.filterBy;
-
-    const { sortBy } = this.state;
-    const value = sortBy && sortBy.value;
 
     return (
       <div className="collection collection-grid">
@@ -77,21 +66,8 @@ class CollectionGrid extends Component {
                 Three cols
               </span>
             </div>
-            <Select
-              name="collection-sorting"
-              value={value}
-              placeholder={"Sort by"}
-              autosize={true}
-              onChange={this.handleSortBy}
 
-              options={[
-                { value: "best_sellers", label: "Best Sellers" },
-                { value: "lowest_price", label: "Price: Low to High" },
-                { value: "highest_price", label: "Price: High to Low" },
-                { value: "highest_rating", label: "Top Rated" },
-                { value: "newest", label: "Newest" }
-              ]}
-            />
+            <SortBy />
           </div>
         </div>
 
@@ -102,7 +78,7 @@ class CollectionGrid extends Component {
               : `collection-grid__items grid-two-cols`
           }`}
         >
-            {ItemSelectors(allItems, filterBy).map(item => (
+            {ItemSelectors(allItems, filterBy, sortBy).map(item => (
               <CollectionGridItem
                 key={item.guid}
                 {...item}
@@ -117,8 +93,9 @@ class CollectionGrid extends Component {
   }
 }
 
-const mapStateToProps = ({ filterBy }) => ({
-  filterBy
+const mapStateToProps = ({ filterBy, sorting }) => ({
+  filterBy,
+  sortBy: sorting.sortBy
 });
 
 export default connect(mapStateToProps)(WithHomepage(CollectionGrid));
