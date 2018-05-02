@@ -67,7 +67,7 @@ class MainCheckout extends Component {
             <BagContainer handleCloseMenu={handleCloseMenu} />
 
             {Object.keys(cart).map(id =>
-              cart[id].map(item => <ItemSelected {...item} key={item.variationId} />)
+              cart[id].map(item => <ItemSelected guid={id} {...item} key={item.variationId} />)
             )}
           </div>
 

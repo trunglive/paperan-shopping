@@ -1,16 +1,23 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 import { SingleItemContext } from "../single-item-page/SingleItemContainer";
+import { removeFromCart } from '../../actions/cartActions';
 
 class ItemSelected extends Component {
   render() {
     const {
+      guid,
+      variationId,
       quantity,
       photo_url,
       fullItemName,
       price,
       currentSize,
-      currentColor
+      currentColor,
+      removeFromCart
     } = this.props;
+
+    // console.log(this.props);
 
     return (
       <div className="checkout-menu__items-section--items-container">
@@ -27,11 +34,16 @@ class ItemSelected extends Component {
         </div>
         <div className="item-display--right">
           <p>$ {price}</p>
-          <p className="item-delete">Delete</p>
+          <p
+            className="item-delete"
+            onClick={() => removeFromCart(guid, variationId)}
+          >
+            Delete
+          </p>
         </div>
       </div>
     );
   }
 }
 
-export default ItemSelected;
+export default connect(null, { removeFromCart })(ItemSelected);
