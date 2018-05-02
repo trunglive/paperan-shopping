@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import WithHomepage from "../home/WithHomepage";
 import CollectionGridItem from "./CollectionGridItem";
 import { connect } from "react-redux";
-import { convertTextToPriceRange } from "../../utils/convertTextToPriceRange";
+import { ItemSelectors } from '../../selectors/ItemSelectors';
+// import { convertTextToPriceRange } from "../../utils/convertTextToPriceRange";
 import Select from "react-select";
 import 'react-select/dist/react-select.css';
 
@@ -43,7 +44,6 @@ class CollectionGrid extends Component {
   render() {
     const { threeCols, filterBy } = this.state;
     const { allItems } = this.props;
-    console.log(this.state.filterBy);
 
     const {
       type,
@@ -53,8 +53,6 @@ class CollectionGrid extends Component {
       coverMaterial,
       audience
     } = this.state.filterBy;
-
-    const priceRange = convertTextToPriceRange(price);
 
     const { sortBy } = this.state;
     const value = sortBy && sortBy.value;
@@ -104,19 +102,7 @@ class CollectionGrid extends Component {
               : `collection-grid__items grid-two-cols`
           }`}
         >
-          {allItems
-            .filter(
-              item =>
-                type.includes(item.type) ||
-                (priceRange[0] <= Number(item.price) &&
-                  Number(item.price) <= priceRange[1]) ||
-                colors.some(color => item.colors.includes(color)) ||
-                sheetStyle.includes(item.sheet_style) ||
-                coverMaterial.includes(item.cover_material) ||
-                audience.includes(item.target_audience) ||
-                Object.values(filterBy).every(property => property.length === 0)
-            )
-            .map(item => (
+            {ItemSelectors(allItems, filterBy).map(item => (
               <CollectionGridItem
                 key={item.guid}
                 {...item}
