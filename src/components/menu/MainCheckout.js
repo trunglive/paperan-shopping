@@ -14,10 +14,20 @@ class MainCheckout extends Component {
       isMenuOpen,
       handleOpenMenu,
       handleCloseMenu,
-      quantity
+      quantity,
+      cart
     } = this.props;
 
-    // console.log(this.props);
+    const totalPrice = Object.keys(cart)
+      .map(id => {
+        return cart[id].map(item => Number(item.quantity) * item.price);
+      })
+      .reduce((acc, next) => {
+        return [...acc, ...next];
+      }, [])
+      .reduce((acc, next) => {
+        return acc + next;
+      }, 0);
 
     return (
       <div className="menu checkout-menu">
@@ -33,16 +43,19 @@ class MainCheckout extends Component {
             <div
               className="product-details__add-to-cart-container--button"
               onClick={() => {
-                handleOpenMenu(quantity, currentColor, currentSize, guid);
-                this.props.addToCart(
-                  guid,
-                  currentSize,
-                  currentColor,
-                  photo_url,
-                  fullItemName,
-                  price,
-                  quantity
-                );
+                handleOpenMenu(quantity, currentColor, currentSize);
+
+                if (quantity > 0 && currentColor && currentSize) {
+                  this.props.addToCart(
+                    guid,
+                    currentSize,
+                    currentColor,
+                    photo_url,
+                    fullItemName,
+                    price,
+                    quantity
+                  );
+                }
               }}
             >
               add to cart
@@ -60,17 +73,26 @@ class MainCheckout extends Component {
         >
           <div className="checkout-menu__items-section">
             <BagContainer handleCloseMenu={handleCloseMenu} />
-            <ItemSelected quantity={quantity} />
+
+            {Object.keys(cart).map(id =>
+              cart[id].map(item => <ItemSelected {...item} key={item.variationId} />)
+            )}
           </div>
 
-          <Subtotal />
+          <Subtotal totalPrice={totalPrice} />
         </Menu>
       </div>
     );
   }
 }
 
-export default connect(null, { addToCart })(WithMenuToggle(MainCheckout));
+const mapStateToProps = ({ cart }) => ({
+  cart
+});
+
+export default connect(mapStateToProps, { addToCart })(
+  WithMenuToggle(MainCheckout)
+);
 
 const modalStyles = {
   overlay: {

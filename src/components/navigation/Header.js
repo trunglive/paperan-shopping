@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 export default class Header extends Component {
   render() {
@@ -12,7 +13,12 @@ export default class Header extends Component {
           <span>Search</span>
         </div>
         <div className="user-account-container">
-          <span>Shop</span>
+          <Link
+            to="/collection/all"
+            style={{ textDecoration: "none", color: "inherit" }}
+          >
+            <span>Shop</span>
+          </Link>
           <span>My account</span>
           <img
             className="user-account-container__cart-icon"

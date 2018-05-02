@@ -21,9 +21,8 @@ export const addToCart = (
   }
 });
 
-export const removeFromCart = (guid, currentSize, currentColor) => ({
+export const removeFromCart = (guid, variationId) => ({
   type: REMOVE_FROM_CART,
   guid,
-  currentSize,
-  currentColor
+  variationId
 });
