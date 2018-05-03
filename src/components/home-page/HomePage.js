@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import FeaturedProducts from "./FeaturedProducts";
-import NewArrivalsProducts from "./NewArrivalsProducts";
+import TrendingProducts from "./TrendingProducts";
 import OnSaleProducts from "./OnSaleProducts";
 import WithHomePage from "./WithHomePage";
 
@@ -23,7 +23,7 @@ const HomePage = ({ allItems }) => (
     </div>
 
     <FeaturedProducts allItems={allItems} />
-    <NewArrivalsProducts allItems={allItems} />
+    <TrendingProducts allItems={allItems} />
     <OnSaleProducts allItems={allItems} />
   </div>
 );
