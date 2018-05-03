@@ -49,7 +49,15 @@ const CollectionGridItem = ({
               starDimension="12px"
               starSpacing="1px"
             />
-            <span className="collection-grid__item--rating">{reviews.length}</span>
+            <span className="collection-grid__item--rating">
+              {calculateAverageRating(reviews) > 0 ? (
+                reviews.length
+              ) : (
+                <span className="collection-grid__item--no-review">
+                  no reviews yet
+                </span>
+              )}{" "}
+            </span>
           </div>
         </div>
       )}

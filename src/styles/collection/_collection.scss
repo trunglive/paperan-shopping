@@ -77,6 +77,10 @@
       font-size: 1.1rem;
       color: $color-grey-dark;
     }
+
+    &--no-review {
+      color: $color-grey-light-1;
+    }
   }
 }
 
