@@ -19,7 +19,7 @@
 .ReactModal__Content--after-open.filter-container {
   -webkit-transform: translateX(0);
   transform: translateX(0);
-  transition: all 200ms ease-in-out;
+  transition: all 500ms cubic-bezier(0.9, 0.37, 0, 0.37);
 }
 
 .ReactModal__Content.checkout-menu-container {
@@ -30,5 +30,5 @@
 .ReactModal__Content--after-open.checkout-menu-container {
   -webkit-transform: translateX(0);
   transform: translateX(0);
-  transition: all 350ms ease-out;
+  transition: all 600ms cubic-bezier(0.73, 0.19, 0.09, 0.93);
 }
