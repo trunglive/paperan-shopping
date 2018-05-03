@@ -1,20 +1,22 @@
 import { checkItemPrice } from "../utils/checkItemPrice";
 import { calculateAverageRating } from "../utils/calculateAverageRating";
 
-export const ItemSelectors = (items, filterBy, sortBy) => {
+export const ItemSelectors = (
+  items,
+  { type, priceRange, colors, sheetStyle, coverMaterial, audience },
+  sortBy
+) => {
   return items
     .filter(
       item =>
-        (filterBy.type.includes(item.type) || filterBy.type.length === 0) &&
-        (checkItemPrice(filterBy.priceRange, item.price) || filterBy.priceRange.length === 0) &&
-        (filterBy.colors.some(color => item.colors.includes(color)) ||
-          filterBy.colors.length === 0) &&
-        (filterBy.sheetStyle.includes(item.sheet_style) ||
-          filterBy.sheetStyle.length === 0) &&
-        (filterBy.coverMaterial.includes(item.cover_material) ||
-          filterBy.coverMaterial.length === 0) &&
-        (filterBy.audience.includes(item.target_audience) ||
-          filterBy.audience.length === 0)
+        (type.includes(item.type) || type.length === 0) &&
+        (checkItemPrice(priceRange, item.price) || priceRange.length === 0) &&
+        (colors.some(color => item.colors.includes(color)) ||
+          colors.length === 0) &&
+        (sheetStyle.includes(item.sheet_style) || sheetStyle.length === 0) &&
+        (coverMaterial.includes(item.cover_material) ||
+          coverMaterial.length === 0) &&
+        (audience.includes(item.target_audience) || audience.length === 0)
     )
     .sort((currentItem, nextItem) => {
       switch (sortBy) {

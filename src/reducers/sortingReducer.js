@@ -1,13 +1,13 @@
 import { SORT_BY } from "../actions/actionTypes";
 
-const initialSortingState = { sortBy: "newest" };
+const initialSortingState = { value: "newest" };
 
 const sortingReducer = (state = initialSortingState, action) => {
   switch (action.type) {
     case SORT_BY:
       return {
         ...state,
-        sortBy: action.value
+        value: action.value
       };
     default:
       return state;

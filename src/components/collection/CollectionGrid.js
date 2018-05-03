@@ -93,9 +93,9 @@ class CollectionGrid extends Component {
   }
 }
 
-const mapStateToProps = ({ filterBy, sorting }) => ({
+const mapStateToProps = ({ filterBy, sortBy }) => ({
   filterBy,
-  sortBy: sorting.sortBy
+  sortBy: sortBy.value
 });
 
 export default connect(mapStateToProps)(WithHomepage(CollectionGrid));

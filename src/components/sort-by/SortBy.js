@@ -18,7 +18,7 @@ class SortBy extends Component {
     return (
       <Select
         name="collection-sorting"
-        value={this.props.sortByValue}
+        value={this.props.value}
         placeholder={"Sort by"}
         autosize={true}
         onChange={this.handleSortBy}
@@ -35,8 +35,8 @@ class SortBy extends Component {
   }
 }
 
-const mapStateToProps = ({ sorting }) => ({
-  sortByValue: sorting.sortBy
+const mapStateToProps = ({ sortBy }) => ({
+  value: sortBy.value
 });
 
 export default connect(mapStateToProps, { sortBy })(SortBy);

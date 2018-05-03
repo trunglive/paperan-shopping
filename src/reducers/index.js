@@ -1,12 +1,12 @@
 import { combineReducers } from 'redux';
-import filtering from './filteringReducer';
+import filterBy from './filteringReducer';
 import cart from './cartReducer';
-import sorting from './sortingReducer';
+import sortBy from './sortingReducer';
 
 const rootReducer = combineReducers({
-  filterBy: filtering,
+  filterBy,
   cart,
-  sorting
+  sortBy
 })
 
 export default rootReducer;
