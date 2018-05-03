@@ -2,9 +2,9 @@ import React, { Component } from "react";
 // import { database } from "../../firebase";
 import { paperan as API } from "../../../dev_off/paperan.json";
 
-const WithHomepage = WrappedComponent =>
+const WithHomePage = WrappedComponent =>
   class extends Component {
-    static displayName = `WithHomepage(${WrappedComponent.displayName ||
+    static displayName = `WithHomePage(${WrappedComponent.displayName ||
       WrappedComponent.name})`;
 
     state = {
@@ -51,4 +51,4 @@ const WithHomepage = WrappedComponent =>
     }
   };
 
-export default WithHomepage;
+export default WithHomePage;

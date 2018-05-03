@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import FeaturedProducts from "./FeaturedProducts";
 import NewArrivalsProducts from "./NewArrivalsProducts";
 import OnSaleProducts from "./OnSaleProducts";
-import WithHomepage from "./WithHomepage";
+import WithHomePage from "./WithHomePage";
 
 const HomePage = ({ allItems }) => (
   <div>
@@ -28,4 +28,4 @@ const HomePage = ({ allItems }) => (
   </div>
 );
 
-export default WithHomepage(HomePage);
+export default WithHomePage(HomePage);

@@ -104,20 +104,3 @@
     cursor: pointer;
   }
 }
-
-
-.Select {
-  width: 16rem;
-  margin-left: 4rem;  
-  font-size: 1.2rem;
-
-  .Select-control {
-    border: 1px solid $color-grey-light-1;
-    border-radius: 0;
-  }
-}
-
-.Select-menu-outer {
-  border: 1px solid $color-grey-light-1;
-  border-radius: 0;
-}

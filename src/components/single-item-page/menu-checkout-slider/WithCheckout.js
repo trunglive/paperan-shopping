@@ -21,10 +21,14 @@ class WithCheckout extends Component {
   };
 
   render() {
-    return this.props.render(
-      this.state.isMenuOpen,
-      this.handleOpenMenu,
-      this.handleCloseMenu
+    return (
+      <div className="with-checkout">
+        {this.props.render(
+          this.state.isMenuOpen,
+          this.handleOpenMenu,
+          this.handleCloseMenu
+        )}
+      </div>
     );
   }
 }

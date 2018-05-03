@@ -91,6 +91,6 @@ class SingleItemPage extends Component {
   }
 }
 
-export default WithHomepage(SingleItemPage);
+export default WithHomePage(SingleItemPage);
 
 export const SingleItemContext = React.createContext(null);

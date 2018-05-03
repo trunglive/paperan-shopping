@@ -1,5 +1,5 @@
 import React from "react";
-import { renderProducts } from "../../utils/renderProducts";
+import { renderProducts } from "./renderProducts";
 
 const OnSaleProducts = ({ allItems }) => (
   <div className="homepage-on-sale small-grid">
