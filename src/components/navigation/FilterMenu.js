@@ -117,8 +117,8 @@ class FilterMenu extends Component {
                   <input
                     type="checkbox"
                     id="less-than-ten"
-                    checked={checkbox.price.includes("less-than-ten")}
-                    name="price"
+                    checked={checkbox.priceRange.includes("less-than-ten")}
+                    name="priceRange"
                     value="less-than-ten"
                     onClick={this.handleCheckBox}
                   />
@@ -134,8 +134,8 @@ class FilterMenu extends Component {
                   <input
                     type="checkbox"
                     id="between-ten-and-thirty"
-                    checked={checkbox.price.includes("between-ten-and-thirty")}
-                    name="price"
+                    checked={checkbox.priceRange.includes("between-ten-and-thirty")}
+                    name="priceRange"
                     value="between-ten-and-thirty"
                     onClick={this.handleCheckBox}
                   />
@@ -152,10 +152,10 @@ class FilterMenu extends Component {
                   <input
                     type="checkbox"
                     id="between-thirty-and-fifty"
-                    checked={checkbox.price.includes(
+                    checked={checkbox.priceRange.includes(
                       "between-thirty-and-fifty"
                     )}
-                    name="price"
+                    name="priceRange"
                     value="between-thirty-and-fifty"
                     onClick={this.handleCheckBox}
                   />
@@ -174,8 +174,8 @@ class FilterMenu extends Component {
                   <input
                     type="checkbox"
                     id="more-than-fifty"
-                    checked={checkbox.price.includes("more-than-fifty")}
-                    name="price"
+                    checked={checkbox.priceRange.includes("more-than-fifty")}
+                    name="priceRange"
                     value="more-than-fifty"
                     onClick={this.handleCheckBox}
                   />

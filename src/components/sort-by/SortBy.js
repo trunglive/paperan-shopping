@@ -26,8 +26,9 @@ class SortBy extends Component {
           { value: "best_sellers", label: "Best Sellers" },
           { value: "lowest_price", label: "Price: Low to High" },
           { value: "highest_price", label: "Price: High to Low" },
+          { value: "most_reviews", label: "Most Reviews" },
           { value: "top_rated", label: "Top Rated" },
-          { value: "newest", label: "Newest" }
+          { value: "newest", label: "Newest" },
         ]}
       />
     );

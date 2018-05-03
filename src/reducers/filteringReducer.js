@@ -5,7 +5,7 @@ import {
 
 const initialFilterState = {
   type: [],
-  price: [],
+  priceRange: [],
   colors: [],
   sheetStyle: [],
   coverMaterial: [],

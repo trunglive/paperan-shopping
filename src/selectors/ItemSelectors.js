@@ -1,15 +1,12 @@
-import { convertTextToPriceRange } from "../utils/convertTextToPriceRange";
+import { checkItemPrice } from "../utils/checkItemPrice";
 import { calculateAverageRating } from "../utils/calculateAverageRating";
 
 export const ItemSelectors = (items, filterBy, sortBy) => {
-  const priceRange = convertTextToPriceRange(filterBy.price);
-
   return items
     .filter(
       item =>
         (filterBy.type.includes(item.type) || filterBy.type.length === 0) &&
-        ((priceRange[0] <= item.price && item.price <= priceRange[1]) ||
-          filterBy.price.length === 0) &&
+        (checkItemPrice(filterBy.priceRange, item.price) || filterBy.priceRange.length === 0) &&
         (filterBy.colors.some(color => item.colors.includes(color)) ||
           filterBy.colors.length === 0) &&
         (filterBy.sheetStyle.includes(item.sheet_style) ||
@@ -32,6 +29,8 @@ export const ItemSelectors = (items, filterBy, sortBy) => {
             calculateAverageRating(nextItem.reviews)
             ? 1
             : -1;
+        case "most_reviews":
+          return currentItem.reviews.length < nextItem.reviews.length ? 1 : -1;
         case "newest":
           return currentItem.updated_at < nextItem.updated_at ? 1 : -1;
         default:
