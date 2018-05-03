@@ -51,6 +51,6 @@ export default class Sidebar extends Component {
 
 const filterStyles = {
   overlay: {
-    backgroundColor: "rgb(8, 8, 8, 0.2)"
+    backgroundColor: "rgb(8, 8, 8, 0.3)"
   }
 };

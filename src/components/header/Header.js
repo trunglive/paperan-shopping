@@ -4,11 +4,6 @@ import { fetchCart } from "../../actions/modalActions";
 import { Link } from "react-router-dom";
 
 class Header extends Component {
-  handleOpenCart = () => {
-    console.log("thats dope");
-    //dispatch an action to open menu checkout modal
-  };
-
   render() {
     return (
       <div className="header">

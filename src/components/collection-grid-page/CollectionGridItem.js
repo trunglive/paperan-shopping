@@ -18,7 +18,7 @@ const CollectionGridItem = ({
   resizePhoto
 }) => (
   <div>
-    <FadeIn easing={"ease-out"} height={300}>
+    <FadeIn easing={"ease-out"} height={400}>
       {onload => (
         <div>
           <Link to={`/collection/${type}/${guid}`}>

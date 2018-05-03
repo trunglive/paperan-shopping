@@ -8,7 +8,7 @@ export const renderProducts = (products, section) => {
       target="_blank"
       key={item.guid}
     >
-      <FadeIn duration={800} height={300} easing={"ease-in"}>
+      <FadeIn duration={800} height={400} easing={"ease-in"}>
         {onload => (
           <img
             src={item.photo_url}

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { SingleItemContext } from "../SingleItemPage";
-import { removeFromCart } from '../../../actions/cartActions';
+import { SingleItemContext } from "../single-item-page/SingleItemPage";
+import { removeFromCart } from "../../actions/cartActions";
 
 class ItemInCart extends Component {
   render() {

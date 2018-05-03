@@ -7,7 +7,7 @@ const modalReducer = (state = initialModalState, action) => {
     case FETCH_CART:
       return {
         ...state,
-        isCartOpen: true
+        isCartOpen: action.isCartOpen
       };
     default:
       return state;
