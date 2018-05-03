@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { fetchCart } from "../../actions/cartActions";
+import { fetchCart } from "../../actions/modalActions";
 import { Link } from "react-router-dom";
 
 class Header extends Component {
