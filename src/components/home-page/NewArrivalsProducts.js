@@ -1,5 +1,5 @@
 import React from "react";
-import { renderProducts } from "../../utils/renderProducts";
+import { renderProducts } from "./renderProducts";
 
 const NewArrivalsProducts = ({ allItems }) => (
   <div className="homepage-new-arrivals small-grid">

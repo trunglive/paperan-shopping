@@ -6,8 +6,7 @@ import Header from "../components/header/Header";
 import HomePage from "../components/home-page/HomePage";
 import CollectionGridPage from "../components/collection-grid-page/CollectionGridPage";
 import SingleItemPage from '../components/single-item-page/SingleItemPage';
-
-import Footer from "../components/navigation/Footer";
+import Footer from "../components/footer/Footer";
 
 const AppRouter = () => (
   <Router>

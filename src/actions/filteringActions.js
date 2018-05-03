@@ -1,4 +1,4 @@
-import { ADD_FILTER, REMOVE_FILTER, ADD_TO_CART } from "./actionTypes";
+import { ADD_FILTER, REMOVE_FILTER } from "./actionTypes";
 
 export const addFilter = (name, value) => ({
   type: ADD_FILTER,

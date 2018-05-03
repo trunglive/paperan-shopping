@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import WithHomepage from "../home-page/WithHomepage";
+import WithHomePage from "../home-page/WithHomePage";
 import PhotoView from "./photo-section/PhotoView";
 import ColorView from "./color-section/ColorView";
 import SizeView from "./size-section/SizeView";
@@ -91,6 +91,6 @@ class SingleItemPage extends Component {
   }
 }
 
-export default WithHomepage(SingleItemPage);
+export default WithHomePage(SingleItemPage);
 
 export const SingleItemContext = React.createContext(null);

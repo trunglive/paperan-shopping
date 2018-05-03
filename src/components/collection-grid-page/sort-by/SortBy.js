@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import Select from "react-select";
 import "react-select/dist/react-select.css";
-import { sortBy } from "../../actions/sortingActions";
+import { sortBy } from "../../../actions/sortingActions";
 
 class SortBy extends Component {
 
