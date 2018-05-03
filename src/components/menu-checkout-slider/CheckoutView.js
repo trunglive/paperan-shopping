@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import WithCheckout from "./WithCheckout";
-import { SingleItemContext } from "../SingleItemPage";
-import { addToCart } from "../../../actions/cartActions";
+import { SingleItemContext } from "../single-item-page/SingleItemPage";
+import { addToCart } from "../../actions/cartActions";
 
 class CheckoutView extends Component {
   render() {

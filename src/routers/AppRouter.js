@@ -9,7 +9,7 @@ import CollectionGridPage from "../components/collection-grid-page/CollectionGri
 import SingleItemPage from "../components/single-item-page/SingleItemPage";
 import Footer from "../components/footer/Footer";
 import { connect } from "react-redux";
-import WithCheckout from "../components/single-item-page/menu-checkout-slider/WithCheckout";
+import WithCheckout from "../components/menu-checkout-slider/WithCheckout";
 
 const AppRouter = ({ cart, modal }) => (
   <Router>

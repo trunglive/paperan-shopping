@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import Menu from "react-modal";
-import { fetchCart } from "../../../actions/modalActions";
+import { fetchCart } from "../../actions/modalActions";
 
 class WithCheckout extends Component {
   state = {

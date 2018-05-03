@@ -31,12 +31,13 @@ export default class WithAddToCart extends Component {
   render() {
     return (
       <div className="with-add-to-cart">
-        {this.props.render(
-          { ...this.state },
-          { ...this.props },
-          this.handleQuantityIncrement,
-          this.handleQuantityDecrement
-        )}
+        {this.props.render({
+          quantity: this.state.quantity,
+          isItemOutOfStock: this.state.isItemOutOfStock,
+          overQuantityClick: this.state.overQuantityClick,
+          handleQuantityIncrement: this.handleQuantityIncrement,
+          handleQuantityDecrement: this.handleQuantityDecrement
+        })}
       </div>
     );
   }

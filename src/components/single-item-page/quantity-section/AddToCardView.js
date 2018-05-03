@@ -1,17 +1,20 @@
 import React, { Component } from "react";
 import WithAddToCart from "./WithAddToCart";
-import CheckoutView from '../menu-checkout-slider/CheckoutView';
+import CheckoutView from "../../menu-checkout-slider/CheckoutView";
 
 class AddToCartView extends Component {
   render() {
+    const { inStock } = this.props;
+
     return (
       <WithAddToCart
-        render={(
-          { quantity, isItemOutOfStock, overQuantityClick },
-          { inStock },
+        render={({
+          quantity,
+          isItemOutOfStock,
+          overQuantityClick,
           handleQuantityIncrement,
           handleQuantityDecrement
-        ) => (
+        }) => (
           <div className="add-to-card-and-alert">
             <div className="product-details__add-to-cart-container">
               <p>Quantity</p>
