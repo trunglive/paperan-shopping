@@ -1,7 +1,14 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import { fetchCart } from "../../actions/cartActions";
 import { Link } from "react-router-dom";
 
-export default class Header extends Component {
+class Header extends Component {
+  handleOpenCart = () => {
+    console.log("thats dope");
+    //dispatch an action to open menu checkout modal
+  };
+
   render() {
     return (
       <div className="header">
@@ -23,9 +30,12 @@ export default class Header extends Component {
           <img
             className="user-account-container__cart-icon"
             src="/icons/cart.svg"
+            onClick={() => this.props.fetchCart(true)}
           />
         </div>
       </div>
     );
   }
 }
+
+export default connect(null, { fetchCart })(Header);

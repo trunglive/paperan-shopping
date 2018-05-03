@@ -15,7 +15,7 @@ export default class DetailsToggle extends Component {
     const { isDetailSelected } = this.state;
     
     return (
-      <div className="item-details__details-toggle">
+      <div className="product-details__details-toggle">
         <p onClick={this.handleDetailsToggle}>
           {isDetailSelected ? "Hide details" : "Show more details"}
         </p>

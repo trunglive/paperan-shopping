@@ -13,7 +13,7 @@ class AddToCartView extends Component {
           handleQuantityDecrement
         ) => (
           <div className="add-to-card-and-alert">
-            <div className="item-details__add-to-cart-container">
+            <div className="product-details__add-to-cart-container">
               <p>Quantity</p>
               <div className="numeric-input">
                 <p className="quantity-input">{quantity} pcs</p>

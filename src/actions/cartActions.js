@@ -1,4 +1,4 @@
-import { ADD_TO_CART, REMOVE_FROM_CART } from "./actionTypes";
+import { ADD_TO_CART, REMOVE_FROM_CART, FETCH_CART } from "./actionTypes";
 
 export const addToCart = (
   guid,
@@ -25,4 +25,9 @@ export const removeFromCart = (guid, variationId) => ({
   type: REMOVE_FROM_CART,
   guid,
   variationId
+});
+
+export const fetchCart = isCartOpen => ({
+  type: FETCH_CART,
+  isCartOpen
 });

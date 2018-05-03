@@ -51,17 +51,17 @@ class SingleItemPage extends Component {
 
     const { currentSize, currentColor } = this.state;
     return (
-      <div className="single-item">
+      <div className="product-item">
         <PhotoView photo_url={photo_url} fullItemName={fullItemName} />
-        <div className="item-details">
-          <div className="item-details__path">
+        <div className="product-details">
+          <div className="product-details__path">
             <span>
               {capitalizeFirstLetter(type)}
               <span className="long-dash">&mdash;</span>For {target_audience}
             </span>
           </div>
-          <div className="item-details__name">{fullItemName}</div>
-          <div className="item-details__price">
+          <div className="product-details__name">{fullItemName}</div>
+          <div className="product-details__price">
             <span>$ {price}</span>
             <span>incl. VAT</span>
           </div>

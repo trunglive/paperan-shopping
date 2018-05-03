@@ -28,7 +28,7 @@ class CheckoutView extends Component {
                 price
               }) => (
                 <div
-                  className="item-details__add-to-cart-container--button"
+                  className="product-details__add-to-cart-container--button"
                   onClick={() => {
                     handleOpenMenu(quantity, currentColor, currentSize);
 

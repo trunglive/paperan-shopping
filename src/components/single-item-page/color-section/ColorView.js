@@ -9,9 +9,9 @@ class ColorView extends Component {
     return (
       <WithColor
         render={(selectedColor, handlePaperColor) => (
-          <div className="item-details__color-container">
+          <div className="product-details__color-container">
             <p>Color</p>
-            <div className="item-details__color-list">
+            <div className="product-details__color-list">
               {allColors.map(singleColor => (
                 <div
                   style={{

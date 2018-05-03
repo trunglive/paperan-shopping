@@ -1,4 +1,8 @@
-import { ADD_TO_CART, REMOVE_FROM_CART } from "../actions/actionTypes";
+import {
+  ADD_TO_CART,
+  REMOVE_FROM_CART,
+  FETCH_CART
+} from "../actions/actionTypes";
 import uuid from "uuid";
 
 const initialCartState = {};
@@ -35,6 +39,12 @@ const cartReducer = (state = initialCartState, action) => {
         ...state,
         [action.guid]: updatedCart
       };
+
+    case FETCH_CART:
+      return {
+        checked: 'work'
+      }
+
     default:
       return state;
   }
