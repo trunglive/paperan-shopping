@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-export default class NavigationInfo extends Component {
+export default class NavScrolling extends Component {
   render() {
     return (
       <div className="nav-info">

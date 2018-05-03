@@ -1,6 +1,6 @@
 import React from "react";
 
-const Subtotal = ({ totalPrice }) => (
+const BottomSubtotal = ({ totalPrice }) => (
   <div className="checkout-menu__subtotal-section">
     <div className="checkout-menu__subtotal-section--price">
       <p>subtotal</p>
@@ -18,8 +18,4 @@ const Subtotal = ({ totalPrice }) => (
   </div>
 );
 
-// const mapStateToProps = cart => ({
-//   cart
-// });
-
-export default Subtotal;
+export default BottomSubtotal;

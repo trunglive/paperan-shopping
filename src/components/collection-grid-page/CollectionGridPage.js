@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import WithHomepage from "../home/WithHomepage";
+import WithHomepage from "../home-page/WithHomepage";
 import CollectionGridItem from "./CollectionGridItem";
 import SortBy from "../sort-by/SortBy";
 import { connect } from "react-redux";
 import { ItemSelectors } from '../../selectors/ItemSelectors';
 
-class CollectionGrid extends Component {
+class CollectionGridPage extends Component {
   state = {
     threeCols: true,
     filterBy: null,
@@ -98,4 +98,4 @@ const mapStateToProps = ({ filterBy, sortBy }) => ({
   sortBy: sortBy.value
 });
 
-export default connect(mapStateToProps)(WithHomepage(CollectionGrid));
+export default connect(mapStateToProps)(WithHomepage(CollectionGridPage));

@@ -1,13 +1,11 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Sidebar from "../components/navigation/Sidebar";
-import Header from "../components/navigation/Header";
-import NavigationInfo from "../components/navigation/NavigationInfo";
-import Homepage from "../components/home/Homepage";
-import CollectionGrid from "../components/collection/CollectionGrid";
-import SingleItemContainer from '../components/single-item-page/SingleItemContainer';
-
-// import Checkout from "../components/checkout/Checkout";
+import Sidebar from "../components/sidebar/Sidebar";
+import NavScrolling from "../components/nav-scrolling/NavScrolling";
+import Header from "../components/header/Header";
+import HomePage from "../components/home-page/HomePage";
+import CollectionGridPage from "../components/collection-grid-page/CollectionGridPage";
+import SingleItemPage from '../components/single-item-page/SingleItemPage';
 
 import Footer from "../components/navigation/Footer";
 
@@ -15,13 +13,12 @@ const AppRouter = () => (
   <Router>
     <div className="main-container">
       <Sidebar />
+      <NavScrolling />
       <Header />
-      <NavigationInfo />
       <Switch className="main-content">
-        <Route exact path="/" component={Homepage} />
-        <Route exact path="/collection/all" component={CollectionGrid} />
-        <Route exact path="/collection/:type/:id" component={SingleItemContainer} />
-        {/* <Route exact path="/checkout" component={Checkout} /> */}
+        <Route exact path="/" component={HomePage} />
+        <Route exact path="/collection/all" component={CollectionGridPage} />
+        <Route exact path="/collection/:type/:id" component={SingleItemPage} />
       </Switch>
       <Footer />
     </div>

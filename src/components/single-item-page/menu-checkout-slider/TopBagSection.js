@@ -1,6 +1,6 @@
 import React from "react";
 
-const BagContainer = ({ handleCloseMenu }) => (
+const TopBagSection = ({ handleCloseMenu }) => (
   <div className="checkout-menu__items-section--bag-container">
     <div className="bag-group">
       <img className="checkout-menu__bag-icon" src="/icons/cart.svg" />
@@ -14,4 +14,4 @@ const BagContainer = ({ handleCloseMenu }) => (
   </div>
 );
 
-export default BagContainer;
+export default TopBagSection;

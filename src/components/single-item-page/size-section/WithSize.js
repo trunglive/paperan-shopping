@@ -8,7 +8,6 @@ class WithSize extends Component {
   handlePaperSize = size => {
     this.setState({
       selectedPaperSize: size
-      //dispatch size
     });
   };
 

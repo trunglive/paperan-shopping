@@ -1,13 +1,14 @@
 import React, { Component } from "react";
-import WithHomepage from "../home/WithHomepage";
-import ColorContainer from "./color/ColorContainer";
-import SizeContainer from "./size/SizeContainer";
-import InStock from "./in-stock/InStock.js";
-import AddToCartContainer from "./add-to-cart/AddToCardContainer";
+import WithHomepage from "../home-page/WithHomepage";
+import PhotoView from "./photo-section/PhotoView";
+import ColorView from "./color-section/ColorView";
+import SizeView from "./size-section/SizeView";
+import InStock from "./availability-section/InStock.js";
+import AddToCartView from "./quantity-section/AddToCardView";
 import DetailsToggle from "./details-toggle/DetailsToggle";
 import { capitalizeFirstLetter } from "../../utils/capitalizeFirstLetter";
 
-class SingleItemView extends Component {
+class SingleItemPage extends Component {
   state = {
     currentColor: "",
     currentSize: ""
@@ -50,27 +51,22 @@ class SingleItemView extends Component {
 
     const { currentSize, currentColor } = this.state;
     return (
-      <div className="single-product">
-        <div className="photo-display">
-          <img src={photo_url} alt={`${name} ${type} for ${target_audience}`} />
-        </div>
-        <div className="product-details">
-          <div className="product-details__path">
+      <div className="single-item">
+        <PhotoView photo_url={photo_url} fullItemName={fullItemName} />
+        <div className="item-details">
+          <div className="item-details__path">
             <span>
               {capitalizeFirstLetter(type)}
               <span className="long-dash">&mdash;</span>For {target_audience}
             </span>
           </div>
-          <div className="product-details__name">{fullItemName}</div>
-          <div className="product-details__price">
+          <div className="item-details__name">{fullItemName}</div>
+          <div className="item-details__price">
             <span>$ {price}</span>
             <span>incl. VAT</span>
           </div>
-          <ColorContainer
-            allColors={colors}
-            colorChange={this.handleColorChange}
-          />
-          <SizeContainer allSizes={sizes} sizeChange={this.handleSizeChange} />
+          <ColorView allColors={colors} colorChange={this.handleColorChange} />
+          <SizeView allSizes={sizes} sizeChange={this.handleSizeChange} />
           <InStock inStock={in_stock} />
           <SingleItemContext.Provider
             value={{
@@ -85,7 +81,7 @@ class SingleItemView extends Component {
               currentColor
             }}
           >
-            <AddToCartContainer inStock={in_stock} />
+            <AddToCartView inStock={in_stock} />
           </SingleItemContext.Provider>
 
           <DetailsToggle details={details} />
@@ -95,6 +91,6 @@ class SingleItemView extends Component {
   }
 }
 
-export default WithHomepage(SingleItemView);
+export default WithHomepage(SingleItemPage);
 
 export const SingleItemContext = React.createContext(null);

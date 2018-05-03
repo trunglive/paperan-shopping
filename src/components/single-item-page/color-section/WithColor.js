@@ -8,11 +8,10 @@ class WithColor extends Component {
   handlePaperColor = color => {
     this.setState({
       selectedColor: color
-      //dispatch color
     });
   };
 
-  render() {  
+  render() {
     return (
       <div className="with-color">
         {this.props.render(this.state.selectedColor, this.handlePaperColor)}

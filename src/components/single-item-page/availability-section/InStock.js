@@ -1,7 +1,7 @@
 import React from 'react';
 
 const InStock = ({ inStock }) => (
-  <div className="product-details__availability-container">
+  <div className="item-details__availability-container">
     <p>Availability</p>
     {inStock >= 10 && (
       <div className="ten-plus-stock">10+ pcs available in stock</div>

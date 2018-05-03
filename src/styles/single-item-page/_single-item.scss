@@ -1,4 +1,4 @@
-.single-product {
+.single-item {
   // border: 1px solid red;
   grid-column: 4 / -2;
   display: grid;
@@ -18,7 +18,7 @@
   }
 }
 
-.product-details {
+.item-details {
   .long-dash {
     margin: 0 1rem;
   }

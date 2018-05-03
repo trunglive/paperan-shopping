@@ -5,7 +5,7 @@ import NewArrivalsProducts from "./NewArrivalsProducts";
 import OnSaleProducts from "./OnSaleProducts";
 import WithHomepage from "./WithHomepage";
 
-const Homepage = ({ allItems }) => (
+const HomePage = ({ allItems }) => (
   <div>
     <div className="homepage-header">
       <div className="slogan">
@@ -28,4 +28,4 @@ const Homepage = ({ allItems }) => (
   </div>
 );
 
-export default WithHomepage(Homepage);
+export default WithHomepage(HomePage);

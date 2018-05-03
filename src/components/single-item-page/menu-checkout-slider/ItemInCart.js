@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { SingleItemContext } from "../single-item-page/SingleItemContainer";
-import { removeFromCart } from '../../actions/cartActions';
+import { SingleItemContext } from "../SingleItemPage";
+import { removeFromCart } from '../../../actions/cartActions';
 
-class ItemSelected extends Component {
+class ItemInCart extends Component {
   render() {
     const {
       guid,
@@ -16,8 +16,6 @@ class ItemSelected extends Component {
       currentColor,
       removeFromCart
     } = this.props;
-
-    // console.log(this.props);
 
     return (
       <div className="checkout-menu__items-section--items-container">
@@ -46,4 +44,4 @@ class ItemSelected extends Component {
   }
 }
 
-export default connect(null, { removeFromCart })(ItemSelected);
+export default connect(null, { removeFromCart })(ItemInCart);

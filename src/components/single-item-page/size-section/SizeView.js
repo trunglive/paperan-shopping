@@ -4,9 +4,9 @@ import WithSize from "./WithSize";
 const SizeView = ({ allSizes, sizeChange }) => (
   <WithSize
     render={(selectedPaperSize, handlePaperSize) => (
-      <div className="product-details__size-container">
+      <div className="item-details__size-container">
         <p>Size</p>
-        <div className="product-details__size-list">
+        <div className="item-details__size-list">
           {allSizes.map(singleSize => (
             <div
               className={
