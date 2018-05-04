@@ -1,6 +1,14 @@
-import { FETCH_CART, TOGGLE_FILTER_ICON, IS_ALL_FIELDS_SELECTED } from "../actions/actionTypes";
+import {
+  FETCH_CART,
+  TOGGLE_FILTER_ICON,
+  IS_ALL_FIELDS_SELECTED
+} from "../actions/actionTypes";
 
-const initialModalState = { isCartOpen: false, isFilterShown: false, isAllFieldsSelected: false };
+const initialModalState = {
+  isCartOpen: false,
+  isFilterShown: false,
+  isAllFieldsSelected: false
+};
 
 const modalReducer = (state = initialModalState, action) => {
   switch (action.type) {
@@ -21,7 +29,7 @@ const modalReducer = (state = initialModalState, action) => {
       return {
         ...state,
         isAllFieldsSelected: action.val
-      }
+      };
     default:
       return state;
   }

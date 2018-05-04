@@ -23,7 +23,7 @@ class WithCheckout extends Component {
   }
 
   handleOpenCart = (quantity, currentColor, currentSize) => {
-    if (quantity > 0 && currentColor && currentSize ) {
+    if (quantity > 0 && currentColor && currentSize) {
       this.props.fetchCart(true);
       this.props.toggleCartAlert(false);
     } else {
@@ -44,4 +44,6 @@ const mapStateToProps = ({ modal }) => ({
   modal
 });
 
-export default connect(mapStateToProps, { fetchCart, toggleCartAlert })(WithCheckout);
+export default connect(mapStateToProps, { fetchCart, toggleCartAlert })(
+  WithCheckout
+);

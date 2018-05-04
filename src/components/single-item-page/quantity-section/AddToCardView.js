@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import { connect } from 'react-redux';
+import { connect } from "react-redux";
 import WithAddToCart from "./WithAddToCart";
 import CheckoutView from "../../menu-checkout-slider/CheckoutView";
 
 class AddToCartView extends Component {
   state = {
     isAllFieldsSelected: false
-  }
+  };
 
   static getDerivedStateFromProps(nextProps, prevState) {
     if (nextProps.isAllFieldsSelected === prevState.isAllFieldsSelected) {
@@ -14,7 +14,7 @@ class AddToCartView extends Component {
     } else {
       return {
         isAllFieldsSelected: nextProps.isAllFieldsSelected
-      }
+      };
     }
   }
 
@@ -58,7 +58,9 @@ class AddToCartView extends Component {
               <CheckoutView quantity={quantity} />
             </div>
             {isAllFieldsSelected && (
-              <p className="item-selection-alert">Please select color, size and quantity</p>
+              <p className="item-selection-alert">
+                Please select color, size and quantity
+              </p>
             )}
             {isItemOutOfStock && (
               <p className="stock-alert">This item was out of stock</p>
@@ -77,6 +79,6 @@ class AddToCartView extends Component {
 
 const mapStateToProps = ({ modal }) => ({
   isAllFieldsSelected: modal.isAllFieldsSelected
-})
+});
 
 export default connect(mapStateToProps)(AddToCartView);
