@@ -45,7 +45,6 @@ const CollectionGridItem = ({
               starRatedColor="#808080"
               starEmptyColor="#bbb"
               rating={calculateAverageRating(reviews)}
-              // rating={4}
               numberOfStars={5}
               starDimension="12px"
               starSpacing="1px"

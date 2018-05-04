@@ -1,13 +1,13 @@
 import {
   FETCH_CART,
   TOGGLE_FILTER_ICON,
-  IS_ALL_FIELDS_SELECTED
+  ARE_ALL_FIELDS_SELECTED
 } from "../actions/actionTypes";
 
 const initialModalState = {
   isCartOpen: false,
   isFilterShown: false,
-  isAllFieldsSelected: false
+  areAllFieldsSelected: false
 };
 
 const modalReducer = (state = initialModalState, action) => {
@@ -25,10 +25,10 @@ const modalReducer = (state = initialModalState, action) => {
           action.route === "/collection/all" ||
           action.route === "/collection/all/"
       };
-    case IS_ALL_FIELDS_SELECTED:
+    case ARE_ALL_FIELDS_SELECTED:
       return {
         ...state,
-        isAllFieldsSelected: action.val
+        areAllFieldsSelected: action.val
       };
     default:
       return state;

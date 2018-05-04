@@ -10,7 +10,8 @@ import WithCurrentRoute from "../change-route/WithCurrentRoute";
 class CollectionGridPage extends Component {
   state = {
     threeCols: true,
-    filterBy: null
+    filterBy: null,
+    searchVal: ""
   };
 
   handleTwoColsChange = () => {
@@ -26,9 +27,13 @@ class CollectionGridPage extends Component {
   };
 
   static getDerivedStateFromProps(nextProps, prevState) {
-    if (nextProps.filterBy !== prevState.filterBy) {
+    if (
+      nextProps.filterBy !== prevState.filterBy ||
+      nextProps.searchVal !== prevState.searchVal
+    ) {
       return {
-        filterBy: nextProps.filterBy
+        filterBy: nextProps.filterBy,
+        searchVal: nextProps.searchVal
       };
     }
 
@@ -40,9 +45,10 @@ class CollectionGridPage extends Component {
   }
 
   render() {
-    const { threeCols, filterBy } = this.state;
+    const { threeCols, filterBy, searchVal } = this.state;
     const { allItems, sortBy } = this.props;
-
+    console.log(searchVal);
+    
     const {
       type,
       price,
@@ -84,7 +90,7 @@ class CollectionGridPage extends Component {
               : `collection-grid__items grid-two-cols`
           }`}
         >
-          {ItemSelectors(allItems, filterBy, sortBy).map(item => (
+          {ItemSelectors(allItems, filterBy, sortBy, searchVal).map(item => (
             <CollectionGridItem
               key={item.guid}
               {...item}
@@ -99,9 +105,10 @@ class CollectionGridPage extends Component {
   }
 }
 
-const mapStateToProps = ({ filterBy, sortBy }) => ({
+const mapStateToProps = ({ filterBy, sortBy, search }) => ({
   filterBy,
-  sortBy: sortBy.value
+  sortBy: sortBy.value,
+  searchVal: search.keyword
 });
 
 export default connect(mapStateToProps, { toggleFilterIcon })(

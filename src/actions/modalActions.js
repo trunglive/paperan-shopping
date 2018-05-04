@@ -1,4 +1,4 @@
-import { FETCH_CART, TOGGLE_FILTER_ICON, IS_ALL_FIELDS_SELECTED } from "./actionTypes";
+import { FETCH_CART, TOGGLE_FILTER_ICON, ARE_ALL_FIELDS_SELECTED } from "./actionTypes";
 
 export const fetchCart = isCartOpen => ({
   type: FETCH_CART,
@@ -11,6 +11,6 @@ export const toggleFilterIcon = route => ({
 })
 
 export const toggleCartAlert = val => ({
-  type: IS_ALL_FIELDS_SELECTED,
+  type: ARE_ALL_FIELDS_SELECTED,
   val
 })

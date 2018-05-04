@@ -1,5 +1,5 @@
 import React from "react";
-import { renderProducts } from "./renderProducts";
+import { renderProducts } from "./DisplayProducts";
 
 const FeaturedProducts = ({ allItems }) => (
   <div className="homepage-featured">

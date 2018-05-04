@@ -4,7 +4,8 @@ import { calculateAverageRating } from "../utils/calculateAverageRating";
 export const ItemSelectors = (
   items,
   { type, priceRange, colors, sheetStyle, coverMaterial, audience },
-  sortBy
+  sortBy,
+  searchVal
 ) => {
   return items
     .filter(
@@ -17,6 +18,14 @@ export const ItemSelectors = (
         (coverMaterial.includes(item.cover_material) ||
           coverMaterial.length === 0) &&
         (audience.includes(item.target_audience) || audience.length === 0)
+    )
+    .filter(
+      item =>
+        item.type.includes(searchVal.toLowerCase()) ||
+        item.colors.includes(searchVal.toLowerCase()) ||
+        item.sheet_style.includes(searchVal.toLowerCase()) ||
+        item.cover_material.includes(searchVal.toLowerCase) ||
+        item.target_audience.includes(searchVal.toLowerCase)
     )
     .sort((currentItem, nextItem) => {
       switch (sortBy) {

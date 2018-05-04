@@ -8,7 +8,7 @@
   font-size: 1.2rem;
 }
 
-.search-bar-container {
+.search-bar-main {
   display: flex;
   align-items: center;
 
@@ -17,8 +17,21 @@
     height: 1.6rem;
   }
 
-  span {
-    margin: 0 2rem;
+  input {
+    width: 25rem;
+    height: 100%;
+    margin-left: 1rem;
+    border: none;
+    outline: none;
+
+    &:focus::placeholder {
+      opacity: 0;
+    }
+
+    &::placeholder {
+      color: $color-grey-light-1;
+      font-weight: 300;
+    }
   }
 }
 

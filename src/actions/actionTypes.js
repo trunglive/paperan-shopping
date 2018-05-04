@@ -9,7 +9,10 @@ export const REMOVE_FROM_CART = "REMOVE_FROM_CART";
 //actions for modal states
 export const FETCH_CART = "FETCH_CART";
 export const TOGGLE_FILTER_ICON = "TOGGLE_FILTER_ICON";
-export const IS_ALL_FIELDS_SELECTED = "IS_ALL_FIELDS_SELECTED";
+export const ARE_ALL_FIELDS_SELECTED = "ARE_ALL_FIELDS_SELECTED";
 
 //actions for sort-by dropdown
 export const SORT_BY = "SORT_BY";
+
+//actions for search 
+export const SEARCH_PRODUCTS = "SEARCH_PRODUCTS";
