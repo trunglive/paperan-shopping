@@ -3,12 +3,14 @@ import WithHomePage from "../home-page/WithHomePage";
 import CollectionGridItem from "./CollectionGridItem";
 import SortBy from "./sort-by/SortBy";
 import { connect } from "react-redux";
-import { ItemSelectors } from '../../selectors/ItemSelectors';
+import { ItemSelectors } from "../../selectors/ItemSelectors";
+import { toggleFilterIcon } from "../../actions/modalActions";
+import WithCurrentRoute from "../change-route/WithCurrentRoute";
 
 class CollectionGridPage extends Component {
   state = {
     threeCols: true,
-    filterBy: null,
+    filterBy: null
   };
 
   handleTwoColsChange = () => {
@@ -24,13 +26,17 @@ class CollectionGridPage extends Component {
   };
 
   static getDerivedStateFromProps(nextProps, prevState) {
-    if (nextProps.filterBy === prevState.filterBy) {
-      return null;
+    if (nextProps.filterBy !== prevState.filterBy) {
+      return {
+        filterBy: nextProps.filterBy
+      };
     }
 
-    return {
-      filterBy: nextProps.filterBy
-    };
+    return null;
+  }
+
+  componentDidMount() {
+    this.props.toggleFilterIcon(this.props.match.path);
   }
 
   render() {
@@ -78,13 +84,13 @@ class CollectionGridPage extends Component {
               : `collection-grid__items grid-two-cols`
           }`}
         >
-            {ItemSelectors(allItems, filterBy, sortBy).map(item => (
-              <CollectionGridItem
-                key={item.guid}
-                {...item}
-                resizePhoto={threeCols ? null : "resize-photo"}
-              />
-            ))}
+          {ItemSelectors(allItems, filterBy, sortBy).map(item => (
+            <CollectionGridItem
+              key={item.guid}
+              {...item}
+              resizePhoto={threeCols ? null : "resize-photo"}
+            />
+          ))}
         </div>
 
         <div className="more-item">You have reached the end of the list</div>
@@ -98,4 +104,6 @@ const mapStateToProps = ({ filterBy, sortBy }) => ({
   sortBy: sortBy.value
 });
 
-export default connect(mapStateToProps)(WithHomePage(CollectionGridPage));
+export default connect(mapStateToProps, { toggleFilterIcon })(
+  WithHomePage(CollectionGridPage)
+);

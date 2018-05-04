@@ -1,9 +1,10 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import FilterMenu from "./FilterMenu";
 import Filter from "react-modal";
 
-export default class Sidebar extends Component {
+class Sidebar extends Component {
   state = {
     isFilterOpen: false
   };
@@ -21,18 +22,21 @@ export default class Sidebar extends Component {
   };
 
   render() {
-    const { isFilterOpen } = this.state;
+    const { isFilterOpen }  = this.state;
 
     return (
       <div className="sidebar">
         <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
           <p className="sidebar__logo">P.</p>
         </Link>
-        <img
-          className="sidebar__setting-icon"
-          src="/icons/setting.svg"
-          onClick={this.handleOpenFilter}
-        />
+        {this.props.isFilterShown && (
+          <img
+            className="sidebar__setting-icon"
+            src="/icons/setting.svg"
+            onClick={this.handleOpenFilter}
+          />
+        )}
+
         <img className="sidebar__question-icon" src="/icons/question.svg" />
         <Filter
           isOpen={isFilterOpen}
@@ -48,6 +52,12 @@ export default class Sidebar extends Component {
     );
   }
 }
+
+const mapStateToProps = ({ modal }) => ({
+  isFilterShown: modal.isFilterShown
+});
+
+export default connect(mapStateToProps, null)(Sidebar);
 
 const filterStyles = {
   overlay: {

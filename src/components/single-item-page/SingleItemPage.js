@@ -7,6 +7,7 @@ import InStock from "./availability-section/InStock.js";
 import AddToCartView from "./quantity-section/AddToCardView";
 import DetailsToggle from "./details-toggle/DetailsToggle";
 import { capitalizeFirstLetter } from "../../utils/capitalizeFirstLetter";
+import WithCurrentRoute from "../change-route/WithCurrentRoute";
 
 class SingleItemPage extends Component {
   state = {
@@ -50,43 +51,53 @@ class SingleItemPage extends Component {
     )} ${capitalizeFirstLetter(sheet_style)} ${capitalizeFirstLetter(type)}`;
 
     const { currentSize, currentColor } = this.state;
+    console.log(this.props);
+    
     return (
-      <div className="product-item">
-        <PhotoView photo_url={photo_url} fullItemName={fullItemName} />
-        <div className="product-details">
-          <div className="product-details__path">
-            <span>
-              {capitalizeFirstLetter(type)}
-              <span className="long-dash">&mdash;</span>For {target_audience}
-            </span>
-          </div>
-          <div className="product-details__name">{fullItemName}</div>
-          <div className="product-details__price">
-            <span>$ {price}</span>
-            <span>incl. VAT</span>
-          </div>
-          <ColorView allColors={colors} colorChange={this.handleColorChange} />
-          <SizeView allSizes={sizes} sizeChange={this.handleSizeChange} />
-          <InStock inStock={in_stock} />
-          <SingleItemContext.Provider
-            value={{
-              guid,
-              photo_url,
-              name,
-              type,
-              target_audience,
-              fullItemName,
-              price,
-              currentSize,
-              currentColor
-            }}
-          >
-            <AddToCartView inStock={in_stock} />
-          </SingleItemContext.Provider>
+      <WithCurrentRoute
+        render={() => (
+          <div className="product-item">
+            <PhotoView photo_url={photo_url} fullItemName={fullItemName} />
+            <div className="product-details">
+              <div className="product-details__path">
+                <span>
+                  {capitalizeFirstLetter(type)}
+                  <span className="long-dash">&mdash;</span>For{" "}
+                  {target_audience}
+                </span>
+              </div>
+              <div className="product-details__name">{fullItemName}</div>
+              <div className="product-details__price">
+                <span>$ {price}</span>
+                <span>incl. VAT</span>
+              </div>
+              <ColorView
+                allColors={colors}
+                colorChange={this.handleColorChange}
+              />
+              <SizeView allSizes={sizes} sizeChange={this.handleSizeChange} />
+              <InStock inStock={in_stock} />
+              <SingleItemContext.Provider
+                value={{
+                  guid,
+                  photo_url,
+                  name,
+                  type,
+                  target_audience,
+                  fullItemName,
+                  price,
+                  currentSize,
+                  currentColor
+                }}
+              >
+                <AddToCartView inStock={in_stock} />
+              </SingleItemContext.Provider>
 
-          <DetailsToggle details={details} />
-        </div>
-      </div>
+              <DetailsToggle details={details} />
+            </div>
+          </div>
+        )}
+      />
     );
   }
 }

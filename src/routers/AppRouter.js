@@ -14,13 +14,14 @@ import WithCheckout from "../components/menu-checkout-slider/WithCheckout";
 const AppRouter = ({ cart, modal }) => (
   <Router>
     <div className="main-container">
-      <Sidebar />
+      <Sidebar isFilterShown={modal.isFilterShown} />
       <NavScrolling />
       <Header />
       <MainCartView cart={cart} isCartOpen={modal.isCartOpen} />
       <Switch className="main-content">
         <Route exact path="/" component={HomePage} />
         <Route exact path="/collection/all" component={CollectionGridPage} />
+        />
         <Route exact path="/collection/:type/:id" component={SingleItemPage} />
       </Switch>
       <Footer />

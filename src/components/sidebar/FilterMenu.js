@@ -574,4 +574,4 @@ const mapStateToProps = ({ filterBy }) => ({
   filterBy
 });
 
-export default connect(mapStateToProps, actions)(FilterMenu);
+export default connect(mapStateToProps)(FilterMenu);

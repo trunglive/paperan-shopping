@@ -8,6 +8,7 @@ export const REMOVE_FROM_CART = "REMOVE_FROM_CART";
 
 //actions for modal states
 export const FETCH_CART = "FETCH_CART";
+export const TOGGLE_FILTER_ICON = "TOGGLE_FILTER_ICON";
 
 //actions for sort-by dropdown
 export const SORT_BY = "SORT_BY";
