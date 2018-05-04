@@ -134,7 +134,9 @@ class FilterMenu extends Component {
                   <input
                     type="checkbox"
                     id="between-ten-and-thirty"
-                    checked={checkbox.priceRange.includes("between-ten-and-thirty")}
+                    checked={checkbox.priceRange.includes(
+                      "between-ten-and-thirty"
+                    )}
                     name="priceRange"
                     value="between-ten-and-thirty"
                     onClick={this.handleCheckBox}
@@ -574,4 +576,6 @@ const mapStateToProps = ({ filterBy }) => ({
   filterBy
 });
 
-export default connect(mapStateToProps)(FilterMenu);
+export default connect(mapStateToProps, actions)(
+  FilterMenu
+);

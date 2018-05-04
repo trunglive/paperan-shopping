@@ -51,8 +51,7 @@ class SingleItemPage extends Component {
     )} ${capitalizeFirstLetter(sheet_style)} ${capitalizeFirstLetter(type)}`;
 
     const { currentSize, currentColor } = this.state;
-    console.log(this.props);
-    
+
     return (
       <WithCurrentRoute
         render={() => (

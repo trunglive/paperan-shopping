@@ -1,7 +1,4 @@
-import {
-  ADD_FILTER,
-  REMOVE_FILTER
-} from "../actions/actionTypes";
+import { ADD_FILTER, REMOVE_FILTER } from "../actions/actionTypes";
 
 const initialFilterState = {
   type: [],
@@ -26,6 +23,7 @@ const filteringReducer = (state = initialFilterState, action) => {
           ...state[action.name].filter(item => item !== action.value)
         ]
       };
+
     default:
       return state;
   }

@@ -1,7 +1,4 @@
-import {
-  ADD_TO_CART,
-  REMOVE_FROM_CART
-} from "../actions/actionTypes";
+import { ADD_TO_CART, REMOVE_FROM_CART } from "../actions/actionTypes";
 import uuid from "uuid";
 
 const initialCartState = {};
@@ -30,14 +27,21 @@ const cartReducer = (state = initialCartState, action) => {
       }
 
     case REMOVE_FROM_CART:
-      const updatedCart = state[action.guid].filter(
-        item => item.variationId !== action.variationId
-      );
+      if (state[action.guid].length > 1) {
+        const updatedCart = state[action.guid].filter(
+          item => item.variationId !== action.variationId
+        );
 
-      return {
-        ...state,
-        [action.guid]: updatedCart
-      };
+        return {
+          ...state,
+          [action.guid]: updatedCart
+        };
+      } else {
+        const copiedState = { ...state };
+        delete copiedState[action.guid];
+        
+        return { ...copiedState };
+      }
 
     default:
       return state;
