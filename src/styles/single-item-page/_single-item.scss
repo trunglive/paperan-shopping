@@ -182,9 +182,12 @@
   }
 }
 
-.stock-alert {
+.stock-alert,
+.item-selection-alert {
   margin-bottom: 1rem;
   text-align: center;
+  color: $color-secondary;
+  font-weight: 400;
 }
 
 .stack-menu-checkout {

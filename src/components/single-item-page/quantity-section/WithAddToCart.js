@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-export default class WithAddToCart extends Component {
+class WithAddToCart extends Component {
   state = {
     quantity: 0,
     isItemOutOfStock: false,
@@ -42,3 +42,5 @@ export default class WithAddToCart extends Component {
     );
   }
 }
+
+export default WithAddToCart;

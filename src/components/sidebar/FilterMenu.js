@@ -30,7 +30,7 @@ class FilterMenu extends Component {
       <div className="filter-container">
         <img
           className="close-menu-icon close-filter-icon"
-          src="/icons/close-white.svg"
+          src="/icons/close.svg"
           onClick={onCloseFilter}
         />
         <div className="filter-all">

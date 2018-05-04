@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import Menu from "react-modal";
-import { fetchCart } from "../../actions/modalActions";
+import { fetchCart, toggleCartAlert } from "../../actions/modalActions";
 
 class WithCheckout extends Component {
   state = {
@@ -23,8 +23,11 @@ class WithCheckout extends Component {
   }
 
   handleOpenCart = (quantity, currentColor, currentSize) => {
-    if (quantity > 0 && currentColor && currentSize) {
+    if (quantity > 0 && currentColor && currentSize ) {
       this.props.fetchCart(true);
+      this.props.toggleCartAlert(false);
+    } else {
+      this.props.toggleCartAlert(true);
     }
   };
 
@@ -41,4 +44,4 @@ const mapStateToProps = ({ modal }) => ({
   modal
 });
 
-export default connect(mapStateToProps, { fetchCart })(WithCheckout);
+export default connect(mapStateToProps, { fetchCart, toggleCartAlert })(WithCheckout);

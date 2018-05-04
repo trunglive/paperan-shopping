@@ -14,7 +14,6 @@ class MainCartView extends Component {
 
   static getDerivedStateFromProps(nextProps, prevState) {
     if (nextProps.cart !== prevState.cart) {
-      console.log(nextProps.cart);
       return {
         cart: nextProps.cart
       };

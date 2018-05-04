@@ -8,12 +8,17 @@ class Header extends Component {
     return (
       <div className="header">
         <div className="search-bar-container">
-          <img
-            className="search-bar-container__search-icon"
-            src="/icons/search.svg"
-          />
-          <span>Search</span>
+          {this.props.isFilterShown && (
+            <div>
+              <img
+                className="search-bar-container__search-icon"
+                src="/icons/search.svg"
+              />
+              <span>Search products</span>
+            </div>
+          )}
         </div>
+
         <div className="user-account-container">
           <Link
             to="/collection/all"
@@ -33,4 +38,8 @@ class Header extends Component {
   }
 }
 
-export default connect(null, { fetchCart })(Header);
+const mapStateToProps = ({ modal }) => ({
+  isFilterShown: modal.isFilterShown
+});
+
+export default connect(mapStateToProps, { fetchCart })(Header);
