@@ -1,7 +1,7 @@
-export const calculateSubtotal = cart => {
+export const calculateQuantityInCart = cart => {
   const val = Object.keys(cart)
     .map(id => {
-      return cart[id].map(item => item.quantity * item.price);
+      return cart[id].map(item => item.quantity);
     })
     .reduce((acc, next) => {
       return [...acc, ...next];
@@ -10,5 +10,5 @@ export const calculateSubtotal = cart => {
       return acc + next;
     }, 0);
 
-  return val.toFixed(2);
+  return val;
 };

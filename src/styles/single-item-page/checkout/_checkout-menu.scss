@@ -27,6 +27,10 @@
     .bag-group {
       display: flex;
       align-items: center;
+
+      span {
+        margin-left: 1.5rem;
+      }
     }
 
     &--items-container {

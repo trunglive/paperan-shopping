@@ -51,7 +51,7 @@
   &__items {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(26rem, 1fr));
-    grid-column-gap: 4rem;
+    grid-column-gap: 3rem;
     grid-row-gap: 6rem;
     margin: $xl-size 0;
   }
