@@ -1,5 +1,5 @@
 export const calculateAverageRating = reviews => {
-  if (reviews !== undefined && reviews.length > 0) {
+  if (reviews.length > 0) {
     const sum = reviews.reduce((acc, currentRating) => {
       return acc + currentRating.rating;
     }, 0);
@@ -8,3 +8,4 @@ export const calculateAverageRating = reviews => {
     return 0;
   }
 };
+

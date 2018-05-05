@@ -22,8 +22,19 @@ const WithHomePage = WrappedComponent =>
           });
         });
 
+        const result = allItems.map(item => {
+          if (item.reviews === undefined) {
+            return {
+              ...item,
+              reviews: []
+            };
+          } else {
+            return item;
+          }
+        });
+
         this.setState({
-          allItems
+          allItems: result
         });
       });
     }
@@ -38,7 +49,8 @@ const WithHomePage = WrappedComponent =>
 
     render() {
       const { allItems } = this.state;
-      
+      console.log(allItems);
+
       return (
         <div className="homepage">
           {allItems.length > 0 ? (
