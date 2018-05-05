@@ -6,11 +6,11 @@
 
 ---
 
-# Paperan
+## Paperan
 
-> This project is an implementation of design concept Paperan from Designer Patrik Michalicka. All API data are created from [JSON Generator](https://next.json-generator.com/) and just for illustration purpose.
+> This project is an implementation of design concept Paperan from Designer Patrik Michalicka. The app serves as a small ecommerce app about notebooks. All API data are created from [JSON Generator](https://next.json-generator.com/) and just for illustration purpose.
 
-# Notes on my work
+## Notes on my work
 
 * I am working on responsiveness of the app to different screen sizes, checkout form, authentication, and data persistence on page refresh.
 
