@@ -1,0 +1,28 @@
+.about-us-container {
+  // border: 1px solid red;
+  position: absolute;
+  top: 0;
+  left: 6.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 45rem;
+  height: 100vh;
+  padding: 8rem;
+  padding-left: 0;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  color: #080808;
+  background-color: #fff;
+  outline: none;
+}
+
+.about-us-text {
+  font-size: 2.8rem;
+  font-weight: 500;
+}
+
+.about-us-goal {
+  margin-top: 5rem;
+  line-height: 2.5;
+}

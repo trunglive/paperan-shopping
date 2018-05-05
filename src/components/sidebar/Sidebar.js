@@ -3,10 +3,13 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import FilterMenu from "./FilterMenu";
 import Filter from "react-modal";
+import AboutUsMenu from "./AboutUsMenu";
+import AboutUs from "react-modal";
 
 class Sidebar extends Component {
   state = {
-    isFilterOpen: false
+    isFilterOpen: false,
+    isAboutUsOpen: false
   };
 
   componentWillMount() {
@@ -14,15 +17,28 @@ class Sidebar extends Component {
   }
 
   handleOpenFilter = () => {
-    this.setState({ isFilterOpen: true });
+    this.setState({ isFilterOpen: true, isAboutUsOpen: false });
   };
 
   handleCloseFilter = () => {
     this.setState({ isFilterOpen: false });
   };
 
+  handleOpenAboutUs = () => {
+    this.setState({
+      isAboutUsOpen: true,
+      isFilterOpen: false
+    });
+  };
+
+  handleCloseAboutUs = () => {
+    this.setState({
+      isAboutUsOpen: false
+    });
+  };
+
   render() {
-    const { isFilterOpen } = this.state;
+    const { isFilterOpen, isAboutUsOpen } = this.state;
 
     return (
       <div className="sidebar">
@@ -38,7 +54,6 @@ class Sidebar extends Component {
           />
         )}
 
-        <img className="sidebar__question-icon" src="/icons/question.svg" />
         <Filter
           isOpen={isFilterOpen}
           onRequestClose={this.handleCloseFilter}
@@ -49,6 +64,22 @@ class Sidebar extends Component {
         >
           <FilterMenu onCloseFilter={this.handleCloseFilter} />
         </Filter>
+
+        <img
+          className="sidebar__question-icon"
+          src="/icons/question.svg"
+          onClick={this.handleOpenAboutUs}
+        />
+        <AboutUs
+          isOpen={isAboutUsOpen}
+          onRequestClose={this.handleCloseAboutUs}
+          style={aboutUsStyles}
+          closeTimeoutMS={200}
+          className="about-us-container"
+          contentLabel="About Us for Paperan"
+        >
+          <AboutUsMenu onCloseAboutUs={this.handleCloseAboutUs} />
+        </AboutUs>
       </div>
     );
   }
@@ -61,6 +92,12 @@ const mapStateToProps = ({ route }) => ({
 export default connect(mapStateToProps, null)(Sidebar);
 
 const filterStyles = {
+  overlay: {
+    backgroundColor: "rgb(8, 8, 8, 0.3)"
+  }
+};
+
+const aboutUsStyles = {
   overlay: {
     backgroundColor: "rgb(8, 8, 8, 0.3)"
   }
