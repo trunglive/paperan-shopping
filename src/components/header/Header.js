@@ -14,7 +14,8 @@ class Header extends Component {
     return (
       <div className="header">
         <div className="search-bar-container">
-          {this.props.isFilterShown && (
+          {(this.props.route === "/collection/all" ||
+            this.props.route === "/collection/all/") && (
             <div className="search-bar-main">
               <img
                 className="search-bar-main__search-icon"
@@ -57,9 +58,9 @@ class Header extends Component {
   }
 }
 
-const mapStateToProps = ({ cart, modal, search }) => ({
+const mapStateToProps = ({ cart, route, search }) => ({
   cart,
-  isFilterShown: modal.isFilterShown,
+  route: route.currentRoute,
   keyword: search.keyword
 });
 
