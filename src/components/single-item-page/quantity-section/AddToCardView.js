@@ -5,24 +5,23 @@ import CheckoutView from "../../menu-checkout-slider/CheckoutView";
 
 class AddToCartView extends Component {
   state = {
-    isAllFieldsSelected: false
+    areAllFieldsSelected: false
   };
 
   static getDerivedStateFromProps(nextProps, prevState) {
-    if (nextProps.isAllFieldsSelected === prevState.isAllFieldsSelected) {
+    if (nextProps.areAllFieldsSelected === prevState.areAllFieldsSelected) {
       return null;
     } else {
       return {
-        isAllFieldsSelected: nextProps.isAllFieldsSelected
+        areAllFieldsSelected: nextProps.areAllFieldsSelected
       };
     }
   }
 
   render() {
     const { inStock } = this.props;
-    const { isAllFieldsSelected } = this.state;
-    console.log(this.props);
-
+    const { areAllFieldsSelected } = this.state;
+    
     return (
       <WithAddToCart
         render={({
@@ -57,7 +56,7 @@ class AddToCartView extends Component {
 
               <CheckoutView quantity={quantity} />
             </div>
-            {isAllFieldsSelected && (
+            {areAllFieldsSelected && (
               <p className="item-selection-alert">
                 Please select color, size and quantity
               </p>
@@ -78,7 +77,7 @@ class AddToCartView extends Component {
 }
 
 const mapStateToProps = ({ modal }) => ({
-  isAllFieldsSelected: modal.isAllFieldsSelected
+  areAllFieldsSelected: modal.areAllFieldsSelected
 });
 
 export default connect(mapStateToProps)(AddToCartView);

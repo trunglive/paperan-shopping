@@ -16,3 +16,6 @@ export const SORT_BY = "SORT_BY";
 
 //actions for search 
 export const SEARCH_PRODUCTS = "SEARCH_PRODUCTS";
+
+//actions for waypoint enter/leave
+export const HANDLE_WAYPOINT = 'HANDLE_WAYPOINT';

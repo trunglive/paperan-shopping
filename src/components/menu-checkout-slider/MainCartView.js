@@ -18,6 +18,8 @@ class MainCartView extends Component {
         cart: nextProps.cart
       };
     }
+
+    return null;
   }
 
   render() {
@@ -44,7 +46,7 @@ class MainCartView extends Component {
               ))
             )
           ) : (
-            <div class="checkout-menu__empty-cart">
+            <div className="checkout-menu__empty-cart">
               <p>The cart is empty</p>
               <img
                 className="empty-cart-icon"

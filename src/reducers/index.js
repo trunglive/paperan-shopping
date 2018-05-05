@@ -4,13 +4,15 @@ import cart from './cartReducer';
 import sortBy from './sortingReducer';
 import modal from './modalReducer';
 import search from './searchReducer';
+import waypoint from './waypointReducer';
 
 const rootReducer = combineReducers({
   filterBy,
   cart,
   sortBy,
   modal,
-  search
+  search,
+  waypoint
 })
 
 export default rootReducer;

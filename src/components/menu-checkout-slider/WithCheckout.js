@@ -8,7 +8,7 @@ class WithCheckout extends Component {
     isCartOpen: false
   };
 
-  componentWillMount() {
+  componentDidMount() {
     Menu.setAppElement("body");
   }
 
