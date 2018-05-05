@@ -56,6 +56,7 @@ class SingleItemPage extends Component {
     )} ${capitalizeFirstLetter(sheet_style)} ${capitalizeFirstLetter(type)}`;
 
     const { currentSize, currentColor } = this.state;
+    const productLink = this.props.match.url;
 
     return (
       <div className="product-item">
