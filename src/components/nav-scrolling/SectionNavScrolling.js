@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
-class NavScrolling extends Component {
+class SectionNavScrolling extends Component {
   render() {
     return (
       <div className="nav-info">
@@ -20,7 +20,7 @@ class NavScrolling extends Component {
 }
 
 const mapStateToProps = ({ waypoint }) => ({
-  waypoint: waypoint.section
+  waypoint: waypoint.section,
 });
 
-export default connect(mapStateToProps)(NavScrolling);
+export default connect(mapStateToProps)(SectionNavScrolling);

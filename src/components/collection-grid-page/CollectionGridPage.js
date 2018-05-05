@@ -5,7 +5,7 @@ import SortBy from "./sort-by/SortBy";
 import { connect } from "react-redux";
 import { ItemSelectors } from "../../selectors/ItemSelectors";
 import { displayCurrentRoute } from "../../actions/routingActions";
-import WithCurrentRoute from "../change-route/WithCurrentRoute";
+import WithCurrentRoute from "../page-routing/WithCurrentRoute";
 
 class CollectionGridPage extends Component {
   state = {
@@ -47,8 +47,7 @@ class CollectionGridPage extends Component {
   render() {
     const { threeCols, filterBy, searchVal } = this.state;
     const { allItems, sortBy } = this.props;
-    console.log(searchVal);
-    
+
     const {
       type,
       price,

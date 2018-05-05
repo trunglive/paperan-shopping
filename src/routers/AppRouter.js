@@ -1,7 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Sidebar from "../components/sidebar/Sidebar";
-import NavScrolling from "../components/nav-scrolling/NavScrolling";
+import SectionNavScrolling from "../components/nav-scrolling/SectionNavScrolling";
+import FilterNavScrolling from "../components/nav-scrolling/FilterNavScrolling";
 import Header from "../components/header/Header";
 import MainCartView from "../components/menu-checkout-slider/MainCartView";
 import HomePage from "../components/home-page/HomePage";
@@ -11,11 +12,14 @@ import Footer from "../components/footer/Footer";
 import { connect } from "react-redux";
 import WithCheckout from "../components/menu-checkout-slider/WithCheckout";
 
-const AppRouter = ({ cart, modal }) => (
+const AppRouter = ({ cart, modal, route }) => (
   <Router>
     <div className="main-container">
       <Sidebar isFilterShown={modal.isFilterShown} />
-      <NavScrolling />
+      {route === "/" && <SectionNavScrolling />}
+      {(route === "/collection/all" || route === "/collection/all/") && (
+        <FilterNavScrolling />
+      )}
       <Header />
       <MainCartView cart={cart} isCartOpen={modal.isCartOpen} />
       <Switch className="main-content">
@@ -29,9 +33,10 @@ const AppRouter = ({ cart, modal }) => (
   </Router>
 );
 
-const mapStateToProps = ({ cart, modal }) => ({
+const mapStateToProps = ({ cart, modal, route }) => ({
   cart,
-  modal
+  modal,
+  route: route.currentRoute
 });
 
 export default connect(mapStateToProps)(AppRouter);

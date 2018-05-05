@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 import WithHomePage from "../home-page/WithHomePage";
 import PhotoView from "./photo-section/PhotoView";
 import ColorView from "./color-section/ColorView";
@@ -7,13 +8,17 @@ import InStock from "./availability-section/InStock.js";
 import AddToCartView from "./quantity-section/AddToCardView";
 import DetailsToggle from "./details-toggle/DetailsToggle";
 import { capitalizeFirstLetter } from "../../utils/capitalizeFirstLetter";
-import WithCurrentRoute from "../page-routing/WithCurrentRoute";
+import { displayCurrentRoute } from "../../actions/routingActions";
 
 class SingleItemPage extends Component {
   state = {
     currentColor: "",
     currentSize: ""
   };
+
+  componentDidMount() {
+    this.props.displayCurrentRoute(this.props.match.path);
+  }
 
   handleColorChange = color => {
     this.setState({
@@ -53,54 +58,48 @@ class SingleItemPage extends Component {
     const { currentSize, currentColor } = this.state;
 
     return (
-      <WithCurrentRoute
-        render={() => (
-          <div className="product-item">
-            <PhotoView photo_url={photo_url} fullItemName={fullItemName} />
-            <div className="product-details">
-              <div className="product-details__path">
-                <span>
-                  {capitalizeFirstLetter(type)}
-                  <span className="long-dash">&mdash;</span>For{" "}
-                  {target_audience}
-                </span>
-              </div>
-              <div className="product-details__name">{fullItemName}</div>
-              <div className="product-details__price">
-                <span>$ {price}</span>
-                <span>incl. VAT</span>
-              </div>
-              <ColorView
-                allColors={colors}
-                colorChange={this.handleColorChange}
-              />
-              <SizeView allSizes={sizes} sizeChange={this.handleSizeChange} />
-              <InStock inStock={in_stock} />
-              <SingleItemContext.Provider
-                value={{
-                  guid,
-                  photo_url,
-                  name,
-                  type,
-                  target_audience,
-                  fullItemName,
-                  price,
-                  currentSize,
-                  currentColor
-                }}
-              >
-                <AddToCartView inStock={in_stock} />
-              </SingleItemContext.Provider>
-
-              <DetailsToggle details={details} />
-            </div>
+      <div className="product-item">
+        <PhotoView photo_url={photo_url} fullItemName={fullItemName} />
+        <div className="product-details">
+          <div className="product-details__path">
+            <span>
+              {capitalizeFirstLetter(type)}
+              <span className="long-dash">&mdash;</span>For {target_audience}
+            </span>
           </div>
-        )}
-      />
+          <div className="product-details__name">{fullItemName}</div>
+          <div className="product-details__price">
+            <span>$ {price}</span>
+            <span>incl. VAT</span>
+          </div>
+          <ColorView allColors={colors} colorChange={this.handleColorChange} />
+          <SizeView allSizes={sizes} sizeChange={this.handleSizeChange} />
+          <InStock inStock={in_stock} />
+          <SingleItemContext.Provider
+            value={{
+              guid,
+              photo_url,
+              name,
+              type,
+              target_audience,
+              fullItemName,
+              price,
+              currentSize,
+              currentColor
+            }}
+          >
+            <AddToCartView inStock={in_stock} />
+          </SingleItemContext.Provider>
+
+          <DetailsToggle details={details} />
+        </div>
+      </div>
     );
   }
 }
 
-export default WithHomePage(SingleItemPage);
+export default connect(null, { displayCurrentRoute })(
+  WithHomePage(SingleItemPage)
+);
 
 export const SingleItemContext = React.createContext(null);
