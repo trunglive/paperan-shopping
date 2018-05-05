@@ -1,15 +1,24 @@
 .Select {
   width: 16rem;
-  margin-left: 4rem;  
+  margin-left: 4rem;
   font-size: 1.2rem;
 
   .Select-control {
-    border: 1px solid $color-grey-light-1;
+    border: 1px solid $color-grey-dark;
     border-radius: 0;
   }
+}
+
+.Select.is-focused:not(.is-open) > .Select-control {
+  border-color: $color-grey-light-1;
+  box-shadow: none !important;
 }
 
 .Select-menu-outer {
   border: 1px solid $color-grey-light-1;
   border-radius: 0;
+}
+
+.Select-option.is-focused {
+  background-color: $color-grey-light-2 !important;
 }
