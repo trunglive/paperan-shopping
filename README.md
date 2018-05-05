@@ -8,17 +8,32 @@
 
 # Paperan
 
-> This project is an implementation of design concept Paperan from Patrik Michalicka. All API data are fictional and just for illustration purpose. React is used for building components. Redux is used as a global state management to handle user actions (increase/decrease product quantity, add/remove items to/from wishlist and cart).
+> This project is an implementation of design concept Paperan from Designer Patrik Michalicka. All API data are created from [JSON Generator](https://next.json-generator.com/) and just for illustration purpose.
+
+# Notes on my work
+
+* I am working on responsiveness of the app to different screen sizes, checkout form, authentication, and data persistence on page refresh.
+
+Additional features I added to the app that are not related to the design:
+
+* Filter Sidebar
+  * User could filter the products based on type, price range, color, sheet style, cover material and audience.
+* Sorting
+  * User could sort the products by best sellers, price, most reviews, top-rated and newest.
+* Footer
+  * This is just a markup with no link connected
 
 ## Stack
 
 * [React](https://github.com/facebook/react)
-* [Redux](https://github.com/reactjs/redux)
 * [React Router](https://github.com/ReactTraining/react-router)
+* [Redux](https://github.com/reactjs/redux)
+* [Redux Persist](https://github.com/rt2zz/redux-persist)
+* [Firebase](https://firebase.google.com/)
 
 ## Demo
 
-The demo will be availabe as soon as the project is completed.
+![paperan-demo](paperan-demo.png)
 
 ## Quick Start
 
