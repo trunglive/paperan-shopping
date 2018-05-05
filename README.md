@@ -33,7 +33,8 @@ Additional features I added to the app that are not related to the design:
 
 ## Demo
 
-![paperan-demo](paperan-demo.png)
+https://paperan-shop.firebaseapp.com
+![paperan-shop](paperan-demo.png)
 
 ## Quick Start
 
