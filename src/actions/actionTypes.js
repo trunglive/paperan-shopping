@@ -8,8 +8,10 @@ export const REMOVE_FROM_CART = "REMOVE_FROM_CART";
 
 //actions for modal states
 export const FETCH_CART = "FETCH_CART";
-export const TOGGLE_FILTER_ICON = "TOGGLE_FILTER_ICON";
 export const ARE_ALL_FIELDS_SELECTED = "ARE_ALL_FIELDS_SELECTED";
+
+//actions for routing
+export const DISPLAY_CURRENT_ROUTE = "DISPLAY_CURRENT_ROUTE";
 
 //actions for sort-by dropdown
 export const SORT_BY = "SORT_BY";

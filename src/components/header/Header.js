@@ -20,10 +20,10 @@ class Header extends Component {
                 className="search-bar-main__search-icon"
                 src="/icons/search.svg"
               />
-              {/* <span>Search products</span> */}
               <input
                 placeholder="Search products"
                 onChange={this.handleSearch}
+                value={this.props.keyword}
               />
             </div>
           )}
@@ -57,9 +57,10 @@ class Header extends Component {
   }
 }
 
-const mapStateToProps = ({ cart, modal }) => ({
+const mapStateToProps = ({ cart, modal, search }) => ({
   cart,
-  isFilterShown: modal.isFilterShown
+  isFilterShown: modal.isFilterShown,
+  keyword: search.keyword
 });
 
 export default connect(mapStateToProps, { fetchCart, searchProducts })(Header);

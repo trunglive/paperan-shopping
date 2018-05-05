@@ -4,7 +4,7 @@ import CollectionGridItem from "./CollectionGridItem";
 import SortBy from "./sort-by/SortBy";
 import { connect } from "react-redux";
 import { ItemSelectors } from "../../selectors/ItemSelectors";
-import { toggleFilterIcon } from "../../actions/modalActions";
+import { displayCurrentRoute } from "../../actions/routingActions";
 import WithCurrentRoute from "../change-route/WithCurrentRoute";
 
 class CollectionGridPage extends Component {
@@ -41,7 +41,7 @@ class CollectionGridPage extends Component {
   }
 
   componentDidMount() {
-    this.props.toggleFilterIcon(this.props.match.path);
+    this.props.displayCurrentRoute(this.props.match.path);
   }
 
   render() {
@@ -111,6 +111,6 @@ const mapStateToProps = ({ filterBy, sortBy, search }) => ({
   searchVal: search.keyword
 });
 
-export default connect(mapStateToProps, { toggleFilterIcon })(
+export default connect(mapStateToProps, { displayCurrentRoute })(
   WithHomePage(CollectionGridPage)
 );

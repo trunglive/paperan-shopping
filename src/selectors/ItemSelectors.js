@@ -21,11 +21,12 @@ export const ItemSelectors = (
     )
     .filter(
       item =>
+        item.name.includes(searchVal.toLowerCase()) ||
         item.type.includes(searchVal.toLowerCase()) ||
         item.colors.includes(searchVal.toLowerCase()) ||
         item.sheet_style.includes(searchVal.toLowerCase()) ||
-        item.cover_material.includes(searchVal.toLowerCase) ||
-        item.target_audience.includes(searchVal.toLowerCase)
+        item.cover_material.includes(searchVal.toLowerCase()) ||
+        item.target_audience.includes(searchVal.toLowerCase())
     )
     .sort((currentItem, nextItem) => {
       switch (sortBy) {

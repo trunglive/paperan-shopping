@@ -5,6 +5,7 @@ import sortBy from './sortingReducer';
 import modal from './modalReducer';
 import search from './searchReducer';
 import waypoint from './waypointReducer';
+import route from './routingReducer';
 
 const rootReducer = combineReducers({
   filterBy,
@@ -12,7 +13,8 @@ const rootReducer = combineReducers({
   sortBy,
   modal,
   search,
-  waypoint
+  waypoint,
+  route
 })
 
 export default rootReducer;

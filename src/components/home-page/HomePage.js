@@ -5,7 +5,7 @@ import FeaturedProducts from "./FeaturedProducts";
 import TrendingProducts from "./TrendingProducts";
 import OnSaleProducts from "./OnSaleProducts";
 import WithHomePage from "./WithHomePage";
-import WithCurrentRoute from "../change-route/WithCurrentRoute";
+import WithCurrentRoute from "../page-routing/WithCurrentRoute";
 import WayPoint from "react-waypoint";
 import { handleWaypoint } from "../../actions/waypointActions";
 

@@ -7,7 +7,7 @@ import InStock from "./availability-section/InStock.js";
 import AddToCartView from "./quantity-section/AddToCardView";
 import DetailsToggle from "./details-toggle/DetailsToggle";
 import { capitalizeFirstLetter } from "../../utils/capitalizeFirstLetter";
-import WithCurrentRoute from "../change-route/WithCurrentRoute";
+import WithCurrentRoute from "../page-routing/WithCurrentRoute";
 
 class SingleItemPage extends Component {
   state = {

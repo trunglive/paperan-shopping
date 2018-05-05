@@ -22,14 +22,14 @@ class Sidebar extends Component {
   };
 
   render() {
-    const { isFilterOpen }  = this.state;
-
+    const { isFilterOpen } = this.state;
+    const collectionRoute = "/collection/all/";
     return (
       <div className="sidebar">
         <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
           <p className="sidebar__logo">P.</p>
         </Link>
-        {this.props.isFilterShown && (
+        {collectionRoute.includes(this.props.route.currentRoute) && (
           <img
             className="sidebar__setting-icon"
             src="/icons/setting.svg"
@@ -53,8 +53,8 @@ class Sidebar extends Component {
   }
 }
 
-const mapStateToProps = ({ modal }) => ({
-  isFilterShown: modal.isFilterShown
+const mapStateToProps = ({ route }) => ({
+  route
 });
 
 export default connect(mapStateToProps, null)(Sidebar);
