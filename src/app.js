@@ -3,14 +3,17 @@ import { render } from "react-dom";
 import { Provider } from "react-redux";
 import AppRouter from "./routers/AppRouter";
 import configureStore from "./store/configureStore";
+import { PersistGate } from "redux-persist/integration/react";
 import "normalize.css/normalize.css";
 import "./styles/styles.scss";
 
-const store = configureStore();
+const { store, persistor } = configureStore();
 
 const app = (
   <Provider store={store}>
-    <AppRouter />
+    <PersistGate loading={null} persistor={persistor}>
+      <AppRouter />
+    </PersistGate>
   </Provider>
 );
 
