@@ -23,13 +23,14 @@ class Sidebar extends Component {
 
   render() {
     const { isFilterOpen } = this.state;
-    const collectionRoute = "/collection/all/";
+
     return (
       <div className="sidebar">
         <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
           <p className="sidebar__logo">P.</p>
         </Link>
-        {collectionRoute.includes(this.props.route.currentRoute) && (
+        {(this.props.route.currentRoute === "/collection/all" ||
+          this.props.route.currentRoute === "/collection/all/") && (
           <img
             className="sidebar__setting-icon"
             src="/icons/setting.svg"
