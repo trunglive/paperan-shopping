@@ -26,7 +26,6 @@ class MainCartView extends Component {
     const { isCartOpen } = this.props;
     const { cart } = this.state;
     const totalPrice = calculateSubtotal(this.state.cart);
-    console.log(this.props);
     
     return (
       <Menu

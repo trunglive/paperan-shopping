@@ -11,11 +11,12 @@ class ItemInCart extends Component {
       quantity,
       photo_url,
       fullItemName,
-      price,
+      price, 
       currentSize,
       currentColor,
       removeFromCart
     } = this.props;
+    console.log(this.props);
 
     return (
       <div className="checkout-menu__items-section--items-container">
