@@ -4,7 +4,6 @@ import { displayCurrentRoute } from "../../actions/routingActions";
 
 class WithCurrentRoute extends Component {
   componentDidMount() {
-    console.log(this.props, 'hey');
     if (this.props.match) {
       this.props.displayCurrentRoute(this.props.match.path);
     } else {

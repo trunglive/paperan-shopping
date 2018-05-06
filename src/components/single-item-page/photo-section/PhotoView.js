@@ -20,7 +20,7 @@ const PhotoView = ({ photo_url, fullItemName }) => (
         enlargedImageClassName: "photo-display__large",
         isHintEnabled: true,
         shouldHideHintAfterFirstActivation: false,
-        hintComponent: () => <ZoomHint />,
+        hintComponent: () => <ZoomHint />
       }}
     />
   </div>

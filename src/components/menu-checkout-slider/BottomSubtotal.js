@@ -4,9 +4,7 @@ const BottomSubtotal = ({ totalPrice }) => (
   <div className="checkout-menu__subtotal-section">
     <div className="checkout-menu__subtotal-section--price">
       <p>subtotal</p>
-      <p>
-        $ { totalPrice }
-      </p>
+      <p>$ {totalPrice}</p>
     </div>
     <div className="checkout-menu__subtotal-section--shipping">
       <p>Shipping from Seattle, WA</p>
