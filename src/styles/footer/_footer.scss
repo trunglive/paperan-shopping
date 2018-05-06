@@ -1,8 +1,10 @@
 .footer {
-  grid-column: 4 / -1;
-  padding: 15rem 0 7rem 7rem;
+  // border: 1px solid red;
+  grid-column: 4 / -2;
+  padding: 18rem 0 7rem;
 
   .footer-paperan {
+    // border: 1px solid royalblue;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;

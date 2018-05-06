@@ -1,5 +1,4 @@
 .product-item {
-  // border: 1px solid red;
   grid-column: 4 / -2;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -7,14 +6,36 @@
   font-size: 1.1rem;
   font-weight: 300;
   color: $color-grey-light-1;
-  // position: relative;
 }
 
 .photo-display {
-  img {
+  position: relative;
+
+  &__small,
+  &__large {
     width: 100%;
     min-height: 50rem;
     object-fit: cover;
+  }
+}
+
+.zoom-hint {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  width: 3rem;
+  height: 3rem;
+  color: $color-grey-dark;
+  background-color: $color-primary;
+  box-shadow: 0.4rem 0.7rem 4rem -1rem rgba($color-secondary, 0.9);
+
+  .zoom-in-icon {
+    width: 1.3rem;
+    height: 1.3rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 }
 
