@@ -13,7 +13,7 @@
   outline: none;
 
   @media only screen and (max-width: $bp-medium) {
-    max-width: 30rem;
+    width: calc(100vw - 12.5rem);
   }
 }
 
@@ -62,17 +62,13 @@
 .close-filter-icon {
   position: absolute;
   top: 3rem;
-  right: 0;
-
-  @media only screen and (max-width: $bp-medium) {
-    right: -3rem;
-  }
+  right: 3rem;
 }
 
 .scroll-filter-icon {
   position: fixed;
   top: 50%;
-  right: 0.5rem;
+  right: 1%;
   display: none;
   width: 3rem;
   height: 3rem;

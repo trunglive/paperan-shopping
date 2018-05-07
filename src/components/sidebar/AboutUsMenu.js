@@ -5,10 +5,11 @@ class AboutUsMenu extends Component {
     return (
       <div className="about-us-container">
       <img
-          className="close-menu-icon close-filter-icon"
+          className="close-menu-icon close-about-us-icon"
           src="/icons/close.svg"
           onClick={this.props.onCloseAboutUs}
         />
+        <img className="scroll-about-us-icon" src="/icons/scroll.svg" />
         <p className="about-us-text">About Paperan</p>
         <p className="about-us-goal">
           Paperan is an emerging office supplies brand which provides
