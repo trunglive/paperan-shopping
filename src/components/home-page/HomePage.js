@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+import WayPoint from "react-waypoint";
+
 import FeaturedProducts from "./FeaturedProducts";
 import TrendingProducts from "./TrendingProducts";
 import OnSaleProducts from "./OnSaleProducts";
 import WithHomePage from "./WithHomePage";
-import WayPoint from "react-waypoint";
 import { handleWaypoint } from "../../actions/waypointActions";
 import { displayCurrentRoute } from "../../actions/routingActions";
 

@@ -1,7 +1,8 @@
+// fixed
+
 .homepage {
-  // border: 1px solid blueviolet;
-  min-height: 80vh;
   grid-column: 4 / -2;
+  min-height: 80vh;
 }
 
 .homepage-header {
@@ -18,8 +19,7 @@
   white-space: nowrap;
 }
 
-.discover-collection,
-.button {
+.discover-collection.button {
   padding: 1.5rem 2rem;
   font-size: 1.1rem;
   font-weight: 600;
@@ -27,24 +27,17 @@
 }
 
 .homepage-featured {
-  margin: $xl-size 0;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
   grid-gap: 2rem;
   grid-auto-flow: row dense;
-  // margin-top: $xl-size;
+  margin: $xl-size 0;
 
   img {
     width: 100%;
     height: 95vh;
     object-fit: cover;
   }
-
-  // img:first-child {
-  //   grid-column: 1 / span 2;
-  //   height: 50rem;
-  //   border: 1px solid red;
-  // }
 }
 
 .small-grid {
@@ -64,7 +57,7 @@
   &__photos {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-    grid-gap: 1rem;
+    grid-gap: 2rem;
     margin: $xl-size 0;
   }
 }

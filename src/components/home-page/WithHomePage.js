@@ -49,7 +49,6 @@ const WithHomePage = WrappedComponent =>
 
     render() {
       const { allItems } = this.state;
-      console.log(allItems);
 
       return (
         <div className="homepage">

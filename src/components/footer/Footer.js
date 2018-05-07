@@ -5,7 +5,7 @@ export default class Footer extends Component {
     return (
       <div className="footer">
         <div className="footer-paperan">
-          <div className="footer__info">
+          <div className="footer__info item">
             <p>Info</p>
             <ul>
               <li>About Paperan</li>
@@ -15,14 +15,14 @@ export default class Footer extends Component {
               <li>Giftcards</li>
             </ul>
           </div>
-          <div className="footer__contacts">
+          <div className="footer__contacts item">
             <p>Contacts</p>
             <ul>
               <li>Contact Us</li>
               <li>Store Locations</li>
             </ul>
           </div>
-          <div className="footer__legal">
+          <div className="footer__legal item">
             <p>Legal</p>
             <ul>
               <li>Terms & Conditions</li>

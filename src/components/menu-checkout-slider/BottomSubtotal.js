@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const BottomSubtotal = ({ totalPrice }) => (
   <div className="checkout-menu__subtotal-section">
@@ -11,7 +12,9 @@ const BottomSubtotal = ({ totalPrice }) => (
       <p>from $ 3.97</p>
     </div>
     <div className="product-details__add-to-cart-container--button checkout-menu__subtotal-section--continue-to-checkout-button">
-      continue to checkout
+      <Link to="/checkout" style={{ textDecoration: "none", color: "#fff" }}>
+        continue to checkout
+      </Link>
     </div>
   </div>
 );

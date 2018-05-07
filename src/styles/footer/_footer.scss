@@ -6,11 +6,32 @@
   .footer-paperan {
     // border: 1px solid royalblue;
     display: flex;
-    flex-wrap: wrap;
+    // flex-wrap: wrap;
     justify-content: center;
 
     > div:not(:last-child) {
-      margin-right: 10rem;
+      padding-right: 10rem;
+    }
+
+    > div {
+      @media only screen and (max-width: $bp-largest) {
+        padding: 3rem 0;
+        border: 1px solid $color-grey-light-2;
+        border-left: none;
+        border-right: none;
+      }
+    }
+
+    .footer__info {
+      @media only screen and (max-width: $bp-largest) {
+        border-top: 2px solid $color-grey-light-2;
+      }
+    }
+
+    .footer__social {
+      @media only screen and (max-width: $bp-largest) {
+        border-bottom: 2px solid $color-grey-light-2;
+      }
     }
 
     p {
@@ -20,6 +41,7 @@
     }
 
     ul {
+      // border: 1px solid red;
       color: $color-grey-light-1;
       list-style-type: none;
 
@@ -32,6 +54,12 @@
       li:not(:last-child) {
         margin-bottom: $s-size;
       }
+    }
+
+    @media only screen and (max-width: $bp-largest) {
+      flex-direction: column;
+      width: 50%;
+      margin: 0 auto;
     }
   }
 

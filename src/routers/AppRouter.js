@@ -12,6 +12,7 @@ import SingleItemPage from "../components/single-item-page/SingleItemPage";
 import Footer from "../components/footer/Footer";
 import { connect } from "react-redux";
 import WithCheckout from "../components/menu-checkout-slider/WithCheckout";
+import CheckoutPage from '../components/checkout-page/CheckoutPage';
 
 const AppRouter = ({ cart, modal, route }) => (
   <Router>
@@ -29,6 +30,7 @@ const AppRouter = ({ cart, modal, route }) => (
         <Route exact path="/collection/all" component={CollectionGridPage} />
         />
         <Route exact path="/collection/:type/:id" component={SingleItemPage} />
+        <Route exact path="/checkout" component={CheckoutPage} />
       </Switch>
       <Footer />
     </div>
