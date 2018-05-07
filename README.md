@@ -15,16 +15,17 @@
 * Add products in cart, remove them from cart
 * Persist data in cart on page refresh
 * Lazy loading on images
-+ Image zoom on hover
+* Image zoom on hover
 * Sidebar filter (type, price range, color, sheet style, cover material and audience)
 * Sorting (best sellers, price, most reviews, top-rated and newest)
 * Grid display (small & large size)
 * Search bar (keywords limited to type, color, sheet style, cover material and audience)
-* Responsive on different viewports (in progress)
+* Responsive on different viewports
+* Authentication (in progress)
 
 ## Notes on my work
 
-* I am working on responsiveness of the app to different screen sizes, checkout page, authentication.
+* I am working on checkout page and authentication.
 
 Redux store works as a global immutable state tree and it prevents props drilling problems as the app grows. I used some new features in React 16.3 in this app in combination with Redux ([React Context API](https://reactjs.org/docs/context.html), [getDerivedStateFromProps](https://reactjs.org/docs/react-component.html#static-getderivedstatefromprops)).
 
