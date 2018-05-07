@@ -6,6 +6,10 @@
   font-size: 1.1rem;
   font-weight: 300;
   color: $color-grey-light-1;
+
+  @media only screen and (max-width: $bp-small) {
+    padding: 1rem 1rem 1rem 0.6rem;
+  }
 }
 
 .photo-display {
