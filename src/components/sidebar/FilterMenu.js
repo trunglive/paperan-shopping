@@ -28,12 +28,15 @@ class FilterMenu extends Component {
 
     return (
       <div className="filter-container">
+        
+        
+        <div className="filter-all">
         <img
           className="close-menu-icon close-filter-icon"
           src="/icons/close.svg"
           onClick={onCloseFilter}
         />
-        <div className="filter-all">
+        <img className="scroll-filter-icon" src="/icons/scroll.svg" />
           <div className="filter__by-type filter-child">
             <p>Type</p>
 

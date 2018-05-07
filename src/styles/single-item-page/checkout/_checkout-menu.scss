@@ -10,6 +10,10 @@
   font-size: 1.1rem;
   background-color: $color-primary;
   outline: none;
+
+  @media only screen and (max-width: $bp-small) {
+    width: 100%;
+  }
 }
 
 .checkout-menu {

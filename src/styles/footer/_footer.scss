@@ -1,12 +1,9 @@
 .footer {
-  // border: 1px solid red;
   grid-column: 4 / -2;
   padding: 18rem 0 7rem;
 
   .footer-paperan {
-    // border: 1px solid royalblue;
     display: flex;
-    // flex-wrap: wrap;
     justify-content: center;
 
     > div:not(:last-child) {
@@ -41,7 +38,6 @@
     }
 
     ul {
-      // border: 1px solid red;
       color: $color-grey-light-1;
       list-style-type: none;
 
@@ -75,5 +71,13 @@
       text-align: center;
       text-decoration: none;
     }
+  }
+
+  @media only screen and (max-width: $bp-medium) {
+    grid-column: 3 / -2;
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    grid-column: 2 / -1;
   }
 }

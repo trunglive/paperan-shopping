@@ -4,20 +4,43 @@
   left: 6.5rem;
   display: flex;
   align-items: center;
-  min-width: 55rem;
-  height: 100vh;
+  width: 52rem;
+  height: 100%;
   font-size: 1.2rem;
   letter-spacing: 1px;
   color: #080808;
   background-color: #fff;
   outline: none;
+
+  @media only screen and (max-width: $bp-medium) {
+    max-width: 30rem;
+  }
 }
 
 .filter-all {
+  position: relative;
   display: grid;
   grid-template-columns: repeat(2, minmax(20rem, 1fr));
   grid-row-gap: 6rem;
   grid-column-gap: 8rem;
+  max-height: 100%;
+  overflow-y: auto;
+  padding: 3rem 0;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  @media only screen and (max-width: $bp-medium) {
+    grid-template-columns: repeat(2, minmax(15rem, 1fr));
+    grid-column-gap: 6rem;
+  }
+
+  @media only screen and (max-width: $bp-medium) {
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    grid-column-gap: 6rem;
+    width: 100%;
+  }
 }
 
 .filter-child {
@@ -39,5 +62,22 @@
 .close-filter-icon {
   position: absolute;
   top: 3rem;
-  right: 3rem;
+  right: 0;
+
+  @media only screen and (max-width: $bp-medium) {
+    right: -3rem;
+  }
+}
+
+.scroll-filter-icon {
+  position: fixed;
+  top: 50%;
+  right: 0.5rem;
+  display: none;
+  width: 3rem;
+  height: 3rem;
+
+  @media only screen and (max-width: $bp-medium) {
+    display: block;
+  }
 }

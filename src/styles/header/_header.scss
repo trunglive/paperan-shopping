@@ -6,6 +6,10 @@
   margin-bottom: $xl-size;
   padding: $m-size;
   font-size: 1.2rem;
+
+  @media only screen and (max-width: $bp-medium) {
+    flex-direction: column-reverse;
+  }
 }
 
 .search-bar-main {
@@ -32,6 +36,17 @@
       color: $color-grey-light-1;
       font-weight: 300;
     }
+
+    @media only screen and (max-width: $bp-medium) {
+      width: 20rem;
+      padding: 1rem;
+      border-bottom: 1px solid $color-grey-light-1;
+      
+    }
+  }
+
+  @media only screen and (max-width: $bp-medium) {
+    margin-top: 4rem;
   }
 }
 
