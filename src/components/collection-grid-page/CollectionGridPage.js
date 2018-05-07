@@ -67,14 +67,14 @@ class CollectionGridPage extends Component {
                 onClick={this.handleTwoColsChange}
                 className={threeCols ? "grey-text" : "false"}
               >
-                Two cols
+                Col 1
               </span>
               <span>/</span>
               <span
                 onClick={this.handleThreeColsChange}
                 className={threeCols ? "false" : "grey-text"}
               >
-                Three cols
+                Col 2
               </span>
             </div>
 

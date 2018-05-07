@@ -11,17 +11,24 @@
 
   &__title {
     font-size: 2rem;
+
+    @media only screen and (max-width: $bp-medium) {
+      margin-bottom: 2rem;
+    }
   }
 
   &__option {
     display: flex;
     font-size: 1.2rem;
     justify-content: space-between;
-    // border: 1px solid red;
     align-items: center;
 
     .col-switch {
-      // border: 1px solid red;
+      padding-right: 4rem;
+
+      @media only screen and (max-width: $bp-large) {
+        display: none;
+      }
     }
 
     span:not(:nth-child(2)) {
@@ -32,6 +39,10 @@
       padding: 0 0.5rem;
       color: $color-grey-light-1;
     }
+  }
+
+  @media only screen and (max-width: $bp-medium) {
+    flex-direction: column;
   }
 }
 
@@ -50,7 +61,7 @@
 
   &__items {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(26rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
     grid-column-gap: 3rem;
     grid-row-gap: 6rem;
     margin: $xl-size 0;
@@ -85,7 +96,7 @@
 }
 
 .grid-two-cols {
-  grid-template-columns: repeat(auto-fit, minmax(36rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(45rem, 1fr));
 }
 
 .grey-text {

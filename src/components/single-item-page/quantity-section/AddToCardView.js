@@ -34,7 +34,8 @@ class AddToCartView extends Component {
           <div className="add-to-card-and-alert">
             <div className="product-details__add-to-cart-container">
               <p>Quantity</p>
-              <div className="numeric-input">
+              <div className="add-to-cart">
+                <div className="numeric-input">
                 <p className="quantity-input">{quantity} pcs</p>
                 <div>
                   <div className="plus-container">
@@ -55,6 +56,8 @@ class AddToCartView extends Component {
               </div>
 
               <CheckoutView quantity={quantity} />
+              </div>
+              
             </div>
             {areAllFieldsSelected && (
               <p className="item-selection-alert">
