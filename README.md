@@ -32,7 +32,7 @@ Additional features/UI I added to the app that are not related to the original d
 * Sidebar Filter
 * Sorting
 * Footer
-+ Checkout Page
+* Checkout Page (in progress)
 
 ## Stack
 
