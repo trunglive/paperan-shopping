@@ -14,6 +14,10 @@
     @media only screen and (max-width: $bp-medium) {
       margin-bottom: 2rem;
     }
+
+    @media only screen and (max-width: $bp-smallest) {
+      font-size: 1.6rem;
+    }
   }
 
   &__option {
@@ -52,6 +56,10 @@
     width: 100%;
     height: 30rem;
     object-fit: cover;
+
+    @media only screen and (max-width: $bp-smallest) {
+      height: 24rem;
+    }
   }
 
   .resize-photo {
@@ -64,6 +72,10 @@
     grid-column-gap: 3rem;
     grid-row-gap: 6rem;
     margin: $xl-size 0;
+
+    @media only screen and (max-width: $bp-smallest) {
+      grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    }
   }
 
   &__item {
@@ -94,7 +106,7 @@
   }
 
   @media only screen and (max-width: $bp-small) {
-    padding: 1rem 1rem 1rem .6rem;
+    padding: 0 0.5rem;
   }
 }
 

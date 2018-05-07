@@ -1,14 +1,18 @@
 .product-item {
   grid-column: 4 / -2;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(31rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
   grid-gap: 10rem;
   font-size: 1.1rem;
   font-weight: 300;
   color: $color-grey-light-1;
 
   @media only screen and (max-width: $bp-small) {
-    padding: 1rem 1rem 1rem 0.6rem;
+    padding: 0 0.5rem;
+  }
+
+  @media only screen and (max-width: $bp-smallest) {
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   }
 }
 
@@ -20,6 +24,15 @@
     width: 100%;
     min-height: 50rem;
     object-fit: cover;
+
+
+    @media only screen and (max-width: $bp-small) {
+      min-height: 30rem;
+    }
+
+    @media only screen and (max-width: $bp-smallest) {
+      min-height: 24rem;
+    }
   }
 }
 
@@ -109,6 +122,10 @@
 
     > div:not(:last-child) {
       margin-right: 1rem;
+
+      @media only screen and (max-width: $bp-smallest) {
+        margin-right: 0.7rem;
+      }
     }
 
     > div {
