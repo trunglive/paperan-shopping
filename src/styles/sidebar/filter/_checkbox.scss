@@ -15,29 +15,29 @@
 }
 
 .checkbox-item label {
-  cursor: pointer;
   position: absolute;
-  width: 15px;
-  height: 15px;
   top: 0;
   left: 0;
+  width: 15px;
+  height: 15px;
   background-color: #fff;
   border: 1px solid #000;
+  cursor: pointer;
 }
 
 .checkbox-item label:after {
-  opacity: 0;
-  content: "";
   position: absolute;
   width: 7px;
   height: 4px;
-  background: transparent;
   top: 30%;
   left: 25%;
+  transform: rotate(-45deg);
+  background: transparent;
   border: 1.25px solid #000;
   border-top: none;
   border-right: none;
-  transform: rotate(-45deg);
+  content: "";
+  opacity: 0;
 }
 
 .checkbox-item label:hover::after {

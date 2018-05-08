@@ -13,7 +13,7 @@ export default class DetailsToggle extends Component {
 
   render() {
     const { isDetailSelected } = this.state;
-    
+
     return (
       <div className="product-details__details-toggle">
         <p onClick={this.handleDetailsToggle}>

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import Menu from "react-modal";
+
 import { fetchCart, toggleCartAlert } from "../../actions/modalActions";
 
 class WithCheckout extends Component {

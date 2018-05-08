@@ -1,19 +1,19 @@
 .sidebar {
   position: fixed;
-  height: 100vh;
   grid-column: 1 / span 1;
   grid-row: 1 / -1;
   display: flex;
   flex-direction: column;
-  background-color: $color-secondary;
   justify-content: space-between;
   align-items: center;
+  height: 100vh;
+  background-color: $color-secondary;
 
   p {
     margin: 1rem 2rem 0 2rem;
-    color: $color-primary;
     font-size: 3rem;
     font-weight: 700;
+    color: $color-primary;
   }
 
   &__setting-icon,

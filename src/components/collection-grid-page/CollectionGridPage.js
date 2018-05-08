@@ -1,11 +1,12 @@
 import React, { Component } from "react";
-import WithHomePage from "../home-page/WithHomePage";
+import { connect } from "react-redux";
+
 import CollectionGridItem from "./CollectionGridItem";
 import SortBy from "./sort-by/SortBy";
-import { connect } from "react-redux";
+import WithHomePage from "../home-page/WithHomePage";
+import WithCurrentRoute from "../page-routing/WithCurrentRoute";
 import { ItemSelectors } from "../../selectors/ItemSelectors";
 import { displayCurrentRoute } from "../../actions/routingActions";
-import WithCurrentRoute from "../page-routing/WithCurrentRoute";
 
 class CollectionGridPage extends Component {
   state = {

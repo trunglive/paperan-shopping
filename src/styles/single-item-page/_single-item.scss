@@ -47,17 +47,16 @@
   box-shadow: 0.4rem 0.7rem 4rem -1rem rgba($color-secondary, 0.9);
 
   .zoom-in-icon {
-    width: 1.3rem;
-    height: 1.3rem;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    width: 1.3rem;
+    height: 1.3rem;
   }
 }
 
 .product-details {
-
   &__path {
     padding-left: 1rem;
   }
@@ -67,10 +66,10 @@
   }
 
   &__name {
+    padding: 4rem 0 4rem 1rem;
     font-size: 3rem;
     font-weight: 500;
     color: $color-secondary;
-    padding: 4rem 0 4rem 1rem;
     line-height: 1.5;
 
     @media only screen and (max-width: $bp-small) {
@@ -154,18 +153,18 @@
 
   .ten-plus-stock {
     font-size: 1.2rem;
-    color: $color-secondary;
     font-weight: 400;
+    color: $color-secondary;
   }
 
   &__add-to-cart-container--button {
     padding: 1.5rem 3rem;
     font-weight: 400;
     color: $color-primary;
-    background-color: $color-secondary;
     text-transform: uppercase;
     letter-spacing: 2px;
-
+    background-color: $color-secondary;
+   
     &:hover,
     &:active,
     &:focus {
@@ -249,9 +248,9 @@
 .stock-alert,
 .item-selection-alert {
   margin-bottom: 1rem;
-  text-align: center;
-  color: $color-secondary;
   font-weight: 400;
+  color: $color-secondary;
+  text-align: center;
 }
 
 .stack-menu-checkout {

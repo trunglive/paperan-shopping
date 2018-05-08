@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import FilterMenu from "./FilterMenu";
 import Filter from "react-modal";
-import AboutUsMenu from "./AboutUsMenu";
 import AboutUs from "react-modal";
+
+import FilterMenu from "./FilterMenu";
+import AboutUsMenu from "./AboutUsMenu";
 
 class Sidebar extends Component {
   state = {

@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { capitalizeFirstLetter } from "../../utils/capitalizeFirstLetter";
-import { calculateAverageRating } from "../../utils/calculateAverageRating";
 import FadeIn from "react-lazyload-fadein";
 import ItemRating from "react-star-ratings";
+
+import { capitalizeFirstLetter } from "../../utils/capitalizeFirstLetter";
+import { calculateAverageRating } from "../../utils/calculateAverageRating";
 
 const CollectionGridItem = ({
   guid,

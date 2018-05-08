@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import Menu from "react-modal";
+
 import TopBagSection from "./TopBagSection";
 import ItemInCart from "./ItemInCart";
 import BottomSubtotal from "./BottomSubtotal";
-import { calculateSubtotal } from "../../utils/calculateSubtotal";
 import { fetchCart } from "../../actions/modalActions";
+import { calculateSubtotal } from "../../utils/calculateSubtotal";
 
 class MainCartView extends Component {
   state = {
@@ -26,7 +27,7 @@ class MainCartView extends Component {
     const { isCartOpen } = this.props;
     const { cart } = this.state;
     const totalPrice = calculateSubtotal(this.state.cart);
-    
+
     return (
       <Menu
         isOpen={isCartOpen}

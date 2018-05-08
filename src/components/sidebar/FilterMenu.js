@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+
 import * as actions from "../../actions/filteringActions";
 
 class FilterMenu extends Component {
@@ -34,9 +35,8 @@ class FilterMenu extends Component {
           onClick={onCloseFilter}
         />
         <img className="scroll-filter-icon" src="/icons/scroll.svg" />
-        
+
         <div className="filter-all">
-        
           <div className="filter__by-type filter-child">
             <p>Type</p>
 
@@ -579,6 +579,4 @@ const mapStateToProps = ({ filterBy }) => ({
   filterBy
 });
 
-export default connect(mapStateToProps, actions)(
-  FilterMenu
-);
+export default connect(mapStateToProps, actions)(FilterMenu);

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+
 import WithColor from "./WithColor";
 import { convertColorName } from "../../../utils/paperColors";
 
@@ -26,9 +27,8 @@ class ColorView extends Component {
                     style={{ backgroundColor: convertColorName(singleColor) }}
                     className="square-color"
                     onClick={() => (
-                      handlePaperColor(singleColor),
-                      colorChange(singleColor)
-                    ) }
+                      handlePaperColor(singleColor), colorChange(singleColor)
+                    )}
                   />
                 </div>
               ))}

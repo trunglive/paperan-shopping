@@ -18,11 +18,11 @@
 
 .section-index {
   min-height: 8rem;
-  margin: 4rem 0;
-  text-align: center;
-  font-size: 1.4rem;
-  writing-mode: tb-rl;
   transform: rotate(-180deg);
+  margin: 4rem 0;
+  font-size: 1.4rem;
+  text-align: center;
+  writing-mode: tb-rl;
 
   &--end {
     color: $color-grey-dark;
@@ -69,8 +69,8 @@
 
   .filter-by {
     display: inline-block;
-    color: $color-grey-dark;
     font-size: 1.1rem;
+    color: $color-grey-dark;
     height: 26rem;
     line-height: 2;
   }

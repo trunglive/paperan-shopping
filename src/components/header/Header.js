@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { fetchCart } from "../../actions/modalActions";
 import { Link } from "react-router-dom";
-import { calculateQuantityInCart } from "../../utils/calculateQuantityInCart";
+
+import { fetchCart } from "../../actions/modalActions";
 import { searchProducts } from "../../actions/searchActions";
+import { calculateQuantityInCart } from "../../utils/calculateQuantityInCart";
 
 class Header extends Component {
   handleSearch = event => {

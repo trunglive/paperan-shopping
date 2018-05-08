@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+
 import WithHomePage from "../home-page/WithHomePage";
 import PhotoView from "./photo-section/PhotoView";
 import ColorView from "./color-section/ColorView";
@@ -7,8 +8,8 @@ import SizeView from "./size-section/SizeView";
 import InStock from "./availability-section/InStock.js";
 import AddToCartView from "./quantity-section/AddToCardView";
 import DetailsToggle from "./details-toggle/DetailsToggle";
-import { capitalizeFirstLetter } from "../../utils/capitalizeFirstLetter";
 import { displayCurrentRoute } from "../../actions/routingActions";
+import { capitalizeFirstLetter } from "../../utils/capitalizeFirstLetter";
 
 class SingleItemPage extends Component {
   state = {

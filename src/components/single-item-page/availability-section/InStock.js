@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const InStock = ({ inStock }) => (
   <div className="product-details__availability-container">

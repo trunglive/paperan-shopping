@@ -1,5 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { connect } from "react-redux";
+
 import Sidebar from "../components/sidebar/Sidebar";
 import SectionNavScrolling from "../components/nav-scrolling/SectionNavScrolling";
 import FilterNavScrolling from "../components/nav-scrolling/FilterNavScrolling";
@@ -10,9 +12,6 @@ import HomePage from "../components/home-page/HomePage";
 import CollectionGridPage from "../components/collection-grid-page/CollectionGridPage";
 import SingleItemPage from "../components/single-item-page/SingleItemPage";
 import Footer from "../components/footer/Footer";
-import { connect } from "react-redux";
-import WithCheckout from "../components/menu-checkout-slider/WithCheckout";
-import CheckoutPage from '../components/checkout-page/CheckoutPage';
 
 const AppRouter = ({ cart, modal, route }) => (
   <Router>
@@ -30,7 +29,6 @@ const AppRouter = ({ cart, modal, route }) => (
         <Route exact path="/collection/all" component={CollectionGridPage} />
         />
         <Route exact path="/collection/:type/:id" component={SingleItemPage} />
-        <Route exact path="/checkout" component={CheckoutPage} />
       </Switch>
       <Footer />
     </div>

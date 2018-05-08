@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+
 import { calculateQuantityInCart } from "../../utils/calculateQuantityInCart";
 
 const TopBagSection = ({ handleCloseCart, cart }) => (

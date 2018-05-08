@@ -1,5 +1,6 @@
 import React from "react";
 import PaperanImageMagnify from "react-image-magnify";
+
 import ZoomHint from "./ZoomHint";
 
 const PhotoView = ({ photo_url, fullItemName }) => (

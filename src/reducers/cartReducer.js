@@ -39,7 +39,7 @@ const cartReducer = (state = initialCartState, action) => {
       } else {
         const copiedState = { ...state };
         delete copiedState[action.guid];
-        
+
         return { ...copiedState };
       }
 

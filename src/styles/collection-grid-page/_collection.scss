@@ -1,6 +1,6 @@
 .collection {
-  min-height: 80vh;
   grid-column: 2 / -2;
+  min-height: 80vh;
 }
 
 .collection-grid-nav {
@@ -22,9 +22,10 @@
 
   &__option {
     display: flex;
-    font-size: 1.2rem;
+
     justify-content: space-between;
     align-items: center;
+    font-size: 1.2rem;
 
     .col-switch {
       padding-right: 4rem;
@@ -90,8 +91,8 @@
       padding: 0.5rem 0 0.8rem;
       font-size: 1.1rem;
       font-weight: 300;
-      letter-spacing: 1px;
       color: $color-grey-dark;
+      letter-spacing: 1px;
     }
 
     &--rating {
@@ -120,12 +121,12 @@
 
 .more-item {
   margin: 0 auto;
-  text-align: center;
-  color: $color-grey-light-1;
   font-size: 1.1rem;
   font-weight: 300;
+  color: $color-grey-light-1;
+  text-align: center;
   letter-spacing: 1px;
-  
+
   &:hover {
     cursor: pointer;
   }
