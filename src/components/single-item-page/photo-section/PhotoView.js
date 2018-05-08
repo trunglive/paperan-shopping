@@ -19,6 +19,7 @@ const PhotoView = ({ photo_url, fullItemName }) => (
         imageClassName: "photo-display__small",
         enlargedImageClassName: "photo-display__large",
         isHintEnabled: true,
+        isActivatedOnTouch: true,
         shouldHideHintAfterFirstActivation: false,
         hintComponent: () => <ZoomHint />
       }}
