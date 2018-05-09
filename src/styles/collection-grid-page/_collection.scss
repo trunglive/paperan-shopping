@@ -112,7 +112,11 @@
 }
 
 .grid-two-cols {
-  grid-template-columns: repeat(auto-fit, minmax(45rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(46rem, 1fr));
+
+  @media only screen and (max-width: $bp-medium) {
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  }
 }
 
 .grey-text {
