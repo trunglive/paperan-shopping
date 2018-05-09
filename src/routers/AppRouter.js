@@ -11,6 +11,7 @@ import MainCartView from "../components/menu-checkout-slider/MainCartView";
 import HomePage from "../components/home-page/HomePage";
 import CollectionGridPage from "../components/collection-grid-page/CollectionGridPage";
 import SingleItemPage from "../components/single-item-page/SingleItemPage";
+import CheckoutPage from '..//components/checkout-page/CheckoutPage';
 import Footer from "../components/footer/Footer";
 
 const AppRouter = ({ cart, modal, route }) => (
@@ -29,6 +30,7 @@ const AppRouter = ({ cart, modal, route }) => (
         <Route exact path="/collection/all" component={CollectionGridPage} />
         />
         <Route exact path="/collection/:type/:id" component={SingleItemPage} />
+        <Route exact path="/checkout" component={CheckoutPage} />
       </Switch>
       <Footer />
     </div>
