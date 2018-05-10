@@ -32,11 +32,6 @@
   }
 
   @media only screen and (max-width: $bp-medium) {
-    grid-template-columns: repeat(2, minmax(15rem, 1fr));
-    grid-column-gap: 6rem;
-  }
-
-  @media only screen and (max-width: $bp-medium) {
     grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
     grid-column-gap: 6rem;
     width: 100%;
