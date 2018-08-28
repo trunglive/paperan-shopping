@@ -16,6 +16,7 @@ class CheckoutView extends Component {
             <SingleItemContext.Consumer>
               {({
                 guid,
+                type,
                 currentSize,
                 currentColor,
                 photo_url,
@@ -30,6 +31,7 @@ class CheckoutView extends Component {
                     if (quantity > 0 && currentColor && currentSize) {
                       this.props.addToCart(
                         guid,
+                        type,
                         currentSize,
                         currentColor,
                         photo_url,

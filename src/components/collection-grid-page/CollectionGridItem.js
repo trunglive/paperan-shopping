@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import FadeIn from "react-lazyload-fadein";
 import ItemRating from "react-star-ratings";
@@ -15,7 +15,6 @@ const CollectionGridItem = ({
   sheet_style,
   target_audience,
   reviews,
-  threeCols,
   resizePhoto
 }) => (
   <div>

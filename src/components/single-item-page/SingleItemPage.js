@@ -60,7 +60,7 @@ class SingleItemPage extends Component {
 
     return (
       <div className="product-item">
-        <PhotoView photo_url={photo_url} fullItemName={fullItemName} />
+        <PhotoView photoUrl={photo_url} fullItemName={fullItemName} />
         <div className="product-details">
           <div className="product-details__path">
             <span>

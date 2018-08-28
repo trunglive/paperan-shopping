@@ -2,6 +2,7 @@ import { ADD_TO_CART, REMOVE_FROM_CART } from "./actionTypes";
 
 export const addToCart = (
   guid,
+  type,
   currentSize,
   currentColor,
   photo_url,
@@ -12,6 +13,7 @@ export const addToCart = (
   type: ADD_TO_CART,
   guid,
   details: {
+    productType: type,
     currentSize,
     currentColor,
     photo_url,

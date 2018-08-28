@@ -1,11 +1,12 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 
-import { SingleItemContext } from "../single-item-page/SingleItemPage";
 import { removeFromCart } from "../../actions/cartActions";
 
 const ItemInCart = ({
   guid,
+  productType,
   variationId,
   quantity,
   photo_url,
@@ -13,13 +14,22 @@ const ItemInCart = ({
   price,
   currentSize,
   currentColor,
-  removeFromCart
+  removeFromCart,
+  onCloseCart
 }) => (
   <div className="checkout-menu__items-section--items-container">
     <div className="item-display--left">
-      <img src={photo_url} alt={fullItemName} />
+      <Link to={`/collection/${productType}/${guid}`}>
+        <img src={photo_url} alt={fullItemName} onClick={onCloseCart} />
+      </Link>
+
       <div>
-        <p className="item-name">{fullItemName}</p>
+        <Link
+          to={`/collection/${productType}/${guid}`}
+          style={{ color: "inherit", textDecoration: "none" }}
+        >
+          <p className="item-name" onClick={onCloseCart}>{fullItemName}</p>
+        </Link>
         <div className="item-size-and-color">
           <span>{currentSize}, </span>
           <span>{currentColor}</span>
@@ -39,4 +49,7 @@ const ItemInCart = ({
   </div>
 );
 
-export default connect(null, { removeFromCart })(ItemInCart);
+export default connect(
+  null,
+  { removeFromCart }
+)(ItemInCart);

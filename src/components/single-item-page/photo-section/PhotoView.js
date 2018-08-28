@@ -3,17 +3,17 @@ import PaperanImageMagnify from "react-image-magnify";
 
 import ZoomHint from "./ZoomHint";
 
-const PhotoView = ({ photo_url, fullItemName }) => (
+const PhotoView = ({ photoUrl, fullItemName }) => (
   <div className="photo-display">
     <PaperanImageMagnify
       {...{
         smallImage: {
           alt: fullItemName,
-          src: photo_url,
+          src: photoUrl,
           isFluidWidth: true
         },
         largeImage: {
-          src: photo_url,
+          src: photoUrl,
           width: 2000,
           height: 1500
         },

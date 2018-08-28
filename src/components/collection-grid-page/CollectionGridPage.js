@@ -4,7 +4,6 @@ import { connect } from "react-redux";
 import CollectionGridItem from "./CollectionGridItem";
 import SortBy from "./sort-by/SortBy";
 import WithHomePage from "../home-page/WithHomePage";
-import WithCurrentRoute from "../page-routing/WithCurrentRoute";
 import { ItemSelectors } from "../../selectors/ItemSelectors";
 import { displayCurrentRoute } from "../../actions/routingActions";
 
@@ -49,15 +48,6 @@ class CollectionGridPage extends Component {
     const { threeCols, filterBy, searchVal } = this.state;
     const { allItems, sortBy } = this.props;
 
-    const {
-      type,
-      price,
-      colors,
-      sheetStyle,
-      coverMaterial,
-      audience
-    } = this.state.filterBy;
-
     return (
       <div className="collection collection-grid">
         <div className="collection-grid-nav">
@@ -78,7 +68,6 @@ class CollectionGridPage extends Component {
                 Col 2
               </span>
             </div>
-
             <SortBy />
           </div>
         </div>

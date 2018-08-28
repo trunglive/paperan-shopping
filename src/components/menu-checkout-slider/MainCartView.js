@@ -23,6 +23,10 @@ class MainCartView extends Component {
     return null;
   }
 
+  handleCloseCart = () => {
+    this.props.fetchCart(false);
+  };
+
   render() {
     const { isCartOpen } = this.props;
     const { cart } = this.state;
@@ -38,12 +42,17 @@ class MainCartView extends Component {
         contentLabel="Menu for Paperan"
       >
         <div className="checkout-menu__items-section">
-          <TopBagSection handleCloseCart={() => this.props.fetchCart(false)} />
+          <TopBagSection onCloseCart={this.handleCloseCart} />
 
           {Object.keys(cart).length > 0 ? (
             Object.keys(cart).map(id =>
               cart[id].map(item => (
-                <ItemInCart guid={id} {...item} key={item.variationId} />
+                <ItemInCart
+                  guid={id}
+                  {...item}
+                  key={item.variationId}
+                  onCloseCart={this.handleCloseCart}
+                />
               ))
             )
           ) : (
@@ -63,7 +72,10 @@ class MainCartView extends Component {
   }
 }
 
-export default connect(null, { fetchCart })(MainCartView);
+export default connect(
+  null,
+  { fetchCart }
+)(MainCartView);
 
 const modalStyles = {
   overlay: {

@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 
 import { calculateQuantityInCart } from "../../utils/calculateQuantityInCart";
 
-const TopBagSection = ({ handleCloseCart, cart }) => (
+const TopBagSection = ({ onCloseCart, cart }) => (
   <div className="checkout-menu__items-section--bag-container">
     <div className="bag-group">
       <div className="quantity-in-cart">
@@ -19,7 +19,7 @@ const TopBagSection = ({ handleCloseCart, cart }) => (
     <img
       className="close-menu-icon"
       src="/icons/close.svg"
-      onClick={handleCloseCart}
+      onClick={onCloseCart}
     />
   </div>
 );
