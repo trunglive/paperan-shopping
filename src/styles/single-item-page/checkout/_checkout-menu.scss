@@ -108,7 +108,7 @@
     align-items: center;
     margin-top: 60%;
 
-    p { 
+    p {
       margin-bottom: 2rem;
       font-size: 1.4rem;
       font-weight: 300;
@@ -139,9 +139,17 @@
     }
 
     &--shipping {
+      p {
+        font-size: 1rem;
+      }
+
       p:first-child {
         color: $color-grey-light-1;
-        font-size: 1rem;
+      }
+
+      p:nth-child(2) {
+        font-weight: 500;
+        color: $color-secondary;
       }
     }
 

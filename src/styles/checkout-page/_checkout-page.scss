@@ -2,4 +2,30 @@
   grid-column: 1 / -1;
   min-height: 100vh;
   background-color: $color-grey-light-3;
+
+  &__left-section {
+    padding-top: 7rem;
+    padding-left: 21rem;
+
+    > div {
+      padding-bottom: 7rem;
+    }
+  }
+
+  &__right-section {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 37rem;
+    height: 100vh;
+    background-color: #fff;
+  }
+
+  &__title {
+    font-size: 3.6rem;
+
+    span:first-child {
+      padding-right: 4rem;
+    }
+  }
 }
