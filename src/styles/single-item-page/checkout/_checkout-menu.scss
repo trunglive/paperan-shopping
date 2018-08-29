@@ -19,12 +19,18 @@
 .checkout-menu {
   &__items-section {
     overflow-y: auto;
+    padding-top: 6rem;
 
     &--bag-container {
+      position: fixed;
+      top: 0;
+      right: 0;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      width: 100%;
       padding: 2rem;
+      background-color: #fff;
       border-bottom: 1px solid $color-grey-light-2;
     }
 

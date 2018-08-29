@@ -12,10 +12,8 @@ const TopBagSection = ({ onCloseCart, cart }) => (
           <p className="quantity">{calculateQuantityInCart(cart)}</p>
         </div>
       </div>
-
       <span>Shopping bag</span>
     </div>
-
     <img
       className="close-menu-icon"
       src="/icons/close.svg"

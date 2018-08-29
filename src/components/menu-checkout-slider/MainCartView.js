@@ -19,7 +19,6 @@ class MainCartView extends Component {
         cart: nextProps.cart
       };
     }
-
     return null;
   }
 
@@ -66,7 +65,12 @@ class MainCartView extends Component {
             </div>
           )}
         </div>
-        {totalPrice > 0 && <BottomSubtotal totalPrice={totalPrice} />}
+        {totalPrice > 0 && (
+          <BottomSubtotal
+            totalPrice={totalPrice}
+            onCloseCart={this.handleCloseCart}
+          />
+        )}
       </Menu>
     );
   }
