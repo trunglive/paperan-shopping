@@ -14,3 +14,5 @@ export const SORT_BY = "SORT_BY";
 export const SEARCH_PRODUCTS = "SEARCH_PRODUCTS";
 
 export const HANDLE_WAYPOINT = "HANDLE_WAYPOINT";
+
+export const FETCH_SHIPPING_COST = "FETCH_SHIPPING_COST";

@@ -6,20 +6,16 @@ import { calculateQuantityInCart } from "../../utils/calculateQuantityInCart";
 import { calculateSubtotal } from "../../utils/calculateSubtotal";
 
 class Cart extends Component {
-  state = {};
-
   render() {
-    const { cart } = this.props;
+    const { cart, shippingCost } = this.props;
     const subtotal = calculateSubtotal(cart);
-    const total = (calculateSubtotal(cart) + 3.97).toFixed(2);
+    const total = (calculateSubtotal(cart) + shippingCost).toFixed(2);
 
     return (
       <div className="checkout-page__right-section">
         <div className="your-cart-and-number">
           <div className="your-cart">Your cart</div>
-          <div className="number">
-            ({calculateQuantityInCart(cart)})
-          </div>
+          <div className="number">({calculateQuantityInCart(cart)})</div>
         </div>
         <div className="checkout-menu__items-section all-items-in-cart">
           {Object.keys(cart).length > 0 &&
@@ -36,7 +32,7 @@ class Cart extends Component {
           </div>
           <div className="checkout-menu__subtotal-section--shipping">
             <p>Shipping from Seattle, WA</p>
-            <p>from $ 3.97</p>
+            <p>from $ {shippingCost}</p>
           </div>
           <div className="checkout-menu__subtotal-section--final-total-price">
             <p>total</p>
@@ -48,8 +44,9 @@ class Cart extends Component {
   }
 }
 
-const mapStateToProps = ({ cart }) => ({
-  cart
+const mapStateToProps = ({ cart, shipping }) => ({
+  cart,
+  shippingCost: shipping.cost
 });
 
 export default connect(mapStateToProps)(Cart);

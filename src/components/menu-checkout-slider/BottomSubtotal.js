@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
 
-const BottomSubtotal = ({ totalPrice, onCloseCart }) => (
+const BottomSubtotal = ({ totalPrice, shippingCost, onCloseCart }) => (
   <div className="checkout-menu__subtotal-section">
     <div className="checkout-menu__subtotal-section--price">
       <p>subtotal</p>
@@ -9,7 +10,7 @@ const BottomSubtotal = ({ totalPrice, onCloseCart }) => (
     </div>
     <div className="checkout-menu__subtotal-section--shipping">
       <p>Shipping from Seattle, WA</p>
-      <p>from $ 3.97</p>
+      <p>from $ {shippingCost}</p>
     </div>
     <Link to="/checkout" style={{ textDecoration: "none", color: "#fff" }}>
       <div
@@ -22,4 +23,8 @@ const BottomSubtotal = ({ totalPrice, onCloseCart }) => (
   </div>
 );
 
-export default BottomSubtotal;
+const mapStateToProps = ({ shipping }) => ({
+  shippingCost: shipping.cost
+});
+
+export default connect(mapStateToProps)(BottomSubtotal);
