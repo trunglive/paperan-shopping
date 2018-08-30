@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
+import Cart from './Cart';
 import { displayCurrentRoute } from "../../actions/routingActions";
 
 class CheckoutPage extends Component {
@@ -101,7 +102,8 @@ class CheckoutPage extends Component {
             <div className="checkout-page__grid" />
           </div>
         </form>
-        <div className="checkout-page__right-section" />
+        
+        <Cart />
       </div>
     );
   }

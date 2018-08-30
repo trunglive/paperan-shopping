@@ -15,12 +15,32 @@
   }
 
   &__right-section {
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     width: 37rem;
     height: 100vh;
+    overflow-y: auto;
+    font-size: 1.1rem;
     background-color: #fff;
+
+    .your-cart-and-number {
+      position: fixed;
+      top: 5rem;
+      right: 0;
+      display: flex;
+      justify-content: space-between;
+      width: 37rem;
+      padding: 2rem;
+      font-size: 1.8rem;
+      font-weight: 600;
+      background-color: #fff;
+    }
+
+    .all-items-in-cart {
+      padding-top: 12rem;
+      height: 65vh;
+    }
   }
 
   &__title {
@@ -147,4 +167,6 @@
       }
     }
   }
+
+
 }
