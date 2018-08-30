@@ -10,5 +10,5 @@ export const calculateSubtotal = cart => {
       return acc + next;
     }, 0);
 
-  return val.toFixed(2);
+  return Number(val.toFixed(2));
 };

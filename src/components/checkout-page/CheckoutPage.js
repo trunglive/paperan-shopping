@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
-import Cart from './Cart';
+import Cart from "./Cart";
 import { displayCurrentRoute } from "../../actions/routingActions";
 
 class CheckoutPage extends Component {
@@ -99,10 +99,31 @@ class CheckoutPage extends Component {
               <span>03</span>
               <span>Payment</span>
             </div>
-            <div className="checkout-page__grid" />
+            <div className="payment-section__all-fields-container checkout-page__grid">
+              <input
+                type="text"
+                placeholder="Name on card"
+                className="name-on-card checkout-page__input-container"
+              />
+              <input
+                type="number"
+                placeholder="Card number"
+                className="card-number checkout-page__input-container"
+              />
+              <input
+                type="text"
+                placeholder="Valid through"
+                className="valid-through checkout-page__input-container"
+              />
+              <input
+                type="number"
+                placeholder="CVC code"
+                className="cvc-code checkout-page__input-container"
+              />
+            </div>
           </div>
         </form>
-        
+
         <Cart />
       </div>
     );

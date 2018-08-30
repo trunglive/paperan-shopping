@@ -11,14 +11,14 @@ const BottomSubtotal = ({ totalPrice, onCloseCart }) => (
       <p>Shipping from Seattle, WA</p>
       <p>from $ 3.97</p>
     </div>
-    <div
-      className="product-details__add-to-cart-container--button checkout-menu__subtotal-section--continue-to-checkout-button"
-      onClick={onCloseCart}
-    >
-      <Link to="/checkout" style={{ textDecoration: "none", color: "#fff" }}>
+    <Link to="/checkout" style={{ textDecoration: "none", color: "#fff" }}>
+      <div
+        className="product-details__add-to-cart-container--button checkout-menu__subtotal-section--continue-to-checkout-button"
+        onClick={onCloseCart}
+      >
         continue to checkout
-      </Link>
-    </div>
+      </div>
+    </Link>
   </div>
 );
 
