@@ -18,13 +18,25 @@ class CheckoutPage extends Component {
               <span>Shipping</span>
             </div>
             <div className="shipping-section__all-shipping-carriers checkout-page__grid">
-              <div className="shipping-section__dhl-parcel-service">
-                <input type="radio" name="shipping" />
-                <label>DHL Parcel Service</label>
+              <div className="shipping-section__dhl-parcel-service checkout-page__input-container">
+                <div className="radio-and-carrier-info">
+                  <input type="radio" name="shipping" />
+                  <div className="shipping-section__carrier-info">
+                    <label>DHL Parcel Service</label>
+                    <label>Express delivery in 48 hours.</label>
+                  </div>
+                </div>
+                <p className="shipping-cost">$19.99</p>
               </div>
-              <div className="shipping-section__fedex-shipping">
-                <input type="radio" name="shipping" />
-                <label>Fedex Shipping</label>
+              <div className="shipping-section__fedex-shipping checkout-page__input-container">
+                <div className="radio-and-carrier-info">
+                  <input type="radio" name="shipping" />
+                  <div className="shipping-section__carrier-info">
+                    <label>Fedex Shipping</label>
+                    <label>Delivery in 2-4 weeks.</label>
+                  </div>
+                </div>
+                <p className="shipping-cost">$4.99</p>
               </div>
             </div>
           </div>
@@ -34,15 +46,51 @@ class CheckoutPage extends Component {
               <span>Address</span>
             </div>
             <div className="address-section__all-fields-container checkout-page__grid">
-              <input type="text" placeholder="First name" className="first-name" />
-              <input type="text" placeholder="Last name" className="last-name" />
-              <input type="text" placeholder="Company" className="company" />
-              <input type="email" placeholder="E-mail" className="email" />
-              <input type="tel" placeholder="Phone number" className="phone-number" />
-              <input type="text" placeholder="Zip code" className="zip-code" />
-              <input type="text" placeholder="Address" className="address" />
-              <input type="text" placeholder="City" className="city" />
-              <input type="text" placeholder="Country" className="country" />
+              <input
+                type="text"
+                placeholder="First name"
+                className="first-name checkout-page__input-container"
+              />
+              <input
+                type="text"
+                placeholder="Last name"
+                className="last-name checkout-page__input-container"
+              />
+              <input
+                type="text"
+                placeholder="Company"
+                className="company checkout-page__input-container"
+              />
+              <input
+                type="email"
+                placeholder="E-mail"
+                className="email checkout-page__input-container"
+              />
+              <input
+                type="tel"
+                placeholder="Phone number"
+                className="phone-number checkout-page__input-container"
+              />
+              <input
+                type="text"
+                placeholder="Zip code"
+                className="zip-code checkout-page__input-container"
+              />
+              <input
+                type="text"
+                placeholder="Address"
+                className="address checkout-page__input-container"
+              />
+              <input
+                type="text"
+                placeholder="City"
+                className="city checkout-page__input-container"
+              />
+              <input
+                type="text"
+                placeholder="Country"
+                className="country checkout-page__input-container"
+              />
             </div>
           </div>
           <div className="payment-section">
