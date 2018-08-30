@@ -51,11 +51,13 @@ class CheckoutPage extends Component {
                 type="text"
                 placeholder="First name"
                 className="first-name checkout-page__input-container"
+                required
               />
               <input
                 type="text"
                 placeholder="Last name"
                 className="last-name checkout-page__input-container"
+                required
               />
               <input
                 type="text"
@@ -66,6 +68,7 @@ class CheckoutPage extends Component {
                 type="email"
                 placeholder="E-mail"
                 className="email checkout-page__input-container"
+                required
               />
               <input
                 type="tel"
@@ -76,21 +79,25 @@ class CheckoutPage extends Component {
                 type="text"
                 placeholder="Zip code"
                 className="zip-code checkout-page__input-container"
+                required
               />
               <input
                 type="text"
                 placeholder="Address"
                 className="address checkout-page__input-container"
+                required
               />
               <input
                 type="text"
                 placeholder="City"
                 className="city checkout-page__input-container"
+                required
               />
               <input
                 type="text"
                 placeholder="Country"
                 className="country checkout-page__input-container"
+                required
               />
             </div>
           </div>
@@ -104,22 +111,29 @@ class CheckoutPage extends Component {
                 type="text"
                 placeholder="Name on card"
                 className="name-on-card checkout-page__input-container"
+                required
               />
               <input
                 type="number"
                 placeholder="Card number"
                 className="card-number checkout-page__input-container"
+                required
               />
               <input
                 type="text"
                 placeholder="Valid through"
                 className="valid-through checkout-page__input-container"
+                required
               />
               <input
                 type="number"
                 placeholder="CVC code"
                 className="cvc-code checkout-page__input-container"
+                required
               />
+              <div className="purchase product-details__add-to-cart-container--button checkout-menu__subtotal-section--continue-to-checkout-button">
+                Purchase
+              </div>
             </div>
           </div>
         </form>
