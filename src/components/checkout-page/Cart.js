@@ -32,7 +32,7 @@ class Cart extends Component {
           </div>
           <div className="checkout-menu__subtotal-section--shipping">
             <p>Shipping from Seattle, WA</p>
-            <p>from $ {shippingCost}</p>
+            <p>$ {shippingCost}</p>
           </div>
           <div className="checkout-menu__subtotal-section--final-total-price">
             <p>total</p>

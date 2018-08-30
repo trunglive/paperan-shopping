@@ -3,7 +3,7 @@
 * https://dribbble.com/shots/4414196-paperan-shopping-exploration-Add-to-cart
 * https://dribbble.com/shots/4104241-paperan-shopping-exploration
 * https://dribbble.com/shots/4185894-paperan-shopping-exploration-collection
-
+* https://dribbble.com/shots/4685102-paperan-shopping-exploration-checkout-process
 ---
 
 #### Paperan
@@ -13,6 +13,7 @@
 #### Features of the app
 
 * Add products in cart, remove them from cart
+* Checkout forms for products
 * Persist data in cart on page refresh
 * Lazy loading on images
 * Image zoom on hover
@@ -33,8 +34,7 @@ Additional features/UI I added to the app that are not related to the original d
 
 * Sidebar Filter
 * Sorting
-* Footer
-* Checkout Page (in progress)
+* Menu Footer
 
 #### Stack
 
