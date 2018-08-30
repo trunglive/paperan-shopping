@@ -33,14 +33,24 @@ class CheckoutPage extends Component {
               <span>02</span>
               <span>Address</span>
             </div>
-            <div className="checkout-page__grid"></div>
+            <div className="address-section__all-fields-container checkout-page__grid">
+              <input type="text" placeholder="First name" className="first-name" />
+              <input type="text" placeholder="Last name" className="last-name" />
+              <input type="text" placeholder="Company" className="company" />
+              <input type="email" placeholder="E-mail" className="email" />
+              <input type="tel" placeholder="Phone number" className="phone-number" />
+              <input type="text" placeholder="Zip code" className="zip-code" />
+              <input type="text" placeholder="Address" className="address" />
+              <input type="text" placeholder="City" className="city" />
+              <input type="text" placeholder="Country" className="country" />
+            </div>
           </div>
           <div className="payment-section">
             <div className="payment-section__title checkout-page__title">
               <span>03</span>
               <span>Payment</span>
             </div>
-            <div className="checkout-page__grid"></div>
+            <div className="checkout-page__grid" />
           </div>
         </form>
         <div className="checkout-page__right-section" />
