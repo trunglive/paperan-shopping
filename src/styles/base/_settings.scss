@@ -18,8 +18,12 @@ $xl-size: 8rem;
 
 // Responsive Breakpoints
 $bp-largest: 62.5em; // 1000px
-$bp-large: 53em; // 848px                
+$bp-large: 53em; // 848px
 $bp-medium: 46em; // 736px
 $bp-medium-small: 37.5em; // 600px
 $bp-small: 32em; // 512px
 $bp-smallest: 22em; // 352px;
+
+// Additional responsive breakpoints for checkout page
+$bp-largest-for-checkout: 75em; // 1200px
+$bp-large-for-checkout: 68.75em; // 1100px
