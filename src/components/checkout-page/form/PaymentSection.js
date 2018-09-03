@@ -1,6 +1,9 @@
 import React from "react";
+import { connect } from "react-redux";
 
-const PaymentSection = () => (
+import { calculateSubtotal } from "../../../utils/calculateSubtotal";
+
+const PaymentSection = ({ cart, shippingCost }) => (
   <div className="payment-section">
     <div className="payment-section__title checkout-page__title">
       <span>03</span>
@@ -32,10 +35,15 @@ const PaymentSection = () => (
         required
       />
       <div className="purchase product-details__add-to-cart-container--button checkout-menu__subtotal-section--continue-to-checkout-button">
-        Purchase
+        Purchase ${(calculateSubtotal(cart) + shippingCost).toFixed(2)}
       </div>
     </div>
   </div>
 );
 
-export default PaymentSection;
+const mapStateToProps = ({ cart, shipping }) => ({
+  cart,
+  shippingCost: shipping.cost
+});
+
+export default connect(mapStateToProps)(PaymentSection);

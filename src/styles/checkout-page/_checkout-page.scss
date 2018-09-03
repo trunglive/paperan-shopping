@@ -1,13 +1,11 @@
 .checkout-page {
-  // display: grid;
-  // grid-template-columns: repeat(auto-fit, minmax(50rem, 1fr));
   grid-column: 1 / -1;
   min-height: 100vh;
   font-size: 1.2rem;
   background-color: $color-grey-light-3;
 
   &__left-section {
-    border: 1px solid red;
+    // border: 1px solid red;
     margin-top: 7rem;
     margin-left: 22rem;
     margin-right: 44rem;
@@ -16,14 +14,26 @@
       padding-bottom: 7rem;
     }
 
-    // @media only screen and (max-width: $bp-largest) {
-    //   grid-column: 1 / -1;
-    //   grid-row: 2 / -1;
-    // }
+    @media only screen and (max-width: $bp-largest) {
+      margin-right: 35rem;
+    }
+
+    @media only screen and (max-width: $bp-large) {
+      margin-right: 8rem;
+    }
+
+    @media only screen and (max-width: $bp-medium) {
+      margin-left: 15rem;
+    }
+
+    @media only screen and (max-width: $bp-medium-small) {
+      margin-left: 9rem;
+      margin-right: 2rem;
+    }
   }
 
   &__right-section {
-    border: 1px solid olivedrab;
+    // border: 1px solid olivedrab;
     position: fixed;
     top: 0;
     right: 0;
@@ -48,6 +58,10 @@
       @media only screen and (max-width: $bp-largest-for-checkout) {
         width: 33rem;
       }
+
+      @media only screen and (max-width: $bp-small) {
+        width: 100%;
+      }
     }
 
     .all-items-in-cart {
@@ -59,10 +73,13 @@
       width: 33rem;
     }
 
-    // @media only screen and (max-width: $bp-largest) {
-    //   grid-column: 1 / -1;
-    //   grid-row: 1 / 2;
-    // }
+    @media only screen and (max-width: $bp-large) {
+      display: none;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+      width: 100%;
+    }
   }
 
   &__title {
@@ -75,7 +92,7 @@
   }
 
   &__grid {
-    border: 1px solid blueviolet;
+    // border: 1px solid blueviolet;
     display: grid;
     grid-template-columns: repeat(4, minmax(10rem, 1fr));
     grid-gap: 1rem;
@@ -86,6 +103,10 @@
 
     @media only screen and (max-width: $bp-large-for-checkout) {
       grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    }
+
+    @media only screen and (max-width: $bp-largest) {
+      grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
     }
   }
 
