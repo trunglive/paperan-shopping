@@ -1,11 +1,13 @@
 .checkout-page {
+  // display: grid;
+  // grid-template-columns: repeat(auto-fit, minmax(50rem, 1fr));
   grid-column: 1 / -1;
   min-height: 100vh;
   font-size: 1.2rem;
   background-color: $color-grey-light-3;
 
   &__left-section {
-    // border: 1px solid red;
+    border: 1px solid red;
     margin-top: 7rem;
     margin-left: 22rem;
     margin-right: 44rem;
@@ -13,6 +15,11 @@
     > div {
       padding-bottom: 7rem;
     }
+
+    // @media only screen and (max-width: $bp-largest) {
+    //   grid-column: 1 / -1;
+    //   grid-row: 2 / -1;
+    // }
   }
 
   &__right-section {
@@ -51,6 +58,11 @@
     @media only screen and (max-width: $bp-largest-for-checkout) {
       width: 33rem;
     }
+
+    // @media only screen and (max-width: $bp-largest) {
+    //   grid-column: 1 / -1;
+    //   grid-row: 1 / 2;
+    // }
   }
 
   &__title {
