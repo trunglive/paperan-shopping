@@ -4,8 +4,10 @@ import ShippingSection from "./ShippingSection";
 import AddressSection from "./AddressSection";
 import PaymentSection from "./PaymentSection";
 
-const Forms = () => (
-  <form className="checkout-page__left-section">
+const Forms = ({ cartState }) => (
+  <form
+    className={`checkout-page__left-section ${cartState && "show-opacity"}`}
+  >
     <ShippingSection />
     <AddressSection />
     <PaymentSection />

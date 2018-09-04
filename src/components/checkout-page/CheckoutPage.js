@@ -6,15 +6,36 @@ import Cart from "./Cart";
 import { displayCurrentRoute } from "../../actions/routingActions";
 
 class CheckoutPage extends Component {
+  state = {
+    cart: false
+  };
+
   componentDidMount() {
     this.props.displayCurrentRoute(this.props.match.path);
   }
 
+  handleClickBurgerIcon = () => {
+    this.setState({
+      cart: !this.state.cart
+    });
+  };
+
   render() {
+    const width = Math.max(
+      document.documentElement.clientWidth,
+      window.innerWidth || 0
+    );
+
     return (
       <div className="checkout-page">
-        <Forms />
-        <Cart />
+        <Forms cartState={this.state.cart} />
+        <Cart cartState={this.state.cart} />
+        <img
+          className="burger-menu-icon"
+          src="/icons/burger.svg"
+          onClick={this.handleClickBurgerIcon}
+        />
+        )
       </div>
     );
   }

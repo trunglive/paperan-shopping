@@ -1,3 +1,20 @@
+.show-cart {
+  display: block !important;
+}
+
+.hide-cart {
+  display: none;
+}
+
+.show-opacity {
+  filter: opacity(25%) blur(7px);
+  transition: filter 0.2s ease-out;
+}
+
+.left-box-shadow {
+  box-shadow: 0 0 0.8rem rgba($color-secondary, 0.1);
+}
+
 .checkout-page {
   grid-column: 1 / -1;
   min-height: 100vh;
@@ -39,9 +56,20 @@
     right: 0;
     width: 37rem;
     height: 100vh;
+    z-index: 10;
+    display: block;
     overflow-y: auto;
     font-size: 1.1rem;
     background-color: #fff;
+
+    .close-checkout-icon {
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+      width: 1.75rem;
+      height: 1.75rem;
+      z-index: 11;
+    }
 
     .your-cart-and-number {
       position: fixed;
@@ -50,10 +78,11 @@
       display: flex;
       justify-content: space-between;
       width: 37rem;
-      padding: 7rem 2rem 2rem 2rem;
+      padding: 8rem 2rem 2rem 2rem;
       font-size: 1.8rem;
       font-weight: 600;
       background-color: #fff;
+      border-bottom: 1px solid $color-grey-light-2;
 
       @media only screen and (max-width: $bp-largest-for-checkout) {
         width: 33rem;
@@ -65,7 +94,7 @@
     }
 
     .all-items-in-cart {
-      padding-top: 12rem;
+      padding-top: 15rem;
       height: 65vh;
     }
 
@@ -348,5 +377,23 @@
         }
       }
     }
+  }
+}
+
+.burger-menu-icon {
+  position: fixed;
+  top: 1.5rem;
+  right: 1.5rem;
+  z-index: 100;
+  display: none;
+  width: 3.5rem;
+  height: 3.5rem;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  @media only screen and (max-width: $bp-large) {
+    display: block;
   }
 }
