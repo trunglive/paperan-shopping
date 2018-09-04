@@ -21,11 +21,6 @@ class CheckoutPage extends Component {
   };
 
   render() {
-    const width = Math.max(
-      document.documentElement.clientWidth,
-      window.innerWidth || 0
-    );
-
     return (
       <div className="checkout-page">
         <Forms cartState={this.state.cart} />

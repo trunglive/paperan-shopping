@@ -26,7 +26,7 @@
 
 #### Notes on my work
 
-* I am working on checkout page and authentication.
+* I am working on authentication.
 
 Redux store works as a global immutable state tree and it prevents props drilling problems as the app grows. I used some new features in React 16.3 in this app in combination with Redux ([React Context API](https://reactjs.org/docs/context.html), [getDerivedStateFromProps](https://reactjs.org/docs/react-component.html#static-getderivedstatefromprops)).
 
