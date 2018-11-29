@@ -380,7 +380,8 @@
   }
 }
 
-.burger-menu-icon {
+.burger-menu-icon,
+.close-big-icon {
   position: fixed;
   top: 1.5rem;
   right: 1.5rem;
@@ -396,4 +397,12 @@
   @media only screen and (max-width: $bp-large) {
     display: block;
   }
+}
+
+.show-icon {
+  display: block;
+}
+
+.hide-icon {
+  display: none;
 }

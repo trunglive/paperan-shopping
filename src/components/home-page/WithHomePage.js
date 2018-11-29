@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { database } from "../../firebase";
+
+// enable this for offline data fetching
 // import { paperan as API } from "../../../dev_off/paperan.json";
 
 const WithHomePage = WrappedComponent =>
@@ -39,6 +41,7 @@ const WithHomePage = WrappedComponent =>
       });
     }
 
+    // enable this for offline data fetching
     // componentWillMount() {
     //   {
     //     this.setState({

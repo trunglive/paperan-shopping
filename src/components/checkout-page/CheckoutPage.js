@@ -7,7 +7,9 @@ import { displayCurrentRoute } from "../../actions/routingActions";
 
 class CheckoutPage extends Component {
   state = {
-    cart: false
+    cart: false,
+    burgerIconDisplay: true,
+    bigCloseIconDisplay: false
   };
 
   componentDidMount() {
@@ -16,7 +18,16 @@ class CheckoutPage extends Component {
 
   handleClickBurgerIcon = () => {
     this.setState({
-      cart: !this.state.cart
+      cart: true,
+      burgerIconDisplay: false,
+      bigCloseIconDisplay: true
+    });
+  };
+
+  handleClickCloseBigIcon = () => {
+    this.setState({
+      cart: false,
+      burgerIconDisplay: true
     });
   };
 
@@ -24,11 +35,21 @@ class CheckoutPage extends Component {
     return (
       <div className="checkout-page">
         <Forms cartState={this.state.cart} />
-        <Cart cartState={this.state.cart} />
+        <Cart
+          cartState={this.state.cart}
+          burgerIconState={this.state.burgerIconDisplay}
+        />
         <img
-          className="burger-menu-icon"
+          className={`burger-menu-icon ${
+            this.state.burgerIconDisplay ? "show-icon" : "hide-icon"
+          }`}
           src="/icons/burger.svg"
           onClick={this.handleClickBurgerIcon}
+        />
+        <img
+          className="close-big-icon"
+          src="/icons/close-big.svg"
+          onClick={this.handleClickCloseBigIcon}
         />
         )
       </div>
